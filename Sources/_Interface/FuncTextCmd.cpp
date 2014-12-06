@@ -5447,8 +5447,7 @@ BEGINE_TEXTCMDFUNC_MAP
 	ON_TEXTCMDFUNC( TextCmd_shout,			"shout",		"s",			"",	"",	TCM_BOTH,	AUTH_GENERAL,	"" )
 	ON_TEXTCMDFUNC( TextCmd_PartyChat,		"partychat",	"p",			"",	"",	TCM_BOTH,	AUTH_GENERAL,	"" )
 	ON_TEXTCMDFUNC( TextCmd_GuildChat,		"GuildChat",	"g",			"",	"",	TCM_BOTH,	AUTH_GENERAL,	"" )
-	ON_TEXTCMDFUNC( TextCmd_gml,            "mjhelp",       "mj",           "", "", TCM_SERVER, AUTH_GENERAL,	"" )  
-	ON_TEXTCMDFUNC( TextCmd_GenRandomOption, "Awake",		"awake",		"", "", TCM_BOTH,	AUTH_GENERAL,	"" )
+	ON_TEXTCMDFUNC( TextCmd_gml,            "mjhelp",       "mj",           "", "", TCM_SERVER, AUTH_GENERAL  , "" )  
 
 #ifdef __CLIENT
 	ON_TEXTCMDFUNC( TextCmd_tradeagree,			"tradeagree",		"ta",	"",	"",	TCM_CLIENT, AUTH_GENERAL,	"" )
@@ -5556,6 +5555,7 @@ BEGINE_TEXTCMDFUNC_MAP
 	ON_TEXTCMDFUNC( TextCmd_GC1to1Next,				"GC1TO1NEXT",		"gc1to1next",			"IIU", "IU",	TCM_BOTH, AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_RefineAccessory,		"RefineAccessory",	"ra",	"¡©¢ç|", "|",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_RefineCollector,		"RefineCollector",	"rc",	"y", "|",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
+	ON_TEXTCMDFUNC( TextCmd_GenRandomOption,		"GenRandomOption",	"gro",	"¡Ë©ö", "¡Ë",	TCM_BOTH,	AUTH_GENERAL, "" )
 	ON_TEXTCMDFUNC( TextCmd_InitializeRandomOption,	"InitializeRandomOption",	"iro",	"¡Ë©ö|", "¡Ë|",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_SetRandomOption,		"SetRandomOption",	"sro",	"¡Ë©öo", "¡Ëo",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_SetPetName,             "SetPetName",           "setpetname",             "eU",       "eU",    TCM_SERVER, AUTH_ADMINISTRATOR , "eU" )
