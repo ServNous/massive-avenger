@@ -1,0 +1,11 @@
+###Eveils Item + Fam :
+- Stats FOR/DEX/INT/END : 8/11/14/17/20/22/23/24/26/28/40
+- DCC/Depla : 4/6/8/10/12/14/16/18/20/23/25
+- CC/ATK SPEED/INCANT : 1/5/8/12/14/16/17/18
+- HP/MP/ATK : 100/150/200/250/300/350/400/450/500
+
+###Béné Déesse + EveilRama
+- Stats FOR/DEX/INT/END : 5/10/15
+- DCC/Depla : 3/6/10
+- CC/ATK SPEED/INCANT : 3/6/10
+- HP/MP/ATK : 100/200/300
