@@ -750,21 +750,46 @@ BOOL TextCmd_SetRandomOption( CScanner & s )
 
 BOOL TextCmd_GenRandomOption( CScanner & s )
 {
-#ifdef __WORLDSERVER
-	CUser* pUser	= (CUser*)s.dwValue;
-//	int i	= s.GetNumber();
-	CItemElem* pItemElem	= pUser->m_Inventory.GetAt( 0 );
-	if( pItemElem )
-	{
-		int nRandomOptionKind	= g_xRandomOptionProperty->GetRandomOptionKind( pItemElem );
-		if( nRandomOptionKind >= 0 )
+	#ifdef __WORLDSERVER
+		CUser* pUser = (CUser*)s.dwValue;
+		CItemElem* pItemElem = pUser->m_Inventory.GetAt(0);
+		if (pItemElem)
 		{
-			g_xRandomOptionProperty->InitializeRandomOption( pItemElem->GetRandomOptItemIdPtr() );
-			g_xRandomOptionProperty->GenRandomOption( pItemElem->GetRandomOptItemIdPtr(), nRandomOptionKind, pItemElem->GetProp()->dwParts );
-			pUser->UpdateItemEx( (BYTE)( pItemElem->m_dwObjId ), UI_RANDOMOPTITEMID, pItemElem->GetRandomOptItemId() );
+
+			int nCost = 1;
+			int nRandomOptionKind = g_xRandomOptionProperty->GetRandomOptionKind(pItemElem);
+
+			if (0 < nCost)
+			{
+				if (nRandomOptionKind >= 0)
+				{
+					if (pUser->GetGold() > nCost)
+					{
+						if (pUser->HasActivatedSystemPet() && pItemElem->GetProp()->dwItemKind3 == IK3_EGG || pUser->HasActivatedEatPet() && pItemElem->GetProp()->dwItemKind3 == IK3_PET)
+						{
+							pUser->AddText("Votre familier doit être de classe C pour être éveillé !");
+						}
+
+						else
+						{
+							pUser->AddGold(-(nCost));
+							g_xRandomOptionProperty->InitializeRandomOption(pItemElem->GetRandomOptItemIdPtr());
+							g_xRandomOptionProperty->GenRandomOption(pItemElem->GetRandomOptItemIdPtr(), nRandomOptionKind, pItemElem->GetProp()->dwParts);
+							pUser->UpdateItemEx((BYTE)(pItemElem->m_dwObjId), UI_RANDOMOPTITEMID, pItemElem->GetRandomOptItemId());
+						}
+					}
+					else
+					{
+						pUser->AddText("Vous n'avez pas les penyas pour faire cette action..");
+					}
+				}
+			}
 		}
-	}
-#endif	// __WORLDSERVER
+		else
+		{
+			pUser->AddText("L'objet doit être en première place dans votre inventaire!");
+		}
+	#endif //__WORLDSERVER
 	return TRUE;
 }
 BOOL TextCmd_PickupPetAwakeningCancel( CScanner & s )
@@ -5530,7 +5555,7 @@ BEGINE_TEXTCMDFUNC_MAP
 	ON_TEXTCMDFUNC( TextCmd_GC1to1Next,				"GC1TO1NEXT",		"gc1to1next",			"IIU", "IU",	TCM_BOTH, AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_RefineAccessory,		"RefineAccessory",	"ra",	"¡©¢ç|", "|",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_RefineCollector,		"RefineCollector",	"rc",	"y", "|",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
-	ON_TEXTCMDFUNC( TextCmd_GenRandomOption,		"GenRandomOption",	"gro",	"¡Ë©ö", "¡Ë",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
+	ON_TEXTCMDFUNC( TextCmd_GenRandomOption,		"GenRandomOption",	"gro",	"¡Ë©ö", "¡Ë",	TCM_BOTH,	AUTH_GENERAL, "" )
 	ON_TEXTCMDFUNC( TextCmd_InitializeRandomOption,	"InitializeRandomOption",	"iro",	"¡Ë©ö|", "¡Ë|",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_SetRandomOption,		"SetRandomOption",	"sro",	"¡Ë©öo", "¡Ëo",	TCM_BOTH,	AUTH_ADMINISTRATOR, "" )
 	ON_TEXTCMDFUNC( TextCmd_SetPetName,             "SetPetName",           "setpetname",             "eU",       "eU",    TCM_SERVER, AUTH_ADMINISTRATOR , "eU" )

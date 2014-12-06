@@ -39,3 +39,7 @@ Buff Pangs : Tous les buff acolyte level 19
 * Vivacité :
     * Level 19 : Vit d'ATK +25%
     * Level 20 : Vit d'ATK +50%
+
+##Groupes
+Modification de Fureur :
+5min de durée, bonus dégats pour tout le groupe
