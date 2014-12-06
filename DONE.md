@@ -43,3 +43,6 @@ Buff Pangs : Tous les buff acolyte level 19
 ##Groupes
 Modification de Fureur :
 5min de durée, bonus dégats pour tout le groupe
+
+##Systèmes
+- Commande d'eveil /Awake prix actuel 1p
