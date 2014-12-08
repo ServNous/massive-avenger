@@ -4,7 +4,7 @@
 * CC/ATK SPEED/INCANT : 1/5/8/12/14/16/17/18
 * HP/MP/ATK : 100/150/200/250/300/350/400/450/500
 
-###Béné Déesse + EveilRama
+###Béné Déesse + Eveil Rama
 * Stats FOR/DEX/INT/END : 5/10/15
 * DCC/Depla : 3/6/10
 * CC/ATK SPEED/INCANT : 3/6/10
@@ -40,9 +40,12 @@ Buff Pangs : Tous les buff acolyte level 19
     * Level 19 : Vit d'ATK +25%
     * Level 20 : Vit d'ATK +50%
 
-##Groupes
+###Groupes
 Modification de Fureur :
 5min de durée, bonus dégats pour tout le groupe
 
-##Systèmes
+###Items
+### * Parures
+###Systèmes
 - Commande d'eveil /Awake prix actuel 1p
+- Ramasseur + Familier se range automatiquement lorsqu'on s'envole
