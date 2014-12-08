@@ -119,7 +119,7 @@ CDPSrvr		g_DPSrvr;
 // dwGold°ú nPlusÀ» ´õ ÇÒ ¼ö ÀÖ´Â°¡?
 BOOL CanAdd( DWORD dwGold, int nPlus )
 {
-	if( nPlus <= 0 )		// ´õÇÏ·Á´Â °ªÀÌ 0ÀÌÇÏÀÌ¸é ³Í¼¾½º 
+	if( nPlus <= 0 )		// ´õÇÏ·Á´Â °ªÀÌ 0ÀÌÇÏÀÌ¸é ³Í¼¾½º
 		return FALSE;
 
 	int nGold = dwGold;
@@ -179,7 +179,7 @@ CDPSrvr::CDPSrvr()
 	ON_MSG( PACKETTYPE_GETGOLDBACK, OnGetGoldBank );
 	ON_MSG( PACKETTYPE_MOVEBANKITEM, OnMoveBankItem );
 	ON_MSG( PACKETTYPE_CHANGEBANKPASS, OnChangeBankPass );
-	ON_MSG( PACKETTYPE_CONFIRMBANK, OnConfirmBank );	
+	ON_MSG( PACKETTYPE_CONFIRMBANK, OnConfirmBank );
 	ON_MSG( PACKETTYPE_PLAYERMOVED, OnPlayerMoved );
 	ON_MSG( PACKETTYPE_PLAYERBEHAVIOR, OnPlayerBehavior );
 	ON_MSG( PACKETTYPE_PLAYERMOVED2, OnPlayerMoved2 );
@@ -236,7 +236,7 @@ CDPSrvr::CDPSrvr()
 	ON_MSG( PACKETTYPE_SFX_HIT, OnSfxHit );
 	ON_MSG( PACKETTYPE_USESKILL, OnUseSkill );
 	ON_MSG( PACKETTYPE_SETTARGET, OnSetTarget );	// Core¿¡ º¸³»¾ß ÇÏ´ÂÁö È®ÀÎÇØ ÁÙ°Í.
-	ON_MSG( PACKETTYPE_TELESKILL, OnTeleSkill );	
+	ON_MSG( PACKETTYPE_TELESKILL, OnTeleSkill );
 	ON_MSG( PACKETTYPE_SKILLTASKBAR, OnSkillTaskBar );
 	ON_MSG( PACKETTYPE_ADDAPPLETTASKBAR, OnAddAppletTaskBar );
 	ON_MSG( PACKETTYPE_REMOVEAPPLETTASKBAR, OnRemoveAppletTaskBar );
@@ -269,9 +269,9 @@ CDPSrvr::CDPSrvr()
 #endif	// __SYS_PLAYER_DATA
 	ON_MSG( PACKETTYPE_GUILD_INVITE, OnGuildInvite );
 	ON_MSG( PACKETTYPE_IGNORE_GUILD_INVITE, OnIgnoreGuildInvite );
-	ON_MSG( PACKETTYPE_NW_GUILDLOGO, OnGuildLogo );			// ·Î°í º¯°æ 
-	ON_MSG( PACKETTYPE_NW_GUILDCONTRIBUTION, OnGuildContribution );		// °øÇåµµ 
-	ON_MSG( PACKETTYPE_NW_GUILDNOTICE, OnGuildNotice );		// °øÁö»çÇ×  
+	ON_MSG( PACKETTYPE_NW_GUILDLOGO, OnGuildLogo );			// ·Î°í º¯°æ
+	ON_MSG( PACKETTYPE_NW_GUILDCONTRIBUTION, OnGuildContribution );		// °øÇåµµ
+	ON_MSG( PACKETTYPE_NW_GUILDNOTICE, OnGuildNotice );		// °øÁö»çÇ×
 	ON_MSG( PACKETTYPE_REQUEST_GUILD_RANKING, OnRequestGuildRank );
 	ON_MSG( PACKETTYPE_PVENDOR_OPEN, OnPVendorOpen );
 	ON_MSG( PACKETTYPE_PVENDOR_CLOSE, OnPVendorClose );
@@ -351,11 +351,11 @@ ON_MSG( PACKETTYPE_DO_COLLECT, OnDoCollect );
 #endif // __ITEMCREATEMON_S0602
 
 	ON_MSG( PACKETTYPE_IN_GUILDCOMBAT, OnGCApp );
-	ON_MSG( PACKETTYPE_OUT_GUILDCOMBAT, OnGCCancel );	
+	ON_MSG( PACKETTYPE_OUT_GUILDCOMBAT, OnGCCancel );
 	ON_MSG( PACKETTYPE_REQUEST_STATUS, OnGCRequestStatus );
 	ON_MSG( PACKETTYPE_SELECTPLAYER_GUILDCOMBAT, OnGCSelectPlayer );
 	ON_MSG( PACKETTYPE_SELECTMAP_GUILDCOMBAT, OnGCSelectMap );
-	ON_MSG( PACKETTYPE_JOIN_GUILDCOMBAT, OnGCJoin );	
+	ON_MSG( PACKETTYPE_JOIN_GUILDCOMBAT, OnGCJoin );
 	ON_MSG( PACKETTYPE_GETPENYAGUILD_GUILDCOMBAT, OnGCGetPenyaGuild );
 	ON_MSG( PACKETTYPE_GETPENYAPLAYER_GUILDCOMBAT, OnGCGetPenyaPlayer );
 #if __VER < 8 // #ifndef __GUILDCOMBAT_85
@@ -375,7 +375,7 @@ ON_MSG( PACKETTYPE_DO_COLLECT, OnDoCollect );
 	ON_MSG( PACKETTYPE_CREATEANGEL, OnCreateAngel );
 	ON_MSG( PACKETTYPE_ANGELBUFF, OnAngleBuff );
 #endif //__CSC_VER8_5
-	
+
 #ifdef __EVE_MINIGAME
 	ON_MSG( PACKETTYPE_KAWIBAWIBO_START, OnKawibawiboStart );
 	ON_MSG( PACKETTYPE_KAWIBAWIBO_GETITEM, OnKawibawiboGetItem );
@@ -432,7 +432,7 @@ ON_MSG( PACKETTYPE_DO_COLLECT, OnDoCollect );
 	ON_MSG( PACKETTYPE_GC1TO1_MEMBERLINEUPOPENWND, OnGC1to1MemberLineUpOpenWnd );
 	ON_MSG( PACKETTYPE_GC1TO1_MEMBERLINEUP, OnGC1to1MemberLineUp );
 	ON_MSG( PACKETTYPE_GC1TO1_TELEPORTTONPC, OnGC1to1TeleportToNPC );
-	ON_MSG( PACKETTYPE_GC1TO1_TELEPORTTOSTAGE, OnGC1to1TeleportToStage );	
+	ON_MSG( PACKETTYPE_GC1TO1_TELEPORTTOSTAGE, OnGC1to1TeleportToStage );
 #endif // __GUILD_COMBAT_1TO1
 
 #if __VER >= 11 // __MA_VER11_04	// ±æµå Ã¢°í ·Î±× ±â´É world,database,neuz
@@ -642,7 +642,7 @@ void CDPSrvr::UserMessageHandler( LPDPMSG_GENERIC lpMsg, DWORD dwMsgSize, DPID i
 
 	void ( theClass::*pfn )( theParameters )	=	GetHandler( dw );
 
-	if( pfn ) 
+	if( pfn )
 	{
 		( this->*( pfn ) )( ar, idFrom, *(UNALIGNED LPDPID)lpMsg, lpBuffer, uBufSize );
 	}
@@ -661,8 +661,8 @@ void CDPSrvr::OnRemoveConnection( DPID dpid )
 	// µî·ÏÇÏ°Ô ÇÑ´Ù.
 	if( dpid == m_dpidCache )
 	{
-		g_UserMng.RemoveAllUsers();		
-		m_dpidCache = DPID_UNKNOWN;	
+		g_UserMng.RemoveAllUsers();
+		m_dpidCache = DPID_UNKNOWN;
 	}
 }
 
@@ -691,7 +691,7 @@ void CDPSrvr::OnAddUser( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long
 		//WriteLog( "CDPSrvr::OnAddUser idPlayer:%d account:%s DPID:%d", idPlayer, lpszAccount, dpidUser );
 		// Ä³½¬¼­¹ö¿¡´Â socket¹øÈ£¸¦ º¸³»¾ß ÇÑ´Ù. ( pUser->m_Snapshot.dpidUser´Â ¼ÒÄÏ¹øÈ£ )
 		QueryDestroyPlayer( pUser->m_Snapshot.dpidCache, pUser->m_Snapshot.dpidUser, pUser->m_dwSerial, pUser->m_idPlayer ); // pUser->m_Snapshot.dpidUser¿¡´Â ¼ÒÄÏ¹øÈ£°¡ µé¾î°¡ ÀÖ´Ù.
-		QueryDestroyPlayer( dpidCache, dpidSocket, dpidUser, idPlayer );	
+		QueryDestroyPlayer( dpidCache, dpidSocket, dpidUser, idPlayer );
 		return;
 	}
 
@@ -714,7 +714,7 @@ void CDPSrvr::OnAddUser( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long
 
 void CDPSrvr::OnRemoveUser( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
-	g_UserMng.RemoveUser( (DWORD)dpidUser ); // dpidUser´Â CACHE¿¡¼­ »ç¿ëµÇ´Â serialÇÑ °ª 
+	g_UserMng.RemoveUser( (DWORD)dpidUser ); // dpidUser´Â CACHE¿¡¼­ »ç¿ëµÇ´Â serialÇÑ °ª
 }
 
 void CDPSrvr::OnChat( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
@@ -726,9 +726,9 @@ void CDPSrvr::OnChat( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_l
 	ar.ReadString( sChat, 1024 );
 	CString strChat	= sChat;
 	strChat.Replace( "\\n", " " );
-	
+
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		if( pUser->m_dwAuthorization >= AUTH_LOGCHATTING )		// ÀÏ¹ÝÀ¯Àú°¡ ¾Æ´Ï¸é ·Î±×³²±è ¸ðµç ·Î±×³²±è
 		{
@@ -811,10 +811,10 @@ void CDPSrvr::OnCtrlCoolTimeCancel( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 	CUser* pUser;
 	CCommonCtrl* pCtrl;
 	pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	((CMover*)pUser)->m_dwCtrlReadyTime = 0xffffffff;
 
 	pCtrl = (CCommonCtrl*)prj.GetCtrl( ((CMover*)pUser)->m_dwCtrlReadyId );
@@ -833,9 +833,9 @@ void CDPSrvr::OnDoEquip( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 	int nPart;
 
 	ar >> nId;
-	ar >> nPart;		
-	
-	if( nPart >= MAX_HUMAN_PARTS )	
+	ar >> nPart;
+
+	if( nPart >= MAX_HUMAN_PARTS )
 		return;
 
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
@@ -907,8 +907,8 @@ void CDPSrvr::OnMoveItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 
 	CItemElem* pItemSrc = pUser->m_Inventory.GetAt( nSrcIndex );
 	CItemElem* pItemDst = pUser->m_Inventory.GetAt( nDstIndex );
-	if( pItemDst == NULL || IsUsableItem( pItemDst ) ) // ºó °ø°£ or °Å·¡ÁßÀÌÁö ¾Ê´Â ¾ÆÀÌÅÛ ?			
-	{	
+	if( pItemDst == NULL || IsUsableItem( pItemDst ) ) // ºó °ø°£ or °Å·¡ÁßÀÌÁö ¾Ê´Â ¾ÆÀÌÅÛ ?
+	{
 		if( IsUsableItem( pItemSrc ) )					// °Å·¡ÁßÀÌÁö ¾Ê´Â ¾ÆÀÌÅÛ ?
 		{
 			pUser->m_Inventory.Swap( nSrcIndex, nDstIndex );
@@ -962,14 +962,14 @@ void CDPSrvr::OnDropGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 
 	return;
 
-#else	//  __VER >= 8  
+#else	//  __VER >= 8
 
 	DWORD dwGold;
 	D3DXVECTOR3 vPos;
 	ar >> dwGold >> vPos;
 
 	BOOL bLimit = FALSE;
-	if( dwGold > 30000 )	// 3¸¸ Æä³Ä ÀÌ»óÀº ¶¥¿¡ ¶³¾î¶ß¸± ¼ö ¾ø½À´Ï´Ù. 
+	if( dwGold > 30000 )	// 3¸¸ Æä³Ä ÀÌ»óÀº ¶¥¿¡ ¶³¾î¶ß¸± ¼ö ¾ø½À´Ï´Ù.
 	{
 		dwGold = 30000;
 		bLimit = TRUE;
@@ -990,7 +990,7 @@ void CDPSrvr::OnDropGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		}
 	}
 
-#endif	//	  __VER >= 8  
+#endif	//	  __VER >= 8
 
 }
 
@@ -1044,9 +1044,9 @@ void CDPSrvr::OnScriptDialogReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 			{
 				if( lstrlen( lpKey ) == 0 )
 					lstrcpy( lpKey, _T( "#init" ) );
-				if( nGlobal3 == 0 )	
+				if( nGlobal3 == 0 )
 					nGlobal3 = (int)pMover->GetId();
-				if( nGlobal4 == 0 )	
+				if( nGlobal4 == 0 )
 					nGlobal4 = (int)pUser->GetId();
 
 				pMover->m_pNpcProperty->RunDialog( lpKey, NULL, nGlobal1, (int)pMover->GetId(), (int)pUser->GetId(), nGlobal2 );
@@ -1087,7 +1087,7 @@ void CDPSrvr::OnRevival( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			Error( "OnRevival\t// %s is not dead", pUser->GetName() );
 			return;
 		}
-		
+
 		BOOL bGuildCombat = FALSE;
 
 		CItemElem* pItemElem = pUser->m_Inventory.GetAtItemId( II_SYS_SYS_SCR_RESURRECTION );
@@ -1138,7 +1138,7 @@ void CDPSrvr::OnRevival( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			int nVal	= (int)(pUser->GetMaxManaPoint() * fRate);			// mp È¸º¹
 			if( pUser->GetManaPoint() < nVal )
 				pUser->SetManaPoint( nVal );
-			
+
 			nVal	= (int)(pUser->GetMaxFatiguePoint() * fRate);			// fp È¸º¹
 			if( pUser->GetFatiguePoint() < nVal )
 				pUser->SetFatiguePoint( nVal );
@@ -1164,14 +1164,14 @@ void CDPSrvr::OnRevival( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 #ifndef __PK_V6
 #if __VER >= 9 // __S_9_ADD
 			pUser->SetPointParam( DST_HP, (int)( pUser->GetMaxHitPoint() * fRate ) );
-					
+
 			 nVal	= (int)(pUser->GetMaxManaPoint() * fRate);			// mp È¸º¹
 			if( pUser->GetManaPoint() < nVal )
 				pUser->SetPointParam( DST_MP, nVal );
-			
+
 			nVal	= (int)(pUser->GetMaxFatiguePoint() * fRate);			// fp È¸º¹
 			if( pUser->GetFatiguePoint() < nVal )
-				pUser->SetPointParam( DST_FP, nVal );			
+				pUser->SetPointParam( DST_FP, nVal );
 #endif // __S_9_ADD
 #endif
 		}
@@ -1193,7 +1193,7 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 		if( pUser->IsDie() == FALSE )
 		{
-			// ÀÌ¸®·Î µé¾î¿À´Â °æ¿ì°¡ »ý±ä´Ù. »ý°¢¿£ ÀÌ¹Ì ÇÑ¹ø ¿©±æ µé¾î¿Ô´Ù°¡ ·º °É¸°µ¿¾È 
+			// ÀÌ¸®·Î µé¾î¿À´Â °æ¿ì°¡ »ý±ä´Ù. »ý°¢¿£ ÀÌ¹Ì ÇÑ¹ø ¿©±æ µé¾î¿Ô´Ù°¡ ·º °É¸°µ¿¾È
 			// ·Îµå½ºÅ¸¸¦ ¶Ç ´©¸£¸é µé¾î¿À´Â°Ô ¾Æ´Ñ°¡ ½Í´Ù.
 			return;
 		}
@@ -1205,9 +1205,9 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 			pWorld->ADDOBJ( pCtrl, FALSE, pUser->GetLayer() );
 			g_dpDBClient.SendLogExpBox( pUser->m_idPlayer, pCtrl->GetId(), pCtrl->m_nExpBox );
 		}
-		
+
 		BOOL bGuildCombat = FALSE;
-		
+
 		g_dpDBClient.SendLogLevelUp( (CMover*)pUser, 9 );	// ·Îµå½ºÅ¸·Î ºÎÈ° ·Î±×
 
 		pUser->m_nDead = PROCESS_COUNT * 5;		// Á×Àº ÈÄ 5ÃÊ°£Àº ¹«Àû
@@ -1224,14 +1224,14 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		else
 			fRate = 0.2f;
 #endif // __S_9_ADD
-		
+
 #ifdef __ECHO_BERSERK	// ¾Æ·¡¿¡¼­ Ã¤¿öÁÖ°í ÆÐÅ¶±îÁö º¸³»¹ö¸®´Â °ÍÀ¸·Î ¼öÁ¤
 		pUser->SetHitPoint( (int)(pUser->GetMaxHitPoint() * fRate) );	// hp È¸º¹
-		
+
 		int nVal	= (int)(pUser->GetMaxManaPoint() * fRate);			// mp È¸º¹
 		if( pUser->GetManaPoint() < nVal )
 			pUser->SetManaPoint( nVal );
-		
+
 		nVal	= (int)(pUser->GetMaxFatiguePoint() * fRate);			// fp È¸º¹
 		if( pUser->GetFatiguePoint() < nVal )
 			pUser->SetFatiguePoint( nVal );
@@ -1250,7 +1250,7 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		else
 		{
 			g_UserMng.AddHdr( pUser, SNAPSHOTTYPE_REVIVAL_TO_LODESTAR );
-		}		
+		}
 #ifndef __PK_V6
 #if __VER >= 9 // __S_9_ADD
 		pUser->SetPointParam( DST_HP, (int)( pUser->GetMaxHitPoint() * fRate ) );
@@ -1274,11 +1274,11 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 			return;
 		}
 #endif // __SECRET_ROOM
-		
+
 		// º¸½º¸÷ ¸Ê¿¡¼­ Á×¾ú´Ù...
 		// ±×·¯¸é ºÎÈ°Àº ¸¶À»¿¡¼­...
 		if( pWorld->GetID() == WI_DUNGEON_MUSCLE || pWorld->GetID() == WI_DUNGEON_KRRR || pWorld->GetID() == WI_DUNGEON_BEAR )
-		{			
+		{
 			pUser->REPLACE( g_uIdofMulti, WI_WORLD_MADRIGAL, D3DXVECTOR3( 6968.0f, 0.0f, 3328.8f ), REPLACE_NORMAL, nDefaultLayer );
 			return;
 		}
@@ -1291,7 +1291,7 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 			if( pWorld->GetID() != pWorld->m_dwIdWorldRevival && pWorld->m_dwIdWorldRevival != 0 )
 				pRgnElem	= g_WorldMng.GetRevivalPosChao( pWorld->m_dwIdWorldRevival, pWorld->m_szKeyRevival );
 			if( NULL == pRgnElem )	// Find near revival pos
-				pRgnElem	= g_WorldMng.GetNearRevivalPosChao( pWorld->GetID(), pUser->GetPos() );	
+				pRgnElem	= g_WorldMng.GetNearRevivalPosChao( pWorld->GetID(), pUser->GetPos() );
 #else // __VER >= 8 // __S8_PK
 			pRgnElem	= g_WorldMng.GetNearRevivalPosChao( pWorld->GetID(), pUser->GetPos() );
 #endif // __VER >= 8 // __S8_PK
@@ -1300,14 +1300,14 @@ void CDPSrvr::OnRevivalLodestar( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		{
 			if( pWorld->GetID() != pWorld->m_dwIdWorldRevival && pWorld->m_dwIdWorldRevival != 0 )
 				pRgnElem	= g_WorldMng.GetRevivalPos( pWorld->m_dwIdWorldRevival, pWorld->m_szKeyRevival );
-			
+
 			if( NULL == pRgnElem )	// Find near revival pos
-				pRgnElem	= g_WorldMng.GetNearRevivalPos( pWorld->GetID(), pUser->GetPos() );	
+				pRgnElem	= g_WorldMng.GetNearRevivalPos( pWorld->GetID(), pUser->GetPos() );
 		}
 
-		if( pRgnElem ) 
+		if( pRgnElem )
 			pUser->REPLACE( g_uIdofMulti, pRgnElem->m_dwWorldId, pRgnElem->m_vPos, REPLACE_FORCE, nRevivalLayer );
-		else 
+		else
 			pUser->REPLACE( g_uIdofMulti, pWorld->GetID(), pUser->GetPos(), REPLACE_FORCE, pUser->GetLayer() );
 	}
 }
@@ -1322,7 +1322,7 @@ void CDPSrvr::OnRevivalLodelight( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
         if( pUser->IsDie() == FALSE )
         {
-            // ÀÌ¸®·Î µé¾î¿À´Â °æ¿ì°¡ »ý±ä´Ù. »ý°¢¿£ ÀÌ¹Ì ÇÑ¹ø ¿©±æ µé¾î¿Ô´Ù°¡ ·º °É¸°µ¿¾È 
+            // ÀÌ¸®·Î µé¾î¿À´Â °æ¿ì°¡ »ý±ä´Ù. »ý°¢¿£ ÀÌ¹Ì ÇÑ¹ø ¿©±æ µé¾î¿Ô´Ù°¡ ·º °É¸°µ¿¾È
             // ·Îµå½ºÅ¸¸¦ ¶Ç ´©¸£¸é µé¾î¿À´Â°Ô ¾Æ´Ñ°¡ ½Í´Ù.
             return;
         }
@@ -1380,7 +1380,7 @@ void CDPSrvr::OnRevivalLodelight( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
         else
         {
             g_UserMng.AddHdr( pUser, SNAPSHOTTYPE_REVIVAL_TO_LODELIGHT );
-        }        
+        }
 
 #if __VER >= 9 // __S_9_ADD
         pUser->SetPointParam( DST_HP, (int)(pUser->GetMaxHitPoint() * fRate) );    // hp È¸º¹
@@ -1412,7 +1412,7 @@ void CDPSrvr::OnRevivalLodelight( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
         // º¸½º¸÷ ¸Ê¿¡¼­ Á×¾ú´Ù...
         // ±×·¯¸é ºÎÈ°Àº ¸¶À»¿¡¼­...
         if( pWorld->GetID() == WI_DUNGEON_MUSCLE || pWorld->GetID() == WI_DUNGEON_KRRR || pWorld->GetID() == WI_DUNGEON_BEAR )
-        {            
+        {
             pUser->REPLACE( g_uIdofMulti, WI_WORLD_MADRIGAL, D3DXVECTOR3( 6968.0f, 0.0f, 3328.8f ), REPLACE_NORMAL, nDefaultLayer );
             return;
         }
@@ -1428,7 +1428,7 @@ void CDPSrvr::OnRevivalLodelight( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
             if( pWorld->GetID() != pWorld->m_dwIdWorldRevival && pWorld->m_dwIdWorldRevival != 0 )
                 pRgnElem    = g_WorldMng.GetRevivalPosChao( pWorld->m_dwIdWorldRevival, pWorld->m_szKeyRevival );
             if( NULL == pRgnElem )    // Find near revival pos
-                pRgnElem    = g_WorldMng.GetNearRevivalPosChao( pWorld->GetID(), pUser->GetPos() );    
+                pRgnElem    = g_WorldMng.GetNearRevivalPosChao( pWorld->GetID(), pUser->GetPos() );
 #else // __VER >= 8 // __S8_PK
             pRgnElem    = g_WorldMng.GetNearRevivalPosChao( pWorld->GetID(), pUser->GetPos() );
 #endif // __VER >= 8 // __S8_PK
@@ -1441,17 +1441,17 @@ void CDPSrvr::OnRevivalLodelight( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
                     pRgnElem    = g_WorldMng.GetRevivalPos( pWorld->m_dwIdWorldRevival, pWorld->m_szKeyRevival );
 
                 if( NULL == pRgnElem )    // Find near revival pos
-                    pRgnElem    = g_WorldMng.GetNearRevivalPos( pWorld->GetID(), pUser->GetPos() );    
+                    pRgnElem    = g_WorldMng.GetNearRevivalPos( pWorld->GetID(), pUser->GetPos() );
             }else{
                 pRgnElem = new REGIONELEM;
                 pRgnElem->m_vPos = pUser->m_vMarkingPos;
                 pRgnElem->m_dwWorldId = pUser->m_idMarkingWorld;
-            }    
+            }
         }
 
-        if( pRgnElem ) 
+        if( pRgnElem )
             pUser->REPLACE( g_uIdofMulti, pRgnElem->m_dwWorldId, pRgnElem->m_vPos, REPLACE_FORCE, nRevivalLayer );
-        else 
+        else
             pUser->REPLACE( g_uIdofMulti, pWorld->GetID(), pUser->GetPos(), REPLACE_FORCE, pUser->GetLayer() );
     }
 }
@@ -1467,7 +1467,7 @@ void CDPSrvr::OnSetLodelight( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		pUser->AddDefinedText( TID_GAME_LODELIGHT, "" );
 	    CWorld* pWorld = pUser->GetWorld();
 	    g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 	}
 }
 
@@ -1480,10 +1480,10 @@ void CDPSrvr::OnIncStatLevel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	if( IsValidObj( pUser ) )
 	{
 		long nValue;
-		
+
 		switch( chID )
 		{
-			case 100:	
+			case 100:
 				pUser->IncStrLevel();
 				nValue	= pUser->m_nStr;
 				break;
@@ -1500,7 +1500,7 @@ void CDPSrvr::OnIncStatLevel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 				nValue	= pUser->m_nInt;
 				break;
 			default:
-				return;			
+				return;
 		}
 //		pUser->AddSetStatLevel( chID, nValue, pUser->m_nRemainGP );
 		g_UserMng.AddSetStateLevel( pUser, chID, nValue );
@@ -1526,7 +1526,7 @@ void CDPSrvr::OnCorrReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 
 void CDPSrvr::OnCreateGuildCloak( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
-	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )		
+	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )
 		return;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );		// ¾î´ÀÀ¯Àú·ÎºÎÅÍ ³¯¾Æ¿Â°Å³Ä.
@@ -1577,8 +1577,8 @@ void CDPSrvr::OnCreateGuildCloak( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 			itemElem.m_nItemNum		= 1;
 			// ±æµå ¾ÆÀÌµð¸¦ ¸ÁÅä¿¡ ¹ÚÀ½. Å¬¶ó¿¡¼± ¼ýÀÚ¸¦ ±â¹ÝÀ¸·Î Ä¿½ºÅÒ ¸ÁÅä¸¦ ÀÐ´Â´Ù.
 			// Ä¿½ºÅÒ ¸ÁÅä°¡ ¾Æ´Ñ°æ¿ì´Â ÀÌ¹øÈ£·Î ±æµåÀÌ¸§À» º¸¿©ÁØ´Ù.
-			itemElem.m_idGuild	= pGuild->m_idGuild;			
-			
+			itemElem.m_idGuild	= pGuild->m_idGuild;
+
 
 			// a. ¿äÃ»ÇÑ Å¬¶ó¿¡°Ô ±æµåÃ¢°í Æä³Ä°¡ ¼Ò¸ðµÇ¾úÀ½À» ¾Ë¸°´Ù.
 			// b. ÇöÀç °°Àº ¼­¹ö¿¡ ÀÖ´Â °°Àº ±æµå¿øÀÎ Å¬¶óÀÌ¾ðÆ®¿¡°Ô Æä³Ä°¡ ¼Ò¸ðµÇ¾úÀ½À» ¾Ë¸°´Ù.
@@ -1593,7 +1593,7 @@ void CDPSrvr::OnCreateGuildCloak( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 			pUser->AddPutItemGuildBank( &itemElem );
 			pGuild->m_GuildBank.Add( &itemElem );
 			g_UserMng.AddPutItemElem( pUser, &itemElem );
-						
+
 			// ÀÚ½ÅÀÇ ±æµå¿øµéÀÇ ·çÇÁ¸¦ µ¹¸é¼­ ±æµå¸ÁÅä¸¦ »ç¼­ 10000Æä³Ä°¡ ¼Ò¸ðµÇ¾ú´Ù°í ¾Ë·ÁÁØ´Ù.
 			// ¹°·Ð ·çÇÁ¿¡¼­ ¿äÃ»ÇÑ Å¬¶óÀÌ¾ðÆ®¿¡°Ôµµ ¸Þ½ÃÁö¸¦ ÇÔ²² º¸³½´Ù.
 			CGuildMember*	pMember;
@@ -1609,12 +1609,12 @@ void CDPSrvr::OnCreateGuildCloak( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 					pUsertmp->AddGetGoldGuildBank( 10000, 2, pMember->m_idPlayer, 1 );	// 2´Â ¾÷µ¥ÀÌÆ® ÇØ¾ßÇÒ Å¬¶óÀÌ°Ô
 				}
 			}
-			// Çö ¸ÖÆ¼¼Â ¼­¹ö¿¡´Â À§ ·çÆ¾ÀÌ ¸ðµÎ 10000Æä³Ä°¡ ¼Ò¸ðµÊÀ» ¾Ë·ÈÀ¸¹Ç·Î DPCoreClient·Î Ä³½Ã¼­¹ö¿¡ ¿äÃ»ÇÏ¿© 
+			// Çö ¸ÖÆ¼¼Â ¼­¹ö¿¡´Â À§ ·çÆ¾ÀÌ ¸ðµÎ 10000Æä³Ä°¡ ¼Ò¸ðµÊÀ» ¾Ë·ÈÀ¸¹Ç·Î DPCoreClient·Î Ä³½Ã¼­¹ö¿¡ ¿äÃ»ÇÏ¿©
 			// ¸ðµç ¸ÖÆ¼¼Â¿¡ 10000Æä³Ä°¡ ¼Ò¸ðµÇ¾ú´Ù°í ¾Ë¸°´Ù. ¹°·Ð º¸³»´Â ÀÌ ¸ÖÆ¼¼Â ¼­¹ö´Â ÀÌ ¸Þ½ÃÁö¸¦ ¹«½ÃÇØ¾ß ÇÑ´Ù. ( ¹«½ÃÇÏ°Ô ÇØ³ùÁö¸¸ Àß µÉ·±Áö -_- )
 			g_DPCoreClient.SendGuildMsgControl_Bank_Penya( pUser, 10000, 2, 1 ); 	// 2´Â ¾÷µ¥ÀÌÆ® ÇØ¾ßÇÒ ´Ù¸¥ ¿ùµå¼­¹öÀÇ Å¬¶óÀÌ¾ðÆ®
 			UpdateGuildBank(pGuild, GUILD_CLOAK, 0, pUser->m_idPlayer, &itemElem, 10000, 1 ); // 0Àº ±æµå Æä³Ä¸¦ ¾÷µ¥ÀÌÆ® ÇÑ´Ù´Â °ÍÀÌ´Ù.(½ÇÀº ¸ðµç°ÍÀ» ¾÷µ¥ÀÌÆ®ÇÏÁö¸¸ -_-)
 			pUser->AddDefinedText( TID_GAME_GUILDCREATECLOAK, "" );
-		} 
+		}
 		else
 		{
 			pUser->AddDefinedText( TID_GAME_GUILDNEEDGOLD, "" );		// ±æµåÃ¢°í¿¡ µ·ÀÌ ¾ö¶º!
@@ -1689,7 +1689,7 @@ void CDPSrvr::OnGetPos( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u
 	float fAngle;
 	OBJID objid;
 	ar >> vPos >> fAngle >> objid;
-	
+
 	if( _isnan((double)fAngle) )
 		return;
 
@@ -1701,9 +1701,9 @@ void CDPSrvr::OnGetPos( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u
 		{
 			pUser->SetPos( vPos );
 			pUser->SetAngle( fAngle );
-			
+
 			pUser->m_fWaitQueryGetPos	= FALSE;
-			
+
 			if( FALSE == pUser->IsEmptyDestPos() )
 				pUser->SetDestPos( pUser->GetDestPos(), pUser->m_bForward, FALSE );
 		}
@@ -1743,12 +1743,12 @@ void CDPSrvr::OnPartySkillUse( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 {
 	u_long uLeaderid;
 	int nSkill;
-	ar >> uLeaderid >> nSkill;	
+	ar >> uLeaderid >> nSkill;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsInvalidObj( pUser ) )		
+	if( IsInvalidObj( pUser ) )
 		return;
-	
+
 	CParty* pParty	= g_PartyMng.GetParty( pUser->m_idparty );
 	if( pParty )
 	{
@@ -1761,7 +1761,7 @@ void CDPSrvr::OnAddFriendReqest( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 {
 	u_long uLeaderid, uMemberid;
 	ar >> uLeaderid >> uMemberid;
-	
+
 	CUser* pLeader	= g_UserMng.GetUserByPlayerID( uLeaderid );
 	CUser* pMember	= g_UserMng.GetUserByPlayerID( uMemberid );
 	if( IsValidObj( pMember ) && IsValidObj( pLeader ) )
@@ -1779,7 +1779,7 @@ void CDPSrvr::OnAddFriendReqest( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		CWorld* pWorldMember = pMember->GetWorld();
 		if( ( pWorldLeader && pWorldLeader->GetID() == WI_WORLD_GUILDWAR ) ||
 			( pWorldMember && pWorldMember->GetID() == WI_WORLD_GUILDWAR ) )
-		{			
+		{
 			pLeader->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_FRIENDADD) );
 			return;
 		}
@@ -1820,7 +1820,7 @@ void CDPSrvr::OnAddFriendNameReqest( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 #else	// __SYS_PLAYER_DATA
 	uMember = prj.GetPlayerID( szMemberName );
 #endif	// __SYS_PLAYER_DATA
-	CUser* pLeader	= g_UserMng.GetUserByPlayerID( uLeaderid );	
+	CUser* pLeader	= g_UserMng.GetUserByPlayerID( uLeaderid );
 
 	if( IsValidObj( pLeader ) )
 	{
@@ -1970,17 +1970,17 @@ void CDPSrvr::OnQueryPlayerListString( CAr & ar, DPID dpidCache, DPID dpidUser, 
 
 	if( nSize > 1024 )
 		return;
-		
+
 	CUser* pUser;
 
 	pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) )
 	{
 		for( int i=0; i<nSize; i++ )
 		{
 			ar >> idPlayer;
-			
+
 			LPCSTR lpszPlayer	= prj.GetPlayerString( idPlayer );
 			if( lpszPlayer )
 			{
@@ -2000,7 +2000,7 @@ void CDPSrvr::OnQueryPlayerListString( CAr & ar, DPID dpidCache, DPID dpidUser, 
 void CDPSrvr::OnGetFriendName( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	int nCount;
-	ar >> nCount;		
+	ar >> nCount;
 	if( nCount <= 0 || nCount > MAX_FRIEND )
 		return;
 
@@ -2017,13 +2017,13 @@ void CDPSrvr::OnGetFriendName( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 			LPCSTR lpszPlayer	= prj.GetPlayerString( aFriend[i].dwUserId );
 			strcpy( aFriend[i].szName, lpszPlayer? lpszPlayer: "" );
 #endif	// __SYS_PLAYER_DATA
-			
+
 		}
 		pUser->AddGetFriendName( nCount, aFriend );
 	}
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 }
 #endif	// __SYS_PLAYER_DATA
 
@@ -2054,7 +2054,7 @@ void CDPSrvr::OnIgnoreGuildInvite( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 	}
 }
 
-// ·Î°í º¯°æ 
+// ·Î°í º¯°æ
 void CDPSrvr::OnGuildLogo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	DWORD dwLogo;
@@ -2073,7 +2073,7 @@ void CDPSrvr::OnGuildLogo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 	g_DPCoreClient.SendGuildStat( pUser, GUILD_STAT_LOGO, dwLogo );
 }
 
-// °øÇåµµ 
+// °øÇåµµ
 void CDPSrvr::OnGuildContribution( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	BYTE cbPxpCount, cbItemFlag;
@@ -2087,7 +2087,7 @@ void CDPSrvr::OnGuildContribution( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 		return;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) == FALSE ) 
+	if( IsValidObj( pUser ) == FALSE )
 		return;
 
 #ifdef SURVEILLANCE_MJ
@@ -2103,7 +2103,7 @@ void CDPSrvr::OnGuildContribution( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 
 	if( nGold > 0 )
 	{
-		if( pUser->GetGold() >= nGold ) 
+		if( pUser->GetGold() >= nGold )
 		{
 			if( g_DPCoreClient.SendGuildStat( pUser, GUILD_STAT_PENYA, nGold ) )
 			{
@@ -2121,7 +2121,7 @@ void CDPSrvr::OnGuildContribution( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 				aLogItem.itemNumber = nGold;
 				OnLogItem( aLogItem );
 			}
-		} 
+		}
 		else
 		{
 			pUser->AddDefinedText( TID_GAME_GUILDNOTENGGOLD, "" );	// ÀÎº¥¿¡ µ·ÀÌºÎÁ·
@@ -2143,8 +2143,8 @@ void CDPSrvr::OnGuildContribution( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 			if( pItemElem->m_nItemNum > 0 )
 			{
 				// ¾ÆÀÌÅÛ ·¹º§¿¡ µû¶ó¼­ °øÇåµµ¸¦ ´Ù¸£°Ô ÇÑ´Ù.
-				nValue = (pItemElem->GetProp()->dwItemLV + 1) / 2;	
-				nValue *= pItemElem->m_nItemNum;					
+				nValue = (pItemElem->GetProp()->dwItemLV + 1) / 2;
+				nValue *= pItemElem->m_nItemNum;
 			}
 
 			if( nValue > 0 )
@@ -2205,11 +2205,11 @@ void CDPSrvr::OnDuelRequest( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 		if( 0 < pUser->m_idparty ||  0 < pDstUser->m_idparty )
 			return;
 #endif
-		if( pUser->m_vtInfo.GetOther() )	// °Å·¡Áß ÀÌ¸é µà¾ó ºÒ°¡ 
+		if( pUser->m_vtInfo.GetOther() )	// °Å·¡Áß ÀÌ¸é µà¾ó ºÒ°¡
 			return;
-		if( pDstUser->m_vtInfo.GetOther() )	// °Å·¡Áß ÀÌ¸é µà¾ó ºÒ°¡ 
+		if( pDstUser->m_vtInfo.GetOther() )	// °Å·¡Áß ÀÌ¸é µà¾ó ºÒ°¡
 			return;
-	
+
 		int	nState = pUser->GetSummonState();
 		if( nState != 0 )
 			return;
@@ -2267,7 +2267,7 @@ void CDPSrvr::OnDuelYes( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			return;
 		}
 #endif
-		//°³ÀÎ»óÁ¡ Áß¿¡´Â µà¾ó ºÒ°¡ 
+		//°³ÀÎ»óÁ¡ Áß¿¡´Â µà¾ó ºÒ°¡
 		if( pSrc->m_vtInfo.VendorIsVendor() || pSrc->m_vtInfo.IsVendorOpen() ||
             pDst->m_vtInfo.VendorIsVendor() || pDst->m_vtInfo.IsVendorOpen() )
 		{
@@ -2322,7 +2322,7 @@ void CDPSrvr::OnDuelPartyRequest( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 {
 	u_long uidSrc, uidDst;
 	ar >> uidSrc >> uidDst;
-	
+
 	CUser* pSrcUser	= g_UserMng.GetUser( dpidCache, dpidUser );	// ½ÅÃ»ÀÚ À¯Àú.
 	CUser* pDstUser	= g_UserMng.GetUserByPlayerID( uidDst );	// »ó´ë À¯Àú
 	if( IsValidObj( pDstUser ) && IsValidObj( pSrcUser ) )
@@ -2360,8 +2360,8 @@ void CDPSrvr::OnDuelPartyYes( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 {
 	u_long uidSrc, uidDst;
 	ar >> uidSrc >> uidDst;
-	
-	CUser* pSrc = g_UserMng.GetUserByPlayerID( uidSrc );	
+
+	CUser* pSrc = g_UserMng.GetUserByPlayerID( uidSrc );
 	CUser* pDst = g_UserMng.GetUserByPlayerID( uidDst );
 	if( IsValidObj(pSrc) && IsValidObj(pDst) )
 	{
@@ -2583,7 +2583,7 @@ void CDPSrvr::OnPlayerMoved( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	ar >> nTickCount;
 
 	int delay	= (int)( (float)g_TickCount.GetOffset( nTickCount ) / 66.6667f );//Anti-Teleport Fix
-		
+
 	if( pUser->m_pActMover->IsFly() )	return;		// ºñÇà»óÅÂÀÎµ¥ ÀÏ·Î µé¾î¿Ô´Ù¸é Ãë¼Ò½ÃÅ°ÀÚ.
 
 	D3DXVECTOR3 vDistance	= pUser->GetPos() - v;
@@ -2599,13 +2599,13 @@ void CDPSrvr::OnPlayerMoved( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	if( delay >= MAX_CORR_SIZE_45 ) {
 		pUser->ActionForceSet( v, vd, f, dwState, dwStateFlag, dwMotion, nMotionEx, nLoop, dwMotionOption );
 	}
-	else 	
+	else
 	{
-		if( pUser->m_pActMover->IsStateFlag( OBJSTAF_FLY ) || dwStateFlag & OBJSTAF_FLY ) 
+		if( pUser->m_pActMover->IsStateFlag( OBJSTAF_FLY ) || dwStateFlag & OBJSTAF_FLY )
 		{
 			pUser->ActionForceSet( v, vd, f, dwState, dwStateFlag, dwMotion, nMotionEx, nLoop, dwMotionOption );
 		}
-		else 
+		else
 		{
 			pUser->m_pActMover->DefaultSet();
 
@@ -2613,7 +2613,7 @@ void CDPSrvr::OnPlayerMoved( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			D3DXVECTOR3 d	= v - pUser->GetPos();
 			float fLength	= D3DXVec3Length( &d );
 			float fSpeed	= ( fLength / (float)nRemnant ) / 4 + 0.020f;
-			
+
 			pUser->m_fCrrSpd	= pUser->m_pActMover->IsStateFlag( OBJSTAF_WALK )? fSpeed*4.0f: fSpeed;
 
 			pUser->m_CorrAction.v	= v;
@@ -2651,7 +2651,7 @@ void CDPSrvr::OnPlayerBehavior( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 
 	if( pUser->m_pActMover->IsDie() )
 			return;
-	
+
 	if( pUser->m_pActMover->IsState( OBJSTA_ATK_CASTING1 | OBJSTA_ATK_CASTING2 | OBJSTA_ATK_MAGIC1 | OBJSTA_ATK_RANGE1 | OBJSTA_ATK_MELEESKILL | OBJSTA_ATK_RANGESKILL ) )
 		return;
 
@@ -2671,13 +2671,13 @@ void CDPSrvr::OnPlayerBehavior( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 
 	if( pUser->m_pActMover->IsFly() )
 		return;
-	
+
 	int delay	= (int)( (float)g_TickCount.GetOffset( nTickCount ) / 66.6667f );
 
 
-	if( !pUser->IsEmptyDest() && pUser->m_CorrAction.fValid == FALSE ) 
+	if( !pUser->IsEmptyDest() && pUser->m_CorrAction.fValid == FALSE )
 		pUser->ActionForceSet( v, vd, f, dwState, dwStateFlag, dwMotion, nMotionEx, nLoop, dwMotionOption );
-	else 
+	else
 		pUser->ActionForceSet( v, vd, f, dwState, dwStateFlag, dwMotion, nMotionEx, nLoop, dwMotionOption );
 
 	g_UserMng.AddMoverBehavior( pUser, v, vd, f, dwState, dwStateFlag, dwMotion,  nMotionEx, nLoop, dwMotionOption, nTickCount );
@@ -2686,7 +2686,7 @@ void CDPSrvr::OnPlayerBehavior( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 void CDPSrvr::OnPlayerMoved2( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		if( pUser->GetIndex() == 0 )
 		{
@@ -2748,7 +2748,7 @@ void CDPSrvr::OnPlayerMoved2( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 
 			g_UserMng.AddMoverMoved2
 				( pUser, v, vd, f, fAngleX, fAccPower, fTurnAngle, dwState, dwStateFlag, dwMotion,  nMotionEx, nLoop, dwMotionOption, nTickCount, nFrame );
-		} 
+		}
 	}
 }
 
@@ -2779,7 +2779,7 @@ void CDPSrvr::OnPlayerBehavior2( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		ar >> nLoop >> dwMotionOption;
 		ar >> nTickCount;
 #ifdef _DEBUG
-		if( dwStateFlag & OBJSTAF_ACC )	
+		if( dwStateFlag & OBJSTAF_ACC )
 		{
 			int a = 0;
 		}
@@ -2901,7 +2901,7 @@ if( IsValidObj( pUser ) == FALSE )
 	return;
 
 	//Crash packet
-	if ( nPart > MAX_HUMAN_PARTS || dwData < 0 )	
+	if ( nPart > MAX_HUMAN_PARTS || dwData < 0 )
 {
 		CString strPacket;
 		strPacket.Format( "[DSystem] Utlisateur: %s -> Type: OnDoUseItem", pUser->GetName());
@@ -2913,7 +2913,7 @@ if( IsValidObj( pUser ) == FALSE )
 #ifdef __SECURITY_FIXES
 	if ( dwData < 0 )
 		return;
-#endif // __SECURITY_FIXES	
+#endif // __SECURITY_FIXES
 
 	WORD nId = HIWORD( dwData );
 	if( nPart > 0 )
@@ -2951,7 +2951,7 @@ if( IsValidObj( pUser ) == FALSE )
 	pUser->OnDoUseItem( dwData, objid, nPart );
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 }
 
 void CDPSrvr::OnPlayerCorr( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
@@ -3048,7 +3048,7 @@ void CDPSrvr::OnOpenShopWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	{
 		OBJID objid;
 		ar >> objid;
-		
+
 		CMover* pVendor	= prj.GetMover( objid );
 		if( IsValidObj( pVendor ) && pUser->m_vtInfo.GetOther() == NULL )
 		{
@@ -3093,7 +3093,7 @@ void CDPSrvr::OnOpenShopWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 void CDPSrvr::OnCloseShopWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		CMover* pMover = pUser->m_vtInfo.GetOther();
 		if( IsValidObj( pMover ) && pMover->IsNPC() )
@@ -3150,13 +3150,13 @@ void CDPSrvr::OnBuyItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			return;
 		}
 #endif // __OCCUPATION_SHOPITEM
-		
+
 		int nCost = (int)pItemElem->GetCost();
 		nCost = (int)( prj.m_fShopCost * nCost );
 #ifdef __SHOP_COST_RATE
 		nCost = (int)( prj.m_EventLua.GetShopBuyFactor() * nCost );
 #endif // __SHOP_COST_RATE
-		
+
 #ifdef __PK_V6
 		// Á÷À§¿¡ µû¸¥ »óÁ¡°¡°Ý º¯µ¿
 		KarmaProp* pProp = prj.GetKarmaProp( pUser->m_nSlaughter );
@@ -3178,7 +3178,7 @@ void CDPSrvr::OnBuyItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 #endif //__MA_VER11_02
 		if( nCost < 1 )
 			nCost = 1;
-		
+
 		int nPracticable = pUser->GetGold() / nCost;
 		if( nNum > nPracticable )
 			nNum = (short)nPracticable;
@@ -3213,7 +3213,7 @@ void CDPSrvr::OnBuyItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			pUser->m_dwLastTryBuyItem = pItemElem->m_dwItemId;
 			pUser->m_dwLastBuyItemTick = GetTickCount();
 #endif // __PERIN_BUY_BUG
-	
+
 			CItemElem itemElem;
 			itemElem	= *pItemElem;
 			itemElem.m_nItemNum	      = nNum;
@@ -3233,7 +3233,7 @@ void CDPSrvr::OnBuyItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 				pItemElem->SetSerialNumber( itemElem.GetSerialNumber() );
 				OnLogItem( aLogItem, pItemElem, nNum );		// why do not pass &itemElem as argument?
 				pItemElem->SetSerialNumber( 0 );
-				pUser->AddGold( -nGold );	
+				pUser->AddGold( -nGold );
 #if __VER >= 12 // __TAX
 				if( nTax )
 					CTax::GetInstance()->AddTax( CTax::GetInstance()->GetContinent( pUser ), nTax, TAX_PURCHASE );
@@ -3245,7 +3245,7 @@ void CDPSrvr::OnBuyItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 	}
 				CWorld* pWorld = pUser->GetWorld();
 				g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 }
 
 void CDPSrvr::OnBuyChipItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
@@ -3263,7 +3263,7 @@ void CDPSrvr::OnBuyChipItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	//CRASH
-	if( cTab > 3 || cTab < 0 || nId < 0 || nNum <= 0 || nNum > 9999 || dwItemId < 0 ) 
+	if( cTab > 3 || cTab < 0 || nId < 0 || nNum <= 0 || nNum > 9999 || dwItemId < 0 )
 	{
 		CString strPacket;
 		strPacket.Format( "[DSystem] User: %s -> Type: OnBuyChipItem", pUser->GetName());
@@ -3300,7 +3300,7 @@ void CDPSrvr::OnBuyChipItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 
 		if( nNum > pItemElem->m_nItemNum )
 			nNum = pItemElem->m_nItemNum;
-		
+
 		// ¼ÒÁöÇÑ Ä¨ÀÇ °³¼ö°¡ ºÎÁ·ÇÒ ¶§
 		if( pUser->m_Inventory.GetAtItemNum( II_CHP_RED ) < (int)( pItemElem->GetChipCost() * nNum ) )
 		{
@@ -3309,7 +3309,7 @@ void CDPSrvr::OnBuyChipItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			return;
 		}
 
-		// ÀÎº¥Åä¸®°¡ ²Ë Ã¡À» ¶§ 
+		// ÀÎº¥Åä¸®°¡ ²Ë Ã¡À» ¶§
 		if( pUser->m_Inventory.IsFull( pItemElem, pItemElem->GetProp(), nNum ) )
 		{
 			int nChipNum = pItemElem->GetChipCost() * nNum;
@@ -3336,7 +3336,7 @@ void CDPSrvr::OnBuyChipItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				}
 			}
 		}
-		
+
 		// ±¸¸Å °¡°Ý ¸¸Å­ÀÇ Ä¨ »èÁ¦
 		DWORD dwChipCost = pItemElem->GetChipCost() * nNum;
 		if( dwChipCost > 0x7fff )
@@ -3348,7 +3348,7 @@ void CDPSrvr::OnBuyChipItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			}
 		}
 		pUser->RemoveItemA( II_CHP_RED, (short)dwChipCost );
-				
+
 		// ±¸¸Å ¾ÆÀÌÅÛ »ý¼º
 		CItemElem itemElem;
 		itemElem	= *pItemElem;
@@ -3405,14 +3405,14 @@ void CDPSrvr::OnSellItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		if( !CNpcChecker::GetInstance()->IsCloseNpc( MMI_TRADE, pUser->GetWorld(), pUser->GetPos() ) )
 			return;
 
-		CItemElem* pItemElem = pUser->m_Inventory.GetAtId( nId );		
+		CItemElem* pItemElem = pUser->m_Inventory.GetAtId( nId );
 		if( IsUsableItem( pItemElem ) == FALSE )
 			return;
 
 		ItemProp* pProp	= pItemElem->GetProp();
 		if( pProp->dwItemKind3 == IK3_EVENTMAIN )
 			return;
-		
+
 		if( pItemElem->IsQuest() )
 			return;
 
@@ -3482,7 +3482,7 @@ void CDPSrvr::OnSellItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		int nCost	= (int)pItemElem->GetCost() / 4;
 
 #ifdef __PK_V6
-		
+
 		KarmaProp* sProp = prj.GetKarmaProp( pUser->m_nSlaughter );
 		int nGrade = sProp->nGrade + 1;
 		if( pProp )
@@ -3497,13 +3497,13 @@ void CDPSrvr::OnSellItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		}
 #endif // __VER < 8 // __S8_PK
 
-		if( nCost < 1 )	
+		if( nCost < 1 )
 			nCost = 1;
 
 #if __VER >= 12 // __TAX
 		if( nGold < 1 )
 			nGold = 1;
-		
+
 		pUser->AddGold( nGold );
 		if( nTax )
 			CTax::GetInstance()->AddTax( CTax::GetInstance()->GetContinent( pUser ), nTax, TAX_SALES );
@@ -3514,7 +3514,7 @@ void CDPSrvr::OnSellItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 	}
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 }
 
 // ÆÐ½º¿öµå º¯°æÃ¢À» ¶ç¿ï°ÍÀÎÁö ÆÐ½º¿öµå È®ÀÎÃ¢À» ¶çÀ»°ÍÀÎÁö¸¦ ¾Ë·ÁÁØ´Ù
@@ -3551,7 +3551,7 @@ void CDPSrvr::OnOpenBankWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 
 void CDPSrvr::OnOpenGuildBankWnd(CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
-	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )		
+	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )
 		return;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
@@ -3575,7 +3575,7 @@ void CDPSrvr::OnOpenGuildBankWnd(CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 void CDPSrvr::OnCloseBankWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
-	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );	
+	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
 		pUser->m_bBank = FALSE;
@@ -3586,50 +3586,50 @@ void CDPSrvr::OnCloseBankWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 void CDPSrvr::OnDoUseSkillPoint( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	SKILL aJobSkill[ MAX_SKILL_JOB ] = {0, };
-	
-	for( int i = 0; i < MAX_SKILL_JOB; i++ ) 
+
+	for( int i = 0; i < MAX_SKILL_JOB; i++ )
 		ar >> aJobSkill[i].dwSkill >> aJobSkill[i].dwLevel;
 
-	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );	
+	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{	// ¹Ù²Ü¼ö ÀÖÀ»Áö?  È®ÀÎ
 		int nChangePoint = 0;
-		for( i = 0; i < MAX_SKILL_JOB; i++ ) 
-		{		
+		for( i = 0; i < MAX_SKILL_JOB; i++ )
+		{
 			if( aJobSkill[i].dwSkill == NULL_ID )
 				continue;
-			ItemProp* pSkillProp    = prj.GetSkillProp( aJobSkill[i].dwSkill );			
+			ItemProp* pSkillProp    = prj.GetSkillProp( aJobSkill[i].dwSkill );
 			if( pSkillProp == NULL )
 				continue;
 
 			if( aJobSkill[i].dwLevel < pUser->m_aJobSkill[i].dwLevel || aJobSkill[i].dwLevel > pSkillProp->dwExpertMax )
 			{
 				pUser->AddDefinedText(TID_RESKILLPOINT_ERROR);
-				return;						
+				return;
 			}
 			int nPoint = (aJobSkill[i].dwLevel - pUser->m_aJobSkill[i].dwLevel) * prj.GetSkillPoint( pSkillProp );
 			nChangePoint += nPoint;
 		}
 
-		if( nChangePoint == 0 ) 
+		if( nChangePoint == 0 )
 			return;
 		if( pUser->m_nSkillPoint < nChangePoint )
 		{
 			pUser->AddDefinedText(TID_RESKILLPOINT_ERROR);
-			return;						
+			return;
 		}
-		
+
 		// ½ºÅ³º° ÀçºÐ¹è ÇÏ±â // ½ºÅ³ ·¹º§ ¼ÂÆÃ
 		pUser->m_nSkillPoint -= nChangePoint;
 
-		for( i = 0; i < MAX_SKILL_JOB; i++ ) 
-		{				
+		for( i = 0; i < MAX_SKILL_JOB; i++ )
+		{
 			LPSKILL lpSkill = &(pUser->m_aJobSkill[i]);
 			if( lpSkill )
 			{
 				if( aJobSkill[i].dwSkill == NULL_ID )
 					continue;
-				ItemProp* pSkillProp    = prj.GetSkillProp( lpSkill->dwSkill );			
+				ItemProp* pSkillProp    = prj.GetSkillProp( lpSkill->dwSkill );
 				if( pSkillProp == NULL )
 					continue;
 
@@ -3639,7 +3639,7 @@ void CDPSrvr::OnDoUseSkillPoint( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 				lpSkill->dwLevel = aJobSkill[i].dwLevel;
 			}
-		}	
+		}
 		g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_SYS_EXCHAN01, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 		pUser->AddDoUseSkillPoint( &aJobSkill[0], pUser->m_nSkillPoint );
 #ifdef __S_NEW_SKILL_2
@@ -3650,11 +3650,11 @@ void CDPSrvr::OnDoUseSkillPoint( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 void CDPSrvr::OnCloseGuildBankWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
-	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )		
+	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )
 		return;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) )
 	{
 		pUser->m_bGuildBank = FALSE;
@@ -3717,16 +3717,16 @@ void CDPSrvr::OnBankToBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 			else		// Gold
 			{
 				 ar >> dwGold;
-				
+
 				 if( dwGold > pUser->m_dwGoldBank[nPutSlot] )
 					 dwGold = pUser->m_dwGoldBank[nPutSlot];
-				 
+
 				 int nGold = dwGold;
 				 if( CanAdd( pUser->m_dwGoldBank[nSlot], nGold ) )
 				 {
 					 pUser->m_dwGoldBank[nSlot]	+= nGold;
 					 pUser->m_dwGoldBank[nPutSlot] -= nGold;
-					 
+
 					 pUser->AddPutGoldBank( nSlot, pUser->GetGold(), pUser->m_dwGoldBank[nSlot] );
 					 pUser->AddPutGoldBank( nPutSlot, pUser->GetGold(), pUser->m_dwGoldBank[nPutSlot] );
 
@@ -3743,7 +3743,7 @@ void CDPSrvr::OnBankToBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 					 aLogItem.nSlot = nSlot;
 					 aLogItem.nSlot1 = nPutSlot;
 					 OnLogItem( aLogItem );
-				 }	
+				 }
 			}
 		}
 	}
@@ -3777,7 +3777,7 @@ void CDPSrvr::OnPutItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				if( pItemElem->IsQuest() )
 					return;
 			}
-				
+
 #if __VER >= 11 // __SYS_IDENTIFY
 			if( pItemElem->IsBinds() )
 				return;
@@ -3795,7 +3795,7 @@ void CDPSrvr::OnPutItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				pUser->AddDefinedText( TID_GAME_CANNOT_DO_USINGITEM );
 				return;
 			}
-			
+
 			if( pProp->dwItemKind3 == IK3_EVENTMAIN ||
 				pProp->dwItemKind3 == IK3_LINK ||
 				( pProp->dwItemKind3 == IK3_CLOAK && pItemElem->m_idGuild != 0 ) )
@@ -3812,7 +3812,7 @@ void CDPSrvr::OnPutItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				pUser->AddDefinedText( TID_GAME_EQUIPTRADE, "" );
 				return;
 			}
-			
+
 			if( nItemNum > pItemElem->m_nItemNum )
 				nItemNum	= pItemElem->m_nItemNum;
 			if( nItemNum < 1 )
@@ -3852,7 +3852,7 @@ void CDPSrvr::OnPutItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 
 void CDPSrvr::OnPutItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
-	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )		
+	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )
 		return;
 
 	BYTE nId, mode;
@@ -3860,7 +3860,7 @@ void CDPSrvr::OnPutItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 	ar >> nId >> nItemNum >> mode;
 
-	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );	
+	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
 #if __VER >= 15 // __GUILD_HOUSE
@@ -3885,13 +3885,13 @@ void CDPSrvr::OnPutItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 		if( nId < 1 || nId > pUser->m_Inventory.GetMax() )
 			return;
 
-		CItemElem* pItemElem = pUser->m_Inventory.GetAtId( nId );		
+		CItemElem* pItemElem = pUser->m_Inventory.GetAtId( nId );
 		if( IsUsableItem( pItemElem ) == FALSE )
 			return;
 
 		if( pItemElem->IsQuest() )
 			return;
-		
+
 		if( pItemElem->IsBinds() )
 			return;
 
@@ -3913,15 +3913,15 @@ void CDPSrvr::OnPutItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 		if( pItemElem->IsCharged() )
 			return;
-	
+
 		if( (int)( nItemNum ) > pItemElem->m_nItemNum )
 			nItemNum = pItemElem->m_nItemNum;
 		if( nItemNum < 1 )
 			return;
-		
-		//	GUILD_BANK_STR 'S1','000000','01' 
-		//	GUILD BANK ÀüÃ¼ ºÒ·¯¿À±â ex ) GUILD_BANK_STR 'S1',@im_idGuild,@iserverindex GUILD_BANK_STR 'S1','000000','01'  
-		//	GUILD BANK ÀúÀåÇÏ±â ex ) GUILD_BANK_STR 'U1',@im_idGuild,@iserverindex,@im_nGoldGuild,@im_apIndex,@im_dwObjIndex,@im_GuildBank GUILD_BANK_STR 'U1','000001','01',0,'$','$','$' 			
+
+		//	GUILD_BANK_STR 'S1','000000','01'
+		//	GUILD BANK ÀüÃ¼ ºÒ·¯¿À±â ex ) GUILD_BANK_STR 'S1',@im_idGuild,@iserverindex GUILD_BANK_STR 'S1','000000','01'
+		//	GUILD BANK ÀúÀåÇÏ±â ex ) GUILD_BANK_STR 'U1',@im_idGuild,@iserverindex,@im_nGoldGuild,@im_apIndex,@im_dwObjIndex,@im_GuildBank GUILD_BANK_STR 'U1','000001','01',0,'$','$','$'
 
 		CGuild*	pGuild = pUser->GetGuild();
 		if( pGuild )
@@ -3954,7 +3954,7 @@ void CDPSrvr::OnPutItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
-	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )		
+	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )
 		return;
 
 	BYTE nId, mode;
@@ -3962,7 +3962,7 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 	ar >> nId >> dwItemNum >> mode;
 
-	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );	
+	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
 #if __VER >= 15 // __GUILD_HOUSE
@@ -3970,7 +3970,7 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 #endif // __GUILD_HOUSE
 			if( !CNpcChecker::GetInstance()->IsCloseNpc( MMI_GUILDBANKING, pUser->GetWorld(), pUser->GetPos() ) )
 				return;
-		
+
 		if (mode == 0) // Gold¸¦ ±æµåÃ¢°í¿¡¼­ »©³¾¶§
 		{
 			int nGold = (int)dwItemNum;
@@ -3985,7 +3985,7 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 				pUser->AddGold( nGold, FALSE );
 				pGuild->m_nGoldGuild -= nGold;
-				pUser->AddGetGoldGuildBank( nGold, 0, pUser->m_idPlayer, 0 );	// 0Àº ¾÷µ¥ÀÌÆ® ½ÃÅ² Å¬¶ó¿¡°Ô 
+				pUser->AddGetGoldGuildBank( nGold, 0, pUser->m_idPlayer, 0 );	// 0Àº ¾÷µ¥ÀÌÆ® ½ÃÅ² Å¬¶ó¿¡°Ô
 				pGuild->DecrementMemberContribution( pUser->m_idPlayer, nGold, 0 );
 				UpdateGuildBank(pGuild, GUILD_GET_PENYA, 1, pUser->m_idPlayer, NULL, nGold );
 
@@ -4027,15 +4027,15 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 					return;
 
 				CItemElem* pItemElem	= pGuild->m_GuildBank.GetAtId( nId );
-				
+
 				if( NULL == pItemElem )
 					return;
-				
+
 				if( (int)( dwItemNum ) > pItemElem->m_nItemNum )
 					dwItemNum = pItemElem->m_nItemNum;
 				if( dwItemNum < 1 )
 					return;
-				
+
 				CItemElem itemElem;
 				itemElem	= *pItemElem;
 				itemElem.m_nItemNum		= (short)( dwItemNum );
@@ -4045,7 +4045,7 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 				{
 					if (pItemElem->m_nItemNum > (int)( dwItemNum ) )
 						pItemElem->m_nItemNum	= (short)( pItemElem->m_nItemNum - dwItemNum );
-					else 
+					else
 						pGuild->m_GuildBank.RemoveAtId( nId );
 					UpdateGuildBank(pGuild, GUILD_GET_ITEM, 0, pUser->m_idPlayer, &itemElem, 0, (short)( dwItemNum ) );
 					LogItemInfo aLogItem;
@@ -4055,7 +4055,7 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 					aLogItem.WorldId = pUser->GetWorld()->GetID();
 					aLogItem.Gold = aLogItem.Gold2 = pUser->GetGold();
 					OnLogItem( aLogItem, &itemElem, dwItemNum );
-				
+
 					// Å¬¶óÀÌ¾ðÆ®¿¡°Ô ¾ÆÀÌÅÛÀÌ ÀÎº¥Åä¸®¿¡ Ãß°¡µÊÀ» ¾Ë¸°´Ù.
 					pUser->AddGetItemGuildBank( &itemElem );
 					// ÀÚ½ÅÀ» Á¦¿ÜÇÑ ¸ðµç Å¬¶óÀÌ¾ðÆ®¿¡°Ô ¾Ë·ÁÁØ´Ù.
@@ -4074,16 +4074,16 @@ void CDPSrvr::OnGetItemGuildBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 void CDPSrvr::OnGuildBankMoveItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize)
 {
-	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )		
+	if( g_eLocal.GetState( ENABLE_GUILD_INVENTORY ) == FALSE )
 		return;
 
 	BYTE nSrcIndex, nDestIndex;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
 		ar >> nSrcIndex >> nDestIndex;
-		
+
 		// ±æµå Ã¢°íÀÇ ¾ÆÀÌÅÛÀ» ½º¿ÒÇÑ´Ù.
 		CGuild* pGuild = pUser->GetGuild();
 		if ( pGuild )
@@ -4103,7 +4103,7 @@ void CDPSrvr::UpdateGuildBank(CGuild* p_GuildBank, int p_Mode, BYTE cbUpdate, u_
 		ar << p_GuildBank->m_idGuild;
 		ar << p_GuildBank->m_nGoldGuild;
 		p_GuildBank->m_GuildBank.Serialize(ar);
-		ar << cbUpdate;	// ¸â¹öÀÇ °øÇåÆä³Ä¸¦ ¾÷µ«ÇØ¾ßÇÏ´Â°¡? 
+		ar << cbUpdate;	// ¸â¹öÀÇ °øÇåÆä³Ä¸¦ ¾÷µ«ÇØ¾ßÇÏ´Â°¡?
 		ar << idPlayer;
 		ar << p_Mode;
 		if( pItemElem == NULL )
@@ -4117,7 +4117,7 @@ void CDPSrvr::UpdateGuildBank(CGuild* p_GuildBank, int p_Mode, BYTE cbUpdate, u_
 			ar << pItemElem->m_dwItemId;
 			ar << pItemElem->GetAbilityOption();
 			ar << pItemElem->GetSerialNumber();
-		}		
+		}
 		ar << nItemCount;
 		ar << dwPenya;
 		SEND( ar, &g_dpDBClient, DPID_SERVERPLAYER );
@@ -4133,9 +4133,9 @@ void CDPSrvr::OnGetItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	ar >> nSlot >> nId >> nItemNum;
 	if( nSlot >= 3 )
 		return;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) )
 	{
 		if( !pUser->m_bInstantBank )
@@ -4148,12 +4148,12 @@ void CDPSrvr::OnGetItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			CItemElem* pItemElem	= pUser->m_Bank[nSlot].GetAtId( nId );
 			if( NULL == pItemElem )
 				return;
-	
+
 			if( nItemNum > pItemElem->m_nItemNum )
 				nItemNum = pItemElem->m_nItemNum;
 			if( nItemNum < 1 )
 				nItemNum	= 1;
-			
+
 			if( MAX_INVENTORY > pUser->m_Inventory.GetCount() )
 			{
 				CItemElem itemElem;
@@ -4180,7 +4180,7 @@ void CDPSrvr::OnGetItemBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				// ²ËÂ÷¼­ ³ÖÀ»¼ö °¡ ¾øÀ½. ¸Þ¼¼Áö Ã³¸®
 				pUser->AddBankIsFull();
 			}
-		}		
+		}
 	}
 }
 
@@ -4190,7 +4190,7 @@ void CDPSrvr::OnPutGoldBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpb
 	DWORD dwGold;
 	BYTE nSlot;
 	ar >> nSlot >> dwGold;
-	
+
 	int nGold = dwGold;
 	if( nGold <= 0 )
 		return;
@@ -4209,7 +4209,7 @@ void CDPSrvr::OnPutGoldBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpb
 		{
 			if( nGold > pUser->GetGold() )
 				nGold = pUser->GetGold();
-			
+
 			// ÀºÇàµ·ÀÌ overflowµÇÁö ¾Ê°Ô ÇÑ´Ù.
 			if( CanAdd(pUser->m_dwGoldBank[nSlot], nGold) )
 			{
@@ -4226,13 +4226,13 @@ void CDPSrvr::OnPutGoldBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpb
 				aLogItem.Gold_1 = pUser->m_dwGoldBank[pUser->m_nSlot];
 				aLogItem.nSlot1 = nSlot;
 				OnLogItem( aLogItem );
-				
+
 				pUser->m_dwGoldBank[nSlot] += nGold;
 				pUser->AddGold( -nGold, FALSE );
-				
+
 				pUser->AddPutGoldBank( nSlot, pUser->GetGold(), pUser->m_dwGoldBank[nSlot] );
 			}
-		}		
+		}
 	}
 }
 
@@ -4244,7 +4244,7 @@ void CDPSrvr::OnGetGoldBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpb
 	BYTE nSlot;
 	ar >> nSlot >> dwGold;
 
-	int nGold = dwGold;		
+	int nGold = dwGold;
 	if( nGold <= 0 )
 		return;
 
@@ -4281,9 +4281,9 @@ void CDPSrvr::OnGetGoldBank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpb
 
 				pUser->AddGold( nGold, FALSE );
 				pUser->m_dwGoldBank[nSlot] -= nGold;
-				pUser->AddPutGoldBank( nSlot, pUser->GetGold(), pUser->m_dwGoldBank[nSlot] );		
+				pUser->AddPutGoldBank( nSlot, pUser->GetGold(), pUser->m_dwGoldBank[nSlot] );
 			}
-		}		
+		}
 	}
 }
 
@@ -4392,26 +4392,26 @@ void CDPSrvr::OnSfxHit( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u
 	PSfxHit pSfxHit		= NULL;
 	CMover* pAttacker	= NULL;
 
-	ar >> idSfxHit >> nMagicPower >> dwSkill >> idAttacker >> nDmgCnt >> fDmgAngle >> fDmgPower;		
+	ar >> idSfxHit >> nMagicPower >> dwSkill >> idAttacker >> nDmgCnt >> fDmgAngle >> fDmgPower;
 
 	// idAttacker°¡ NULL_ID¸é ¾îÅÂÄ¿¸¦ dpidUser·Î ÇÑ´Ù.
 	if( idAttacker == NULL_ID )
-		pAttacker = g_UserMng.GetUser( dpidCache, dpidUser );	
+		pAttacker = g_UserMng.GetUser( dpidCache, dpidUser );
 	else
 		pAttacker = prj.GetMover( idAttacker );
 
-	if( IsValidObj( pAttacker ) == FALSE ) 
+	if( IsValidObj( pAttacker ) == FALSE )
 		return;
 
 	pSfxHit	= pAttacker->m_sfxHitArray.GetSfxHit( idSfxHit );
-	if( pSfxHit == NULL ) 
+	if( pSfxHit == NULL )
 		return;
 
 	CMover* pTarget	= prj.GetMover( pSfxHit->objid );
 
 	/*
 	// Ë¬	// 06-10-23
-	if( dwSkill == SI_MAG_FIRE_HOTAIR )	
+	if( dwSkill == SI_MAG_FIRE_HOTAIR )
 	{
 		if( IsValidObj( pTarget ) && pTarget->IsLive() )
 		{
@@ -4439,7 +4439,7 @@ void CDPSrvr::OnSfxID( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_
 	if( IsValidObj( pUser ) )
 	{
 		ar >> idTarget >> idSfxHit >> dwType >> dwSkill >> nMaxDmgCnt;
-		pUser->m_sfxHitArray.Add( idSfxHit, idTarget, dwType, dwSkill, nMaxDmgCnt );		
+		pUser->m_sfxHitArray.Add( idSfxHit, idTarget, dwType, dwSkill, nMaxDmgCnt );
 	}
 }
 
@@ -4504,7 +4504,7 @@ void CDPSrvr::OnMeleeAttack( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				return;
 
 			int nRet = pUser->SendActMsg( (OBJMSG)dwAtkMsg, objid, nParam2, nParam3 );
-			
+
 			if( nRet == 0 && pUser->IsFly() == FALSE )
 #ifdef __OPT_MEM_0811
 				pUser->m_pActMover->m_qMeleeAtkMsg.AddTail( new ACTMSG( dwAtkMsg, objid, nParam2, nParam3 ) );
@@ -4525,7 +4525,7 @@ void CDPSrvr::OnMeleeAttack2( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	OBJID objid;
 	int nParam2, nParam3;
 	ar >> dwAtkMsg >> objid >> nParam2 >> nParam3;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
@@ -4548,7 +4548,7 @@ void CDPSrvr::OnMeleeAttack2( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 #else	// __OPT_MEM_0811
 				pUser->m_pActMover->m_qMeleeAtkMsg.AddTail( ACTMSG( dwAtkMsg, objid, nParam2, nParam3 ) );
 #endif	// __OPT_MEM_0811
-			
+
 			if( nRet != -2 )	// -2´Â ¸í·É ¿ÏÀü ¹«½Ã.
 				g_UserMng.AddMeleeAttack2( pUser, dwAtkMsg, objid, nParam2, nParam3 );
 		}
@@ -4570,13 +4570,13 @@ void CDPSrvr::OnMagicAttack( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	{
 		CMover* pTargetObj	= prj.GetMover( objid );
 
-		if( IsValidObj( pTargetObj ) ) 
+		if( IsValidObj( pTargetObj ) )
 		{
 			if( !pTargetObj->IsNPC() && !pTargetObj->IsPlayer() )
 				return;
 
 			int nRet = pUser->DoAttackMagic( pTargetObj, nMagicPower, idSfxHit );
-			
+
 			if( nRet == 0 && pUser->IsFly() == FALSE )
 #ifdef __OPT_MEM_0811
 				pUser->m_pActMover->m_qMagicAtkMsg.AddTail( new MAGICATKMSG( dwAtkMsg, objid, nParam2, nParam3, nMagicPower, idSfxHit ) );
@@ -4588,7 +4588,7 @@ void CDPSrvr::OnMagicAttack( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 }
 
 void CDPSrvr::OnRangeAttack( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
-{	
+{
 	DWORD dwAtkMsg;
 	OBJID objid;
 	DWORD dwItemID;
@@ -4601,7 +4601,7 @@ void CDPSrvr::OnRangeAttack( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	{
 		CMover* pTargetObj	= prj.GetMover( objid );
 
-		if( IsValidObj( pTargetObj ) ) 
+		if( IsValidObj( pTargetObj ) )
 		{
 			if( !pTargetObj->IsNPC() && !pTargetObj->IsPlayer() )
 				return;
@@ -4811,11 +4811,11 @@ void CDPSrvr::OnModifyMode( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 		g_UserMng.AddModifyMode( pUser );
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 	}
 }
 
-// ¿î¿µÀÚÀÇ ¼ÒÈ¯ ¸í·É¾î 
+// ¿î¿µÀÚÀÇ ¼ÒÈ¯ ¸í·É¾î
 void CDPSrvr::OnSummonPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
@@ -4871,7 +4871,7 @@ void CDPSrvr::OnTeleportPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE,
 #else // __SECURITY_FIXES
 	u_long idOperator;
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	CWorld* pWorld;
 	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) )
 	{
@@ -4902,7 +4902,7 @@ void CDPSrvr::OnTeleportPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE,
 #endif	// __LAYER_1015
 		CWorld* pWorld = pUser->GetWorld();
 		g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-			
+
 	}
 #endif // __SECURITY_FIXES
 }
@@ -4919,11 +4919,11 @@ void CDPSrvr::OnChangeFace( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 #else //__NEWYEARDAY_EVENT_COUPON
 	ar >> objId >> dwFaceNum >> cost;
 #endif //__NEWYEARDAY_EVENT_COUPON
-	
+
 	cost = CHANGE_FACE_COST;
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
-	{	
+	{
 #ifdef __NEWYEARDAY_EVENT_COUPON
 		if(!bUseCoupon)
 		{
@@ -4957,14 +4957,14 @@ void CDPSrvr::OnChangeFace( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 #endif //__NEWYEARDAY_EVENT_COUPON
 		g_UserMng.AddChangeFace( objId, dwFaceNum );
 		CWorld* pWorld = pUser->GetWorld();
-		g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );		
+		g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
 	}
 }
 
 void CDPSrvr::OnExpUp( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
-{	
+{
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		if( (DWORD)AUTH_GAMEMASTER <= pUser->m_dwAuthorization )
 		{
@@ -4996,15 +4996,15 @@ void	CDPSrvr::OnChangeJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 	if( TRUE == IsValidObj( ( CObj* )pUser ) )
 	{
 		if( bGamma )
-		{			
+		{
 			if( pUser->IsBaseJob() )	// 1Â÷ ÀüÁ÷
 			{
 				if( pUser->GetLevel() != MAX_JOB_LEVEL )
 				{
 					pUser->AddDefinedText( TID_GAME_CHGJOBLEVEL15 ); // "·¹º§ 15°¡ µÇ¾ß ÀüÁ÷ÇÒ¼ö ÀÖ½À´Ï´Ù"
 					return;
-				}			
-				
+				}
+
 				if( pUser->AddChangeJob( nJob ) )
 				{
 					( (CUser*)pUser )->AddSetChangeJob( nJob );
@@ -5021,7 +5021,7 @@ void	CDPSrvr::OnChangeJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 
 					return;
 				}
-				
+
 			}
 			else
 			if( pUser->IsExpert() )
@@ -5031,7 +5031,7 @@ void	CDPSrvr::OnChangeJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 					pUser->AddDefinedText( TID_LIMIT_CHANGEJOBLEVEL, "" );	// 60·¹º§ÀÌ µÇ¾ß ÀüÁ÷À» ÇÒ¼ö ÀÖ½À´Ï´Ù
 					return;
 				}
-				
+
 				if( pUser->AddChangeJob( nJob ) )
 				{
 					( (CUser*)pUser )->AddSetChangeJob( nJob );
@@ -5052,7 +5052,7 @@ void	CDPSrvr::OnChangeJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 		else
 		{
 			CItemElem* pItemElem = pUser->m_Inventory.GetAtItemId( II_SYS_SYS_SCR_CHACLA );
-			if( IsUsableItem( pItemElem ) == FALSE || pUser->IsBaseJob() || pUser->GetJob() == nJob ) 
+			if( IsUsableItem( pItemElem ) == FALSE || pUser->IsBaseJob() || pUser->GetJob() == nJob )
 			{	// ÀÎº¥Åä¸®¿¡ ¾ÆÀÌÅÛÀÌ ¾ø°Å³ª ¹æ¶ûÀÚ°Å³ª °°Àº Á÷¾÷À» ¹Ù±¸·Á¸é ¸®ÅÏ
 				return;
 			}
@@ -5082,7 +5082,7 @@ void	CDPSrvr::OnChangeJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 			if( pItemProp && pItemProp->dwSfxObj3 != -1 )
 				g_UserMng.AddCreateSfxObj((CMover *)pUser, pItemElem->GetProp()->dwSfxObj3, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 			pUser->AddDefinedText( TID_GAME_CHANGECLASS, "%s", prj.m_aJob[pUser->GetJob()].szName );
-			
+
 			// »ó¿ëÈ­ ¾ÆÀÌÅÛ »ç¿ë ·Î±× »ðÀÔ
 			g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElem, pItemProp );
 			pUser->RemoveItem( (BYTE)pItemElem->m_dwObjId, 1 );
@@ -5163,8 +5163,8 @@ void	CDPSrvr::OnLogItem( LogItemInfo & info, CItemElem* pItemElem, int nItemCoun
 	ar << info.Gold;
 	ar << info.Gold2;
 	ar << info.ItemNo; // ¾ÆÀÌÅÛ °íÀ¯¹øÈ£
-	ar << info.Negudo; // ³»±¸µµ 
-	ar << info.MaxNegudo; // ³»±¸µµ 
+	ar << info.Negudo; // ³»±¸µµ
+	ar << info.MaxNegudo; // ³»±¸µµ
 	if( _tcslen( info.szItemName ) == 0 )
 	{
 		_stprintf( info.szItemName, "%d", -1 );
@@ -5213,7 +5213,7 @@ void	CDPSrvr::OnLogItem( LogItemInfo & info, CItemElem* pItemElem, int nItemCoun
 	ar << info.nPetAL_A;
 	ar << info.nPetAL_S;
 #endif // __PET_0410
-	
+
 	SEND( ar, &g_dpDBClient, DPID_SERVERPLAYER );
 }
 
@@ -5274,7 +5274,7 @@ void CDPSrvr::OnRepairItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 			if( pItemElem )
 			{
 				ItemProp* pItemProp	= pItemElem->GetProp();
-				if( pItemProp && pItemProp->dwItemKind2 >= IK2_WEAPON_HAND && pItemProp->dwItemKind2 <= IK2_ARMORETC && 
+				if( pItemProp && pItemProp->dwItemKind2 >= IK2_WEAPON_HAND && pItemProp->dwItemKind2 <= IK2_ARMORETC &&
 					pItemElem->m_nHitPoint < (int)( pItemProp->dwEndurance ) && pItemElem->m_nRepair < pItemProp->nMaxRepair )
 				{
 					int nRepair	= 100 - ( ( pItemElem->m_nHitPoint * 100 ) / pItemProp->dwEndurance );
@@ -5320,7 +5320,7 @@ void CDPSrvr::OnSetHair( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 #endif //__NEWYEARDAY_EVENT_COUPON
 
 		int nCost;
-	
+
 		nCost	= CMover::GetHairCost( (CMover*)pUser, nR, nG, nB, nHair );
 
 #ifdef __NEWYEARDAY_EVENT_COUPON
@@ -5386,7 +5386,7 @@ void CDPSrvr::OnBlock( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_
 
 #if __VER >= 12 // __J12_0
 DWORD WhatEleCard( DWORD dwItemType )
-{	// ¼Ó¼º Á¦·Ã ¿ë Ä«µåÀÇ Á¾·ù°¡ 
+{	// ¼Ó¼º Á¦·Ã ¿ë Ä«µåÀÇ Á¾·ù°¡
 	// ¼Ó¼º ´ç ÇÏ³ª·Î ÅëÇÕµÊ
 	switch( dwItemType )
 	{
@@ -5428,11 +5428,11 @@ DWORD WhatEleCard( DWORD dwLV, DWORD dwItemType )
 void CDPSrvr::OnPiercingSize( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize)
 {
 	DWORD dwId1, dwId2, dwId3;
-	
+
 	ar >> dwId1;
 	ar >> dwId2;
 	ar >> dwId3;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 #if __VER >= 12 // __EXT_PIERCING
 	if( IsValidObj( pUser ) )
@@ -5465,7 +5465,7 @@ void CDPSrvr::OnPiercingSize( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		aLogItem.SendName = pUser->GetName();
 		aLogItem.RecvName = "PIERCING";
 		aLogItem.WorldId = pUser->GetWorld()->GetID();
-		
+
 		int nCost = pItemElem0->GetProp()->dwItemRare * ( 200  + ( pItemElem0->GetPiercingSize()+1) * 200 );
 
 		if( 0 < nCost )
@@ -5475,7 +5475,7 @@ void CDPSrvr::OnPiercingSize( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 				pUser->AddDefinedText( TID_GAME_LACKMONEY , "" );
 				return;
 			}
-				
+
 			pUser->AddGold( -( nCost ) );
 
 			aLogItem.Gold = pUser->GetGold() + nCost;
@@ -5515,13 +5515,13 @@ void CDPSrvr::OnPiercingSize( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_FAIL, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 			pUser->AddDefinedText( TID_MMI_PIERCINGFAIL , "" );
 
-			if( pItemElem2 == NULL )								// »ó¿ëÈ­ ¾ÆÀÌÅÛÀ» »ç¿ëÇÏÁö ¾Ê¾Ò´Ù¸é 
+			if( pItemElem2 == NULL )								// »ó¿ëÈ­ ¾ÆÀÌÅÛÀ» »ç¿ëÇÏÁö ¾Ê¾Ò´Ù¸é
 				pUser->RemoveItem( dwId1, (short)1 );	// ÇÇ¾î½Ì ´ë»ó ¾ÆÀÌÅÛÀº »èÁ¦µÈ´Ù.
 		}
 		else
-		{	// ¼º°ø			
-			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );			
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);			
+		{	// ¼º°ø
+			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 			pUser->UpdateItem( (BYTE)pItemElem0->m_dwObjId, UI_PIERCING_SIZE, pItemElem0->GetPiercingSize() + 1 );
 			pUser->AddDefinedText( TID_MMI_PIERCINGSUCCESS , "" );
 
@@ -5530,10 +5530,10 @@ void CDPSrvr::OnPiercingSize( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		}
 		aLogItem.Action = "!";
 		OnLogItem( aLogItem, pItemElem1, pItemElem1->m_nItemNum );
-		
+
 		// ´ÙÀÌ½º¿Í À¯·á¾ÆÀÌÅÛ »èÁ¦ÇÑ´Ù.
 		pUser->RemoveItem( dwId2, (short)1 );
-		
+
 		if( dwId3 != NULL_ID )
 		{
 			aLogItem.Action = "!";
@@ -5582,11 +5582,11 @@ void CDPSrvr::OnItemTransy( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 			pUser->AddDefinedText( TID_GAME_EQUIPPUT , "" );
 			return;
 		}
-		
+
 		// Àç·á°¡ Æ®·£Áö(ITM)ÀÎÁö °Ë»ç
 		if( !(pItemElemTransy->GetProp()->dwID == II_CHR_SYS_SCR_ITEMTRANSY_A || pItemElemTransy->GetProp()->dwID == II_CHR_SYS_SCR_ITEMTRANSY_B) )
 			return;
-		
+
 		// ·¹º§ °Ë»ç
 		if( pItemElemTransy->GetProp()->dwID == II_CHR_SYS_SCR_ITEMTRANSY_A )
 		{
@@ -5602,15 +5602,15 @@ void CDPSrvr::OnItemTransy( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 		// ¼ºº°ÀÌ ÀÖ´Â ¾ÆÀÌÅÛ ÀÎÁö °Ë»ç
 		ItemProp* pItemPropChange = NULL;
 		ItemProp* pItemProp = pItemElemTarget->GetProp();
-		
+
 		pItemPropChange = pUser->GetTransyItem( pItemProp );
 
 		if( pItemPropChange == NULL )
 			return;
 
 		// ¾ÆÀÌÅÛ Æ®·£Áö ¼º°ø
-		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );			
-		g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);			
+		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
+		g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 
 		// ±âÁ¸ ¾ÆÀÌÅÛÀÇ Elem Á¤º¸¸¦ ÀúÀå ÇÏ°í ÀÕÀ½...
 		CItemElem ItemElemSend;
@@ -5619,13 +5619,13 @@ void CDPSrvr::OnItemTransy( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 		ItemElemSend.m_nHitPoint	= pItemPropChange->dwEndurance;		// ³»±¸·Â 100%
 
 		g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElemTransy, pItemElemTransy->GetProp() );
-		g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElemTarget, pItemElemTarget->GetProp(), "RemoveItem" );	
-		g_dpDBClient.SendLogSMItemUse( "1", pUser, &ItemElemSend, ItemElemSend.GetProp(), "CreateItem" );	
+		g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElemTarget, pItemElemTarget->GetProp(), "RemoveItem" );
+		g_dpDBClient.SendLogSMItemUse( "1", pUser, &ItemElemSend, ItemElemSend.GetProp(), "CreateItem" );
 		pUser->AddDefinedText( TID_GAME_ITEM_TRANSY_SUCCESS, "\"%s\" \"%s\"", pItemElemTarget->GetProp()->szName, ItemElemSend.GetProp()->szName );
 
 		// ±âÁ¸ ¾ÆÀÌÅÛ Àç·á »èÁ¦
 		pUser->RemoveItem( objidTarget, (short)1 );
-		pUser->RemoveItem( objidTransy, (short)1 );		
+		pUser->RemoveItem( objidTransy, (short)1 );
 
 		// »õ·Î¿î ¾ÆÀÌÅÛ Áö±Þ
 		pUser->CreateItem( &ItemElemSend );
@@ -5637,7 +5637,7 @@ void CDPSrvr::OnExpBoxInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 {
 	u_long uIdPlayer;
 	OBJID objid;
-	
+
 	ar >> uIdPlayer >> objid;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
@@ -5654,10 +5654,10 @@ void CDPSrvr::OnExpBoxInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 void CDPSrvr::OnPiercing( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize)
 {
 	DWORD dwId1, dwId2;
-	
+
 	ar >> dwId1;
 	ar >> dwId2;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 #if __VER >= 12 // __EXT_PIERCING
 	if( IsValidObj( pUser ) )
@@ -5676,13 +5676,13 @@ void CDPSrvr::OnPiercing( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		{
 			pUser->AddDefinedText( TID_GAME_EQUIPPUT , "" );
 			return;
-		}			
+		}
 
 		// Ä«µå°¡ IK3_SOCKETCARD°¡ ¾Æ´Ï¸é ÇÇ¾î½Ì ¸øÇÔ
 		if( pItemElem1->GetProp()->dwItemKind3 != IK3_SOCKETCARD )
 		{
-			pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );			
-			return;					
+			pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );
+			return;
 		}
 
 		// Ä«µå°¡ µé¾î°¥ ¾ÆÀÌÅÛÀÌ ½´Æ®( IK3_SUIT ) ÀÎÁö °Ë»ç
@@ -5691,17 +5691,17 @@ void CDPSrvr::OnPiercing( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 			pUser->AddDefinedText(  TID_PIERCING_POSSIBLE_ITEM, "" );
 			return;
 		}
-		
+
 		// ÃÑ ÇÇ¾î½ÌµÈ¼ö¿Í ÀüÃ¼ ¼ö¸¦ ºñ±³ÇÑ´Ù.
 		int nSize = pItemElem0->GetPiercingSize();
-		
+
 		int nCount = 0;
 		for( int j = 0; j < nSize; j++ )
 		{
 			if( pItemElem0->GetPiercingItem( j ) != 0 )
 				nCount++;
 		}
-		
+
 		// ºó°÷ÀÌ ¾øÀ¸¸é Áß´Ü
 		if( nCount == nSize )
 		{
@@ -5714,13 +5714,13 @@ void CDPSrvr::OnPiercing( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 			return;
 		if( pUser->m_vtInfo.VendorIsVendor() )		// ³»°¡ ÆÈ°í ÀÖÀ¸¸é?
 			return;
-		
+
 		LogItemInfo aLogItem;
 		aLogItem.SendName = pUser->GetName();
 		aLogItem.RecvName = "PIERCING";
 		aLogItem.WorldId = pUser->GetWorld()->GetID();
 		aLogItem.Gold = aLogItem.Gold2 = pUser->GetGold();
-		
+
 		if( pUser->Pierce( pItemElem0, pItemElem1->m_dwItemId ) )
 		{
 			aLogItem.Action = "$";
@@ -5729,10 +5729,10 @@ void CDPSrvr::OnPiercing( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 			OnLogItem( aLogItem, pItemElem1, pItemElem1->m_nItemNum );
 
 			// ¾ÆÀÌÅÛ ¹Ú±â ¼º°ø~
-			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );			
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);			
+			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 			// Àç·á ¾ÆÀÌÅÛ »èÁ¦
-			pUser->RemoveItem( dwId2, (short)1 );		
+			pUser->RemoveItem( dwId2, (short)1 );
 		}
 	}
 #endif // __EXT_PIERCING
@@ -5744,11 +5744,11 @@ void CDPSrvr::OnPiercingRemove( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 {
 	OBJID objId;
 	ar >> objId;
-	
+
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( !IsValidObj( pUser ) )
 		return;
-	
+
 #if __VER >= 12 // __EXT_PIERCING
 	CItemUpgrade::GetInstance()->OnPiercingRemove( pUser, objId );
 #else // __EXT_PIERCING
@@ -5780,7 +5780,7 @@ void CDPSrvr::OnPiercingRemove( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 			pUser->AddGold( -nPayPenya );	// Æä³Ä ÁöºÒ
 			pUser->AddDefinedText( TID_GAME_REMOVE_PIERCING_SUCCESS );
 			pUser->UpdateItem( pItemSuit->m_dwObjId, UI_PIERCING, MAKELONG( i, 0 ) );
-			
+
 			LogItemInfo aLogItem;
 			aLogItem.Action = "$";
 			aLogItem.SendName = pUser->GetName();
@@ -5816,15 +5816,15 @@ void CDPSrvr::OnCreateSfxObj( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 			CUser* pUsertmp	= (CUser*)prj.GetUserByID( uIdPlayer );
 			if( IsValidObj( pUsertmp ) )
 				g_UserMng.AddCreateSfxObj((CMover *)pUsertmp, dwSfxId, pUsertmp->GetPos().x, pUsertmp->GetPos().y, pUsertmp->GetPos().z, bFlag);
-		}		
+		}
 	}
 }
 
 // 1000 ´ÜÀ§ÀÇ ÆÛ¼¾Æ®¸¦ ³Ñ±ä´Ù.
-// dwID - Á¦·Ã ¾ÆÀÌÅÛ ¾ÆÀÌµð, n - Á¦·Ã ´Ü°è 
+// dwID - Á¦·Ã ¾ÆÀÌÅÛ ¾ÆÀÌµð, n - Á¦·Ã ´Ü°è
 int GetEnchantPercent( DWORD dwID, int n )
 {
-#if __VER >= 8 //__Y_NEW_ENCHANT	
+#if __VER >= 8 //__Y_NEW_ENCHANT
 	static int nPersent1[10] = { 1000, 1000, 700, 500, 400, 300, 200, 100, 50, 20 };
 #else //__Y_NEW_ENCHANT
 	static int nPersent1[10] = {  900,  850, 800, 600, 450, 300, 200, 100, 50, 20 };
@@ -5832,7 +5832,7 @@ int GetEnchantPercent( DWORD dwID, int n )
 	static int nPersent2[10] = { 1000, 1000, 900, 750, 550, 400, 250, 150, 80, 40 };
 
 	float fFactor = 1.0f;
-	if( ::GetLanguage() != LANG_KOR && n >= 3 )	// Á¦·Ã 4ºÎÅÍ 10% È®·ü °¨¼Ò 
+	if( ::GetLanguage() != LANG_KOR && n >= 3 )	// Á¦·Ã 4ºÎÅÍ 10% È®·ü °¨¼Ò
 		fFactor = 0.9f;
 
 	if( dwID == II_GEN_MAT_DIE_TWELVE )
@@ -5880,7 +5880,7 @@ void CDPSrvr::OnDoUseItemTarget( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 			return;
 		}
 		BOOL	b	= FALSE;
-		switch( pMaterial->m_dwItemId ) 
+		switch( pMaterial->m_dwItemId )
 		{
 			case II_SYS_SYS_QUE_PETRESURRECTION02_S:
 			case II_SYS_SYS_QUE_PETRESURRECTION02_A:
@@ -5927,20 +5927,20 @@ void CDPSrvr::OnDoUseItemTarget( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 #ifdef __NEW_ITEM_VARUNA
 				if( pTarget->GetProp()->IsBaruna() )
 				{
-					b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eAwakening, 
+					b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eAwakening,
 						0, TID_MMI_ERRORSENCHANT_BARUNA, TID_GAME_AWAKE_OR_BLESSEDNESS01,
 						"r", "::Awake" );
 				}else
 #endif // __NEW_ITEM_VARUNA
 				{
-					b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eAwakening, 
+					b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eAwakening,
 						0, TID_GAME_INVALID_TARGET_ITEM, TID_GAME_AWAKE_OR_BLESSEDNESS01,
 						"r", "::Awake" );
 				}
 				break;
 			case II_SYS_SYS_SCR_BLESSEDNESS:
 			case II_SYS_SYS_SCR_BLESSEDNESS02:
-				b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eBlessing, 
+				b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eBlessing,
 					0, TID_GAME_USE_BLESSEDNESS_INFO, TID_GAME_BLESSEDNESS_INVALID_ITEM,
 					"r", "::Blessedness" );
 				break;
@@ -5951,7 +5951,7 @@ void CDPSrvr::OnDoUseItemTarget( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 					"r", "EATPETAWAKE" );
 				break;
 			case II_SYS_SYS_SCR_PETAWAKE:	// ½Ã½ºÅÛ Æê °¢¼º
-				b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eSystemPet, 
+				b	= DoUseItemTarget_GenRandomOption( pUser, pTarget, CRandomOptionProperty::eSystemPet,
 					TID_GAME_PETAWAKE_S00, TID_GAME_PETAWAKE_E00, TID_GAME_PETAWAKE_E00,
 					"r", "PETAWAKE" );
 				break;
@@ -5966,9 +5966,9 @@ void CDPSrvr::OnDoUseItemTarget( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 				b	= DoUseItemTarget_ItemLevelDown( pUser, pMaterial, pTarget );
 				break;
 #ifdef __SCROLL_OF_UNBIND
-			case II_SYS_SYS_SCR_CANCELLATION: 
-                b = DoUseItemTarget_ItemLiberate(pUser, pMaterial, pTarget); 
-                break;  
+			case II_SYS_SYS_SCR_CANCELLATION:
+                b = DoUseItemTarget_ItemLiberate(pUser, pMaterial, pTarget);
+                break;
 #endif
 			default:
 				break;
@@ -5981,7 +5981,7 @@ void CDPSrvr::OnDoUseItemTarget( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 			PutItemLog( pUser, "u", "OnDoUseItemTarget", pMaterial );
 
-			pUser->UpdateItem( (BYTE)( pMaterial->m_dwObjId ), UI_NUM, pMaterial->m_nItemNum - 1 );	
+			pUser->UpdateItem( (BYTE)( pMaterial->m_dwObjId ), UI_NUM, pMaterial->m_nItemNum - 1 );
 		}
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
@@ -6045,7 +6045,7 @@ void CDPSrvr::OnSmeltSafety( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			pUser->AddSmeltSafety( 0 );
 			return;
 		}
-		
+
 		BYTE nResult = CItemUpgrade::GetInstance()->OnSmeltSafety( pUser, pItemElem0, pItemElem1, pItemElem2, pItemElem3 );
 
 		pUser->AddSmeltSafety( nResult );
@@ -6058,7 +6058,7 @@ void CDPSrvr::OnSmeltSafety( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize)
 {
 	DWORD dwItemId, dwItemMaterialId;
-	
+
 	ar >> dwItemId;
 	ar >> dwItemMaterialId;
 
@@ -6084,7 +6084,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 
 		// ÀÎº¥Åä¸®¿¡ ÀÖ´ÂÁö ÀåÂøµÇ¾î ÀÖ´ÂÁö È®ÀÎÀ» ÇØ¾ß ÇÔ
 		CItemElem* pItemElem0	= pUser->m_Inventory.GetAtId( dwItemId );
-		CItemElem* pItemElem1	= pUser->m_Inventory.GetAtId( dwItemMaterialId );		
+		CItemElem* pItemElem1	= pUser->m_Inventory.GetAtId( dwItemMaterialId );
 
 		if( IsUsableItem( pItemElem0 ) == FALSE || IsUsableItem( pItemElem1 ) == FALSE )
 			return;
@@ -6110,16 +6110,16 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 		if( pItemElem1->GetProp()->dwItemKind3 != IK3_ELECARD && pItemElem1->GetProp()->dwItemKind3 != IK3_DICE )
 	#endif //__Y_NEW_ENCHANT
 		{
-			pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );			
-			return;					
+			pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );
+			return;
 		}
 #endif // __SMELT_SAFETY
 #if __VER >= 13 // __EXT_ENCHANT
 	CItemUpgrade::GetInstance()->OnEnchant( pUser, pItemElem0, pItemElem1 );
 #else // __EXT_ENCHANT
-		int nLevDown = 3;		
+		int nLevDown = 3;
 		int*  pAbilityOption = NULL;
-			
+
 		// ¼Ó¼ºÁ¦·ÃÀº ½´Æ®¿Í, ¹«±â¿¡¸¸ Àû¿ë
 		if( pItemElem1->GetProp()->dwItemKind3 == IK3_ELECARD )
 		{
@@ -6133,15 +6133,15 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			{
 				if( pItemElem0->m_bItemResist != pItemElem1->GetProp()->eItemType )
 				{
-					pUser->AddDefinedText( TID_UPGRADE_ERROR_TWOELEMENT , "" );								
+					pUser->AddDefinedText( TID_UPGRADE_ERROR_TWOELEMENT , "" );
 					return;
 				}
 			}
 
 			if( !CItemElem::IsEleRefineryAble(pItemElem0->GetProp()) )
 			{
-				pUser->AddDefinedText( TID_GAME_NOTEQUALITEM , "" );			
-				return;								
+				pUser->AddDefinedText( TID_GAME_NOTEQUALITEM , "" );
+				return;
 			}
 
 #if __VER >= 12 // __J12_0
@@ -6153,8 +6153,8 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 
 			if( pItemElem1->GetProp()->dwID != dwReqCard )
 			{
-				pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );			
-				return;					
+				pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );
+				return;
 			}
 		}
 		else
@@ -6171,7 +6171,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 				pUser->AddDefinedText( TID_GAME_NOTEQUALITEM , "" );
 				return;
 			}
-			
+
 			if( pItemElem1->GetProp()->dwID != II_GEN_MAT_ORICHALCUM01
 				&& pItemElem1->GetProp()->dwID != II_GEN_MAT_ORICHALCUM01_1 )
 			{
@@ -6186,8 +6186,8 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 
 			if( !CItemElem::IsDiceRefineryAble(pItemElem0->GetProp()) )
 			{
-				pUser->AddDefinedText( TID_GAME_NOTEQUALITEM , "" );			
-				return;								
+				pUser->AddDefinedText( TID_GAME_NOTEQUALITEM , "" );
+				return;
 			}
 
 		#if __VER < 8 //__Y_NEW_ENCHANT
@@ -6197,28 +6197,28 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 				{
 					if( pItemElem1->GetProp()->dwID != II_GEN_MAT_DIE_FOUR )
 					{
-						pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );			
-						return;					
+						pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );
+						return;
 					}
 				}
 				else
 				{
 					if( pItemElem1->GetProp()->dwID != II_GEN_MAT_DIE_SIX )
 					{
-						pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );			
-						return;					
+						pUser->AddDefinedText( TID_UPGRADE_ERROR_WRONGUPLEVEL , "" );
+						return;
 					}
 				}
 			}
 		#endif //__Y_NEW_ENCHANT
-		}	
-		
+		}
+
 		if( *pAbilityOption >= 10 )
 		{
-			pUser->AddDefinedText( TID_UPGRADE_MAXOVER , "" );			
+			pUser->AddDefinedText( TID_UPGRADE_MAXOVER , "" );
 			return;
 		}
-		// 1000´ÜÀ§ÀÇ ¼º°ø ÆÛ¼¾Æ® 
+		// 1000´ÜÀ§ÀÇ ¼º°ø ÆÛ¼¾Æ®
 		int nPercent = ::GetEnchantPercent( pItemElem1->GetProp()->dwID, *pAbilityOption );
 
 		LogItemInfo aLogItem;
@@ -6266,7 +6266,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			{
 				nPercent	+= 1000;
 				pUser->RemoveBuff( BUFF_ITEM, II_SYS_SYS_SCR_SUPERSMELTING );
-				
+
 				ItemProp* pItemProp = prj.GetItemProp( II_SYS_SYS_SCR_SUPERSMELTING );
 				if( pItemProp )
 					g_dpDBClient.SendLogSMItemUse( "2", pUser, NULL, pItemProp );
@@ -6296,7 +6296,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 							pUser->UpdateItem( (BYTE)pItemElem0->m_dwObjId, UI_RAO, pItemElem0->m_nResistAbilityOption - 1 );
 							aLogItem.Action = "8";
 						}
-						else 
+						else
 					#if __VER >= 8 //__Y_NEW_ENCHANT
 						if( pItemElem1->GetProp()->dwItemKind3 == IK3_ENCHANT )
 					#else //__Y_NEW_ENCHANT
@@ -6324,7 +6324,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 					aLogItem.Action = "J";
 					OnLogItem( aLogItem, pItemElem0, pItemElem0->m_nItemNum );
 				}
-				else 
+				else
 			#if __VER >= 8 //__Y_NEW_ENCHANT
 				if( pItemElem1->GetProp()->dwItemKind3 == IK3_ENCHANT )
 			#else //__Y_NEW_ENCHANT
@@ -6333,7 +6333,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 				{
 					aLogItem.Action = "F";
 					OnLogItem( aLogItem, pItemElem0, pItemElem0->m_nItemNum );
-				}		
+				}
 			}
 		}
 		else
@@ -6341,10 +6341,10 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 			// ¼º°ø
 			pUser->AddDefinedText( TID_UPGRADE_SUCCEEFUL, "" );
 			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
-			
+
 			if((pUser->IsMode( TRANSPARENT_MODE ) ) == 0)
 				g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
-			
+
 			if( pItemElem1->GetProp()->dwItemKind3 == IK3_ELECARD )
 			{
 				pUser->UpdateItem( (BYTE)pItemElem0->m_dwObjId, UI_IR,  pItemElem1->GetProp()->eItemType );
@@ -6352,7 +6352,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 				aLogItem.Action = "O";
 				OnLogItem( aLogItem, pItemElem0, pItemElem0->m_nItemNum );
 			}
-			else 
+			else
 		#if __VER >= 8 //__Y_NEW_ENCHANT
 			if( pItemElem1->GetProp()->dwItemKind3 == IK3_ENCHANT ) // // ÁÖ»çÀ§
 		#else //__Y_NEW_ENCHANT
@@ -6372,7 +6372,7 @@ void CDPSrvr::OnEnchant( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 #endif // __EXT_ENCHANT
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-	}	
+	}
 }
 
 #if __VER >= 10 // __REMOVE_ATTRIBUTE
@@ -6421,7 +6421,7 @@ void CDPSrvr::OnRemoveAttribute( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		pUser->AddDefinedText( TID_GAME_LACKMONEY , "" );
 		return;
 	}
-	
+
 	// ÇöÀç ¹«±â¿¡ ¼Ó¼ºÀÌ Àû¿ëµÇ¾î ÀÖ¾î¾ß °¡´É.
 	if( (pItemElem->m_bItemResist != SAI79::NO_PROP) && (pItemElem->m_nResistAbilityOption > 0) )
 	{
@@ -6429,11 +6429,11 @@ void CDPSrvr::OnRemoveAttribute( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
 		if((pUser->IsMode( TRANSPARENT_MODE ) ) == 0)
 			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
-	
+
 		pUser->UpdateItem( (BYTE)pItemElem->m_dwObjId, UI_IR,  SAI79::NO_PROP );
 		pUser->UpdateItem( (BYTE)pItemElem->m_dwObjId, UI_RAO,  0 );
 		pUser->AddRemoveAttribute( TRUE );
-		
+
 		// ¼Ó¼ºÁ¦·Ã Á¦°Å ¼º°ø ·Î±×
 		LogItemInfo aLogItem;
 		aLogItem.SendName = pUser->GetName();
@@ -6450,7 +6450,7 @@ void CDPSrvr::OnRemoveAttribute( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 	CWorld* pWorld = pUser->GetWorld();
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
-				
+
 }
 #endif // __REMOVE_ATTRIBUTE
 
@@ -6474,10 +6474,10 @@ void CDPSrvr::OnChangeAttribute( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 void CDPSrvr::OnRandomScroll( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpbuf, u_long uBufSize )
 {
 	DWORD dwId1, dwId2;
-	
+
 	ar >> dwId1;
 	ar >> dwId2;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
@@ -6493,11 +6493,11 @@ void CDPSrvr::OnRandomScroll( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		{
 			pUser->AddDefinedText( TID_GAME_EQUIPPUT , "" );
 			return;
-		}			
+		}
 
 		if( pItemElem1->GetProp()->dwItemKind3 != IK3_RANDOM_SCROLL )
 		{
-			return;					
+			return;
 		}
 
 		if( !(pItemElem0->GetProp()->dwItemKind1 == IK1_WEAPON || pItemElem0->GetProp()->dwItemKind2 == IK2_ARMOR || pItemElem0->GetProp()->dwItemKind2 == IK2_ARMORETC ) )
@@ -6559,11 +6559,11 @@ void CDPSrvr::OnRandomScroll( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 			aLogItem.Action = ")";
 			OnLogItem( aLogItem, pItemElem1, pItemElem1->m_nItemNum );
 
-			pUser->RemoveItem( (BYTE)( dwId2 ), (short)1 );		
+			pUser->RemoveItem( (BYTE)( dwId2 ), (short)1 );
 
 			// ¾ÆÀÌÅÛ ¹Ú±â ¼º°ø~
-			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );			
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);			
+			pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 
 			DWORD dwStringNum = 0;
 			switch( nToolKind )
@@ -6589,7 +6589,7 @@ void CDPSrvr::OnRandomScroll( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
 	}
 }
-	
+
 void CDPSrvr::OnUpgradeBase( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize)
 {
 }
@@ -6608,9 +6608,9 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 		CItemElem* pItemElem0	= pUser->m_Inventory.GetAtId( dwItemId0 );
 		CItemElem* pItemElem1	= pUser->m_Inventory.GetAtId( dwItemId1 );
 
-		if( IsUsableItem( pItemElem0 ) == FALSE || 
-			IsUsableItem( pItemElem1 ) == FALSE || 
-			pItemElem0->GetProp()->nLog >=2 || 
+		if( IsUsableItem( pItemElem0 ) == FALSE ||
+			IsUsableItem( pItemElem1 ) == FALSE ||
+			pItemElem0->GetProp()->nLog >=2 ||
 			pItemElem1->GetProp()->nLog >=2 )
 		{
 			return;
@@ -6625,16 +6625,16 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 		// ¹æ¾î±¸(½´Æ®¸¸), ¹«±â·ù°¡ ¾Æ´Ï¸é Á¦·ÃºÒ°¡´É
 		if( !( ( pItemElem0->GetProp()->dwItemKind2 == IK2_WEAPON_MAGIC ||
 			pItemElem0->GetProp()->dwItemKind2 == IK2_WEAPON_DIRECT ) ||
-			( ( pItemElem0->GetProp()->dwItemKind2 == IK2_ARMOR || pItemElem0->GetProp()->dwItemKind2 == IK2_ARMORETC ) 
+			( ( pItemElem0->GetProp()->dwItemKind2 == IK2_ARMOR || pItemElem0->GetProp()->dwItemKind2 == IK2_ARMORETC )
 			&& pItemElem0->GetProp()->dwItemKind3 == IK3_SUIT )
-			) )		
+			) )
 		{
-			return;			
+			return;
 		}
 
 		if( pItemElem0->m_nResistSMItemId != 0 ) // ÀÌ¹ÌÀû¿ëÇÑ ¾ÆÀÌÅÛÀÌ¸é ºÒ°¡´É
 		{
-			return;	
+			return;
 		}
 
 		BOOL bResistDelete = FALSE;
@@ -6646,13 +6646,13 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 				pItemElem1->m_dwItemId == II_CHR_SYS_SCR_WATEILSTONE ||
 				pItemElem1->m_dwItemId == II_CHR_SYS_SCR_WINDYOSTONE ||
 				pItemElem1->m_dwItemId == II_CHR_SYS_SCR_LIGHTINESTONE ||
-				pItemElem1->m_dwItemId == II_CHR_SYS_SCR_EARTHYSTONE ) 
-				
+				pItemElem1->m_dwItemId == II_CHR_SYS_SCR_EARTHYSTONE )
+
 			{
 				if( pItemElem0->GetProp()->dwItemKind2 == IK2_ARMOR ||
 					pItemElem0->GetProp()->dwItemKind2 == IK2_ARMORETC )
 				{
-					return;	
+					return;
 				}
 			}
 			else // ¼Ó¼º ¹æ¾î·Â Ãß°¡
@@ -6665,7 +6665,7 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 				if( pItemElem0->GetProp()->dwItemKind2 == IK2_WEAPON_MAGIC ||
 					pItemElem0->GetProp()->dwItemKind2 == IK2_WEAPON_DIRECT )
 				{
-					return;	
+					return;
 				}
 			}
 			else // ¼Ó¼º Á¦°Å
@@ -6673,7 +6673,7 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 			{
 				if( pItemElem0->m_bItemResist == SAI79::NO_PROP )
 				{
-					return;	
+					return;
 				}
 				pItemElem0->m_bItemResist = SAI79::NO_PROP;
 				pItemElem0->m_nResistAbilityOption = 0;
@@ -6681,16 +6681,16 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 			}
 			else
 			{
-				return;	
+				return;
 			}
 		}
-		else 
+		else
 		{
-			return;	
+			return;
 		}
 
 		// ¼º°ø
-		
+
 		if( bResistDelete )
 		{
 			pUser->AddCommercialElem( pItemElem0->m_dwObjId, 9999 );
@@ -6699,7 +6699,7 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 		{
 			pItemElem0->m_nResistSMItemId = pItemElem1->m_dwItemId;
 		}
-		
+
 		// ·Î±×
 		g_dpDBClient.SendLogSMItemUse( "5", pUser, pItemElem1, pItemElem1->GetProp() );
 		LogItemInfo aLogItem;
@@ -6720,7 +6720,7 @@ void CDPSrvr::OnCommercialElem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 		OnLogItem( aLogItem );
 
 		pUser->RemoveItem( (BYTE)dwItemId1, (short)1 );
-		
+
 		g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_SYS_EXPAN01, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 		pUser->AddCommercialElem( pItemElem0->m_dwObjId, pItemElem0->m_nResistSMItemId );
 		CWorld* pWorld = pUser->GetWorld();
@@ -6734,7 +6734,7 @@ void CDPSrvr::OnRequestGuildRank( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 	CTimeSpan	tm_update	= tm - CGuildRank::Instance()->m_UpdateTime;
 
 	DWORD	ver;
-	
+
 	//	¹öÁ¯ Á¤º¸¸¦ ¹Þ´Â´Ù.
 	ar >> ver;
 
@@ -6814,11 +6814,11 @@ void CDPSrvr::OnBuyingInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 		}
 	}
 	g_dpDBClient.SendBuyingInfo( &bi2, iSerialNumber );
-//	FILEOUT( "buyinginfo.txt", "dwServerIndex = %d\tdwPlayerId = %d\tdwItemId = %d\tdwItemNum = %d\n", 
+//	FILEOUT( "buyinginfo.txt", "dwServerIndex = %d\tdwPlayerId = %d\tdwItemId = %d\tdwItemNum = %d\n",
 	//	bi2.dwServerIndex, bi2.dwPlayerId, bi2.dwItemId, bi2.dwItemNum );
 	static char lpOutputString[260]	= { 0, };
 	sprintf( lpOutputString, "dwServerIndex = %d\tdwPlayerId = %d\tdwItemId = %d\tdwItemNum = %d",
-		bi2.dwServerIndex, bi2.dwPlayerId, bi2.dwItemId, bi2.dwItemNum );		
+		bi2.dwServerIndex, bi2.dwPlayerId, bi2.dwItemId, bi2.dwItemNum );
 	OutputDebugString( lpOutputString );
 #endif
 }
@@ -6956,14 +6956,14 @@ void CDPSrvr::OnCloseChattingRoom( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 		{
 			pChatting->m_bState = FALSE;
 			CUser*			pUsertmp;
-			
+
 			for( int i = 0 ; i < pChatting->GetChattingMember() ; ++i )
 			{
 				pUsertmp	= (CUser*)prj.GetUserByID( pChatting->m_idMember[i] );
 				if( IsValidObj( pUsertmp ) && pUser->m_idPlayer != pUsertmp->m_idPlayer )
 				{
 					pUsertmp->AddChttingRoomState( pChatting->m_bState );
-				}						
+				}
 			}
 		}
 
@@ -7029,7 +7029,7 @@ void CDPSrvr::OnGameMasterWhisper( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
-	{	
+	{
 		sprintf( szChat, "%s -> %s", sPlayerFrom, lpString );
 		g_dpDBClient.SendLogGamemaChat( pUser, szChat );
 	}
@@ -7043,7 +7043,7 @@ void CDPSrvr::SendReloadProject( DPID dpidCache, DPID dpidUser )
 }
 #endif // __S0114_RELOADPRO
 */
-// Çö»ó±Ý °É±â ÆÐÅ¶ 
+// Çö»ó±Ý °É±â ÆÐÅ¶
 void CDPSrvr::OnNWWantedGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	int		nGold;
@@ -7061,16 +7061,16 @@ void CDPSrvr::OnNWWantedGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 
 	if( szMsg[0] == '\0' )
 		return;
-	
+
 	if( strlen(szMsg) > WANTED_MSG_MAX )
 		return;
 
-	if( nGold < MIN_INPUT_REWARD || nGold > MAX_INPUT_REWARD )			// Çö»ó±ÝÀº ÃÖ¼Ò 1000ÆÐ³Ä¿¡¼­ ÃÖ´ë 2¾ï ÆÐ³Ä±îÁö °É ¼ö ÀÖ´Ù. 
+	if( nGold < MIN_INPUT_REWARD || nGold > MAX_INPUT_REWARD )			// Çö»ó±ÝÀº ÃÖ¼Ò 1000ÆÐ³Ä¿¡¼­ ÃÖ´ë 2¾ï ÆÐ³Ä±îÁö °É ¼ö ÀÖ´Ù.
 		return;
 
-	int nTax = MulDiv( nGold, 10, 100 );					// °Ç Çö»ó±ÝÀÇ 10%´Â ¼ö¼ö·á·Î Áö±ÞµÈ´Ù. 
+	int nTax = MulDiv( nGold, 10, 100 );					// °Ç Çö»ó±ÝÀÇ 10%´Â ¼ö¼ö·á·Î Áö±ÞµÈ´Ù.
 
-	if( pUser->GetGold() >= (nGold + nTax) ) 
+	if( pUser->GetGold() >= (nGold + nTax) )
 		pUser->AddGold( -(nGold + nTax) );
 	else
 		return;
@@ -7110,7 +7110,7 @@ void CDPSrvr::OnNWWantedName( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		return;
 
 	LPCSTR lpszPlayer = "";
-	if( pUser->m_idMurderer )		
+	if( pUser->m_idMurderer )
 	{
 #if __VER >= 11 // __SYS_PLAYER_DATA
 		lpszPlayer	= CPlayerDataCenter::GetInstance()->GetPlayerString( pUser->m_idMurderer );
@@ -7120,7 +7120,7 @@ void CDPSrvr::OnNWWantedName( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		if( lpszPlayer == NULL )
 			lpszPlayer	= "";
 	}
-	
+
 	{
 		BEFORESENDSOLE( ar, PACKETTYPE_WN_WANTED_NAME, pUser->m_Snapshot.dpidUser );
 		ar.WriteString( lpszPlayer );
@@ -7129,7 +7129,7 @@ void CDPSrvr::OnNWWantedName( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 }
 
 
-// Çö»ó¹ü ÀÚ¼¼ÇÑÁ¤º¸ ¿äÃ» ÆÐÅ¶ 
+// Çö»ó¹ü ÀÚ¼¼ÇÑÁ¤º¸ ¿äÃ» ÆÐÅ¶
 void CDPSrvr::OnNWWantedInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	char szPlayer[64];
@@ -7146,9 +7146,9 @@ void CDPSrvr::OnNWWantedInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 
 	{
 		int nGold = REQ_WANTED_GOLD;
-		if( pUser->GetGold() >= nGold ) 
+		if( pUser->GetGold() >= nGold )
 		{
-			D3DXVECTOR3 vPos( 0.0f, 0.0f, 0.0f );		// Çö»ó¹üÀÇ À§Ä¡ 
+			D3DXVECTOR3 vPos( 0.0f, 0.0f, 0.0f );		// Çö»ó¹üÀÇ À§Ä¡
 			BYTE		byOnline = 0;					// 1 ÀÌ¸é online
 			DWORD		dwWorldID = 0;
 			LPCTSTR		lpszWorld = "";
@@ -7158,7 +7158,7 @@ void CDPSrvr::OnNWWantedInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 #else	// __SYS_PLAYER_DATA
 			u_long idPlayer = prj.GetPlayerID( szPlayer );
 #endif	// __SYS_PLAYER_DATA
-			CUser* pTarget	= g_UserMng.GetUserByPlayerID( idPlayer );	
+			CUser* pTarget	= g_UserMng.GetUserByPlayerID( idPlayer );
 			if( IsValidObj(pTarget) && pTarget->GetWorld() )
 			{
 				vPos      = pTarget->GetPos();
@@ -7170,7 +7170,7 @@ void CDPSrvr::OnNWWantedInfo( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 			}
 
 			pUser->AddWantedInfo( vPos, byOnline, dwWorldID, lpszWorld );
-		} 
+		}
 		else
 		{
 			pUser->AddDefinedText( TID_GAME_LACKMONEY, "" );	// ÀÎº¥¿¡ µ·ÀÌºÎÁ·
@@ -7185,7 +7185,7 @@ void CDPSrvr::OnReqLeave( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		return;
 
 	if( pUser->m_dwLeavePenatyTime == 0 )	// Æä³ÎÆ¼ Å¸ÀÓÀ» ¼¼ÆÃÇÑ ÀûÀÌ ¾ø´Â°¡?
-		pUser->m_dwLeavePenatyTime = ::timeGetTime() + TIMEWAIT_CLOSE * 1000;	//  ¼¼ÆÃ 
+		pUser->m_dwLeavePenatyTime = ::timeGetTime() + TIMEWAIT_CLOSE * 1000;	//  ¼¼ÆÃ
 }
 
 void CDPSrvr::OnStateMode( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
@@ -7198,7 +7198,7 @@ void CDPSrvr::OnStateMode( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj(pUser) )
-	{	
+	{
 		if( pUser->IsStateMode( dwStateMode ) )
 		{
 			if( nFlag == STATEMODE_BASEMOTION_CANCEL )
@@ -7216,7 +7216,7 @@ void CDPSrvr::OnResurrectionCancel( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 {
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj(pUser) && pUser->m_Resurrection_Data.bUseing )
-	{	
+	{
 		pUser->m_Resurrection_Data.bUseing = FALSE;
 	}
 }
@@ -7228,7 +7228,7 @@ void CDPSrvr::OnResurrectionOK( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 
 	// ¼­¹ö¿¡¼­ ºÎÈ°¸ðµåÀÎ°¡??
 	if( IsValidObj(pUser) && pUser->m_Resurrection_Data.bUseing )
-	{	
+	{
 		if( pUser->IsDie() == FALSE )
 		{
 			pUser->m_Resurrection_Data.bUseing = FALSE;
@@ -7236,7 +7236,7 @@ void CDPSrvr::OnResurrectionOK( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 		}
 		// ¾à°£ÀÇ ¿¡³ÊÁö¸¦ Ã¤¿öÁÖÀÚ
 		if( pUser->GetType() == OT_MOVER )	// Å¸°ÙÀÌ ¹«¹öÀÏ¶§¸¸.
-		{		
+		{
 			RESURRECTION_DATA* pData = &(((CMover *)pUser)->m_Resurrection_Data);
 			CUser* pSrc	= (CUser*)prj.GetUserByID( pData->dwPlayerID );
 
@@ -7244,17 +7244,17 @@ void CDPSrvr::OnResurrectionOK( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 			{
 				// ºÎÈ° SFXÈ¿°ú
 				g_UserMng.AddCreateSfxObj( pUser, XI_SKILL_ASS_HEAL_RESURRECTION01 );
-				
+
 				// ºÎÈ°ÇÏ±â
 				g_UserMng.AddHdr( pUser, SNAPSHOTTYPE_RESURRECTION );
 				pUser->m_pActMover->SendActMsg( OBJMSG_RESURRECTION );
 				pUser->m_Resurrection_Data.bUseing = FALSE;
-				
+
 				pUser->ApplyParam( (CMover *)pSrc, pData->pSkillProp, pData->pAddSkillProp, TRUE , 0 );
-				
+
 				if( pData->pAddSkillProp->dwDestParam2 == DST_RECOVERY_EXP )
-					pUser->SubDieDecExp(TRUE, pData->pAddSkillProp->nAdjParamVal2 );	// ºÎÈ°ÀÌ µÇ¸é¼­ °âÄ¡°¡ Á¶±Ý ±ðÀÓ.			
-			}	
+					pUser->SubDieDecExp(TRUE, pData->pAddSkillProp->nAdjParamVal2 );	// ºÎÈ°ÀÌ µÇ¸é¼­ °âÄ¡°¡ Á¶±Ý ±ðÀÓ.
+			}
 			else
 				pUser->m_Resurrection_Data.bUseing = FALSE;
 
@@ -7268,10 +7268,10 @@ void CDPSrvr::OnChangeMode( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 	DWORD dwMode;
 	ar >> dwMode;
 	ar >> nFlag;
-	
+
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj(pUser) )
-	{	
+	{
 		switch( nFlag )
 		{
 		case 0:	// ÀÚµ¿ PK ON
@@ -7309,7 +7309,7 @@ void CDPSrvr::OnQuerySetPlayerName( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 #endif // __QUIZ
 #ifdef __RULE_0615
 		if( prj.IsInvalidName( lpszPlayer ) || prj.IsAllowedLetter( lpszPlayer ) == FALSE )
-			pUser->AddDiagText( prj.GetText( TID_DIAG_0020 ) ); 
+			pUser->AddDiagText( prj.GetText( TID_DIAG_0020 ) );
 		prj.Formalize( lpszPlayer );
 #endif	// __RULE_0615
 
@@ -7351,7 +7351,7 @@ void CDPSrvr::OnQuerySetGuildName( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 	{
 #ifdef __RULE_0615
 		if( prj.IsInvalidName( lpszGuild ) || prj.IsAllowedLetter( lpszGuild ) == FALSE )
-			pUser->AddDiagText( prj.GetText( TID_DIAG_0020 ) ); 
+			pUser->AddDiagText( prj.GetText( TID_DIAG_0020 ) );
 #endif	// __RULE_0615
 
 #ifdef __S_SERVER_UNIFY
@@ -7407,7 +7407,7 @@ void CDPSrvr::OnDoEscape( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 			if( !pUser->IsSMMode( SM_ESCAPE ) )
 				pUser->DoUseItemVirtual( II_CHR_SYS_SCR_ESCAPEBLINKWING, FALSE );
 			else
-				pUser->AddDefinedText( TID_GAME_STILLNOTUSE );		
+				pUser->AddDefinedText( TID_GAME_STILLNOTUSE );
 		}
 	}
 }
@@ -7458,7 +7458,7 @@ void CDPSrvr::OnCheering( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 
 			CMover* pSrc = (CMover*)pUser ;
 			g_UserMng.AddMoverBehavior( pSrc, pSrc->GetPos(), pSrc->m_pActMover->m_vDelta,
-				pSrc->GetAngle(), pSrc->m_pActMover->GetState(), pSrc->m_pActMover->GetStateFlag(), 
+				pSrc->GetAngle(), pSrc->m_pActMover->GetState(), pSrc->m_pActMover->GetStateFlag(),
 				pSrc->m_dwMotion, pSrc->m_pActMover->m_nMotionEx, pSrc->m_pModel->m_nLoop, pSrc->m_dwMotionOption, g_TickCount.GetTickCount(), TRUE );
 
 			ItemProp *pItemProp = prj.GetItemProp( II_CHEERUP ); // ÀÀ¿ø ¾ÆÀÌÅÛ
@@ -7467,7 +7467,7 @@ void CDPSrvr::OnCheering( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 		}
 		else
 		{
-			pUser->AddDefinedText( TID_CHEER_NO2, "" );	
+			pUser->AddDefinedText( TID_CHEER_NO2, "" );
 		}
 	}
 }
@@ -7483,7 +7483,7 @@ void CDPSrvr::OnQueryEquip( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBu
 		CUser* pUsertmp		= prj.GetUser( objid );
 		if( IsValidObj( pUsertmp ) )
 		{
-			
+
 			if( pUsertmp->IsMode( EQUIP_DENIAL_MODE ) && pUser->IsAuthHigher( AUTH_GAMEMASTER ) == FALSE )
 			{
 				pUser->AddDefinedText( TID_DIAG_0088 );
@@ -7542,11 +7542,11 @@ void CDPSrvr::OnReturnScroll( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	{
 		static char* szPos[] = { "flaris",	"saintmorning",	"darkon" };
 		pUser->m_lpszVillage = szPos[nSelect];
-		pUser->AddReturnScroll();	//ÀÀ´äÀ» º¸³»¸é '±ÍÈ¯ÀÇ µÎ·ç¸¶¸®'¾ÆÀÌÅÛÀ» »ç¿ëÇÑ´Ù.	
+		pUser->AddReturnScroll();	//ÀÀ´äÀ» º¸³»¸é '±ÍÈ¯ÀÇ µÎ·ç¸¶¸®'¾ÆÀÌÅÛÀ» »ç¿ëÇÑ´Ù.
 	}
 	else
 	{
-		// ÀúÀåµÈ À§Ä¡·Î µ¹¾Æ°¡±â 
+		// ÀúÀåµÈ À§Ä¡·Î µ¹¾Æ°¡±â
 		if( pUser->HasBuff( BUFF_ITEM, II_SYS_SYS_SCR_RETURN ) )
 			pUser->DoUseItemVirtual( II_SYS_SYS_SCR_RETURN, TRUE );
 	}
@@ -7570,7 +7570,7 @@ void CDPSrvr::OnQueryPostMail( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 
 	ar >> nItem >> nItemNum;
 	ar.ReadString( lpszReceiver, MAX_PLAYER );
-	
+
 	ar >> nGold;
 	ar.ReadString( lpszTitle, MAX_MAILTITLE );
 	ar.ReadString( lpszText, MAX_MAILTEXT );
@@ -7579,7 +7579,7 @@ void CDPSrvr::OnQueryPostMail( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 
 	if( ::GetLanguage() != LANG_KOR )
 		nPostGold = 500;
-					
+
 	if( nItem < 0 || nGold < 0 || ( nGold + nPostGold ) <= 0 )
 		return;
 
@@ -7657,7 +7657,7 @@ void CDPSrvr::OnQueryPostMail( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
                         			pUser->AddText("Les envois d'objets sont bloqués pour le moment.");
                         			return;
                     			}
-                		}    
+                		}
 
 						if(g_eLocal.GetState(EVE_NO_TEAM_TRADE))
                 		{
@@ -7751,7 +7751,7 @@ void CDPSrvr::OnQueryPostMail( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 			}
 
 			pUser->AddGold( (int)( (int)( nPostGold + nGold ) * (-1) ), TRUE );	// »ç¿ë·á Áö±Þ
-		
+
 			CItemElem	itemElem;
 			if( pItemElem )
 			{
@@ -7827,7 +7827,7 @@ void CDPSrvr::OnQueryGetMailItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 			pUser->AddDiagText(  prj.GetText( TID_GAME_LACKSPACE ) );
 			return;
 		}
-		
+
 		CMailBox* pMailBox	= CPost::GetInstance()->GetMailBox( pUser->m_idPlayer );
 		if( pMailBox )
 		{
@@ -8012,7 +8012,7 @@ void CDPSrvr::OnGCApp( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_
 					pUser->AddDefinedText( TID_GAME_GUILDCOMBAT1TO1_ISGC1TO1TENDER );
 					return;
 				}
-#endif // __GUILD_COMBAT_1TO1		
+#endif // __GUILD_COMBAT_1TO1
 				pUser->AddGCWindow( g_GuildCombatMng.GetPrizePenya( 2 ), g_GuildCombatMng.GetRequstPenya( pUser->m_idGuild ), g_GuildCombatMng.m_nJoinPanya );
 			}
 		}
@@ -8020,7 +8020,7 @@ void CDPSrvr::OnGCApp( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_
 		{
 			DWORD dwPenya;
 			ar >> dwPenya;
-			g_GuildCombatMng.GuildCombatRequest( pUser, dwPenya );	// 
+			g_GuildCombatMng.GuildCombatRequest( pUser, dwPenya );	//
 		}
 	}
 }
@@ -8044,16 +8044,16 @@ void CDPSrvr::OnGCSelectPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 	if( IsValidObj( pUser ) )
 	{
 		// Ä³¸¯ÅÍ¸¦ ¼±ÅÃÇÒ¼ö ÀÖ´Â ½Ã°£ÀÎÁö °Ë»ç
-		if( g_GuildCombatMng.m_nGCState != CGuildCombat::NOTENTER_COUNT_STATE ) 
+		if( g_GuildCombatMng.m_nGCState != CGuildCombat::NOTENTER_COUNT_STATE )
 		{
- 			pUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_MAKEUP) ); //Áö±ÝÀº ¸í´ÜÀÛ¼ºÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.		
+ 			pUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_MAKEUP) ); //Áö±ÝÀº ¸í´ÜÀÛ¼ºÀ» ÇÒ ¼ö ¾ø½À´Ï´Ù.
 			return;
 		}
 
 		// Ä³¸¯ÅÍ¸¦ ¼±ÅÃÇÒ¼ö ÀÖ´Â ±æµå ÀÎÁö °Ë»ç
 		if( g_GuildCombatMng.IsRequestWarGuild( pUser->m_idGuild, FALSE ) == FALSE )
 		{
-			pUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_MAKEUP_FAIL) );	//±æµå´ëÀü ÀÔÂûÀ» ÇÏÁö ¾Ê¾Ò°Å³ª ÃÖÁ¾ ¼±¹ß ±æµå¼øÀ§¿¡ µéÁö ¸øÇß½À´Ï´Ù.		
+			pUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_MAKEUP_FAIL) );	//±æµå´ëÀü ÀÔÂûÀ» ÇÏÁö ¾Ê¾Ò°Å³ª ÃÖÁ¾ ¼±¹ß ±æµå¼øÀ§¿¡ µéÁö ¸øÇß½À´Ï´Ù.
 			return;
 		}
 
@@ -8069,8 +8069,8 @@ void CDPSrvr::OnGCSelectPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 					bMK = TRUE;
 			}
 		}
-		
-		
+
+
 		if( pGuild && bMK )
 		{
 			if( bWindow == FALSE )
@@ -8118,7 +8118,7 @@ void CDPSrvr::OnGCSelectPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 				if( 1 < nSize && pGuild->IsMaster( uidDefender ) )
 					bMastertoDefender = TRUE;
 
-				if( bMasterOrKinpin && bMastertoDefender == FALSE 
+				if( bMasterOrKinpin && bMastertoDefender == FALSE
 #ifndef _DEBUG
 					&& bDefender
 #endif // _DEBUG
@@ -8147,9 +8147,9 @@ void CDPSrvr::OnGCSelectPlayer( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 									}
 								}
 							}
-						}						
+						}
 					}
-					g_GuildCombatMng.SetDefender( pUser->m_idGuild, uidDefender );			
+					g_GuildCombatMng.SetDefender( pUser->m_idGuild, uidDefender );
 
 					WriteLog( "GuildCombat SelectPlayer GuildID=%d", pUser->m_idGuild );
 				}
@@ -8189,7 +8189,7 @@ void CDPSrvr::OnGCGetPenyaGuild( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
-		CGuild *pGuild = pUser->GetGuild();		
+		CGuild *pGuild = pUser->GetGuild();
 		if( pGuild && pGuild->IsMaster( pUser->m_idPlayer ) )
 		{
 			// ½ÅÃ»±Ý¾× ¹× º¸»óÀÌ ÀÖ´Â°¡?
@@ -8264,7 +8264,7 @@ void CDPSrvr::OnGCGetItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
-		CGuild *pGuild = pUser->GetGuild();		
+		CGuild *pGuild = pUser->GetGuild();
 		if( pGuild && pGuild->IsMember( pUser->m_idPlayer ) )
 		{
 			if( pGuild->GetGuildId() != g_GuildCombatMng.m_uWinGuildId )
@@ -8284,7 +8284,7 @@ void CDPSrvr::OnGCGetItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 
 			// ´ëÀü »óÇ° Áö±Þ
 			CItemElem itemElem;
-			
+
 			if( g_GuildCombatMng.m_nWinGuildCount == 1 )
 				itemElem.m_dwItemId	= II_ARM_S_CLO_CLO_DRAGON1;		//Cadeau 1 victoire
 			else if( g_GuildCombatMng.m_nWinGuildCount == 2 )
@@ -8304,7 +8304,7 @@ void CDPSrvr::OnGCGetItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 
 			CTime tNextCombat = g_GuildCombatMng.GetNextGuildCobmatTime();
 			itemElem.m_dwKeepTime = tNextCombat.GetTime();
-			
+
 			if( pUser->CreateItem( &itemElem ) )
 			{
 				LogItemInfo aLogItem;
@@ -8315,7 +8315,7 @@ void CDPSrvr::OnGCGetItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 				aLogItem.Gold = pUser->GetGold();
 				aLogItem.Gold2 = pUser->GetGold() - g_GuildCombatMng.m_nItemPenya;
 				OnLogItem( aLogItem, &itemElem, 1 );		// why do not pass &itemElem as argument?
-				pUser->AddGold( -g_GuildCombatMng.m_nItemPenya );	
+				pUser->AddGold( -g_GuildCombatMng.m_nItemPenya );
 			}
 			else
 			{
@@ -8346,13 +8346,13 @@ void CDPSrvr::OnSummonFriend( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 {
 	DWORD dwData;
 	char lpszPlayer[MAX_PLAYER]	= { 0, };
-	
+
 	ar >> dwData;
 	ar.ReadString( lpszPlayer, MAX_PLAYER );
 
 	if( strlen(lpszPlayer) >= MAX_NAME )
 		return;
-	
+
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
@@ -8414,7 +8414,7 @@ void CDPSrvr::OnSummonFriend( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 					else if( nState == 6 ) // µà¾óÁß
 						dwMsgId = TID_GAME_ATTACK_NOTUSE1;
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-					
+
 					pUser->AddDefinedText( TID_GAME_STATE_NOTUSE, "\"%s\"", prj.GetText( dwMsgId ) );
 				}
 				else if( pUser->m_idPlayer == pUsertmp->m_idPlayer )
@@ -8448,10 +8448,10 @@ void CDPSrvr::OnSummonFriend( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 				}
 #endif // __RAINBOW_RACE
 #if __VER >= 14 // __QUIZ
-				else if( pUser->GetWorld()->GetID() == WI_WORLD_QUIZ 
+				else if( pUser->GetWorld()->GetID() == WI_WORLD_QUIZ
 						|| pUsertmp->GetWorld()->GetID() == WI_WORLD_QUIZ )
 					pUser->AddDefinedText( TID_GAME_QUIZ_DO_NOT_USE );
-						
+
 #endif // __QUIZ
 				else
 				{
@@ -8474,7 +8474,7 @@ void CDPSrvr::OnSummonFriend( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 			{
 				pUser->AddDefinedText( TID_ERROR_SUMMONFRIEND_NOUSER, "\"%s\"", lpszPlayer );
 			}
-		}	
+		}
 		else
 		{
 			ItemProp* pItemProp = prj.GetItemProp( II_SYS_SYS_SCR_FRIENDSUMMON_A );
@@ -8513,7 +8513,7 @@ void CDPSrvr::OnSummonFriendConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 				else if( nState == 6 ) // µà¾óÁß
 					dwMsgId = TID_GAME_ATTACK_NOTUSE;
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-				
+
 				pUser->AddDefinedText( TID_GAME_STATE_NOTSUMMONOK, "\"%s\"", prj.GetText( dwMsgId ) );
 				pUsertmp->AddDefinedText( TID_GAME_STATE_NOTSUMMON, "\"%s\"", prj.GetText( dwMsgId + 1 ) );
 				return;
@@ -8537,7 +8537,7 @@ void CDPSrvr::OnSummonFriendConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 				else if( nState == 6 ) // µà¾óÁß
 					dwMsgId = TID_GAME_ATTACK_NOTUSE1;
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-				
+
 				pUser->AddDefinedText( TID_GAME_STATE_NOTSUMMONOK , "\"%s\"", prj.GetText( dwMsgId ) );
 				pUsertmp->AddDefinedText( TID_GAME_STATE_NOTSUMMON , "\"%s\"", prj.GetText( dwMsgId - 1 ) );
 				return;
@@ -8574,11 +8574,11 @@ void CDPSrvr::OnSummonFriendConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 					pUsertmp->AddDefinedText( TID_GAME_STATE_NOTSUMMON, "\"%s\"", strtmp );
 				}
 #if __VER >= 14 // __QUIZ
-				else if( pUser->GetWorld()->GetID() == WI_WORLD_QUIZ 
+				else if( pUser->GetWorld()->GetID() == WI_WORLD_QUIZ
 						|| pUsertmp->GetWorld()->GetID() == WI_WORLD_QUIZ )
 					pUser->AddDefinedText( TID_GAME_QUIZ_DO_NOT_USE );
 #endif // __QUIZ
-				else 
+				else
 				{
 					g_dpDBClient.SendLogSMItemUse( "1", pUsertmp, pItemElem, pItemElem->GetProp(), pUser->GetName() );
 
@@ -8623,7 +8623,7 @@ void CDPSrvr::OnSummonFriendCancel( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 void CDPSrvr::OnSummonParty( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	DWORD dwData;
-	
+
 	ar >> dwData;
 
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
@@ -8647,7 +8647,7 @@ void CDPSrvr::OnSummonParty( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			else if( nState == 6 ) // µà¾óÁß
 				dwMsgId = TID_GAME_ATTACK_NOTUSE;
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-			
+
 			pUser->AddDefinedText( TID_GAME_STATE_NOTUSE, "\"%s\"", prj.GetText( dwMsgId ) );
 			return;
 		}
@@ -8665,7 +8665,7 @@ void CDPSrvr::OnSummonParty( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 		}
 #endif // __RAINBOW_RACE
 
-		
+
 		WORD wId	= LOWORD( dwData );
 		WORD wMode	= HIWORD( dwData );
 		CItemElem* pItemElem = (CItemElem*)pUser->GetItemId( wId );
@@ -8680,7 +8680,7 @@ void CDPSrvr::OnSummonParty( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 					pParty->m_dwWorldId = pUser->GetWorld()->GetID();
 
 					g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElem, pItemElem->GetProp(), pParty->m_sParty );
-					
+
 					ItemProp* pItemProptmp = prj.GetItemProp( II_SYS_SYS_SCR_PARTYSUMMON );
 					for( int i = 1 ; i < pParty->m_nSizeofMember ; i++ )
 					{
@@ -8720,14 +8720,14 @@ void CDPSrvr::OnSummonParty( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 					pUser->AddDefinedText( TID_GAME_LIMITED_USE );
 				}
 			}
-		}	
+		}
 		else
 		{
 			ItemProp* pItemProp = prj.GetItemProp( II_SYS_SYS_SCR_PARTYSUMMON );
 			if( pItemProp )
 				pUser->AddDefinedText( TID_ERROR_SUMMONPARTY_NOITEM, "\"%s\"", pItemProp->szName );
 		}
-	}	
+	}
 }
 
 void CDPSrvr::OnSummonPartyConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
@@ -8764,11 +8764,11 @@ void CDPSrvr::OnSummonPartyConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 					else if( nState == 6 ) // µà¾óÁß
 						dwMsgId = TID_GAME_ATTACK_NOTUSE;
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-					
+
 					pUser->AddDefinedText( TID_GAME_STATE_NOTSUMMONOK , "\"%s\"", prj.GetText( dwMsgId ) );
 					return;
 				}
-				
+
 				nState = pLeader->GetSummonState();
 				if( nState != 0 )
 				{
@@ -8787,11 +8787,11 @@ void CDPSrvr::OnSummonPartyConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 					else if( nState == 6 ) // µà¾óÁß
 						dwMsgId = TID_GAME_ATTACK_NOTUSE1;
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-					
+
 					pUser->AddDefinedText( TID_GAME_STATE_NOTSUMMONOK , "\"%s\"", prj.GetText( dwMsgId ) );
 					return;
 				}
-				
+
 				if( prj.IsGuildQuestRegion( pLeader->GetPos() ) )
 				{
 					pUser->AddDefinedText( TID_GAME_STATE_NOTSUMMONOK, "\"%s\"", prj.GetText( TID_GAME_EVENT_WORLD_NOTUSE1) );
@@ -8835,7 +8835,7 @@ void CDPSrvr::OnSummonPartyConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 				}
 #endif // __RAINBOW_RACE
 #if __VER >= 14 // __QUIZ
-				else if( pLeader->GetWorld()->GetID() == WI_WORLD_QUIZ 
+				else if( pLeader->GetWorld()->GetID() == WI_WORLD_QUIZ
 					|| pUser->GetWorld()->GetID() == WI_WORLD_QUIZ )
 					pUser->AddDefinedText( TID_GAME_QUIZ_DO_NOT_USE );
 #endif // __QUIZ
@@ -8844,7 +8844,7 @@ void CDPSrvr::OnSummonPartyConfirm( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 					pUser->RemoveBuff( BUFF_ITEM, II_SYS_SYS_SCR_PARTYSUMMON );
 					pUser->REPLACE( g_uIdofMulti, pLeader->GetWorld()->GetID(), pLeader->GetPos(), REPLACE_FORCE, pLeader->GetLayer() );
 					pUser->AddDefinedText( TID_GAME_SUMMON_SUCCESS1, "\"%s\"", pLeader->GetName() );
-					((CUser*)pLeader)->AddDefinedText( TID_GAME_SUMMON_SUCCESS, "\"%s\"", pUser->GetName() );					
+					((CUser*)pLeader)->AddDefinedText( TID_GAME_SUMMON_SUCCESS, "\"%s\"", pUser->GetName() );
 					ItemProp* pItemProptmp = prj.GetItemProp( II_SYS_SYS_SCR_PARTYSUMMON );
 					if( pItemProptmp )
 						g_UserMng.AddCreateSfxObj((CMover *)pUser, pItemProptmp->dwSfxObj3 );
@@ -8875,20 +8875,20 @@ void CDPSrvr::OnRemoveInvenItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	CItemElem* pItemElem = pUser->m_Inventory.GetAtId( dwId );
 	if( IsUsableItem( pItemElem ) == FALSE )
 		return;
 
 	if( pUser->m_Inventory.IsEquip( dwId ) )
 		return;
-	
+
 	if( pUser->IsUsing( pItemElem ) )
 	{
 		pUser->AddDefinedText( TID_GAME_CANNOT_DO_USINGITEM );
 		return;
 	}
-	
+
 	if( pItemElem->m_nItemNum < nNum )
 		return ;
 
@@ -8921,12 +8921,12 @@ void CDPSrvr::OnCreateMonster( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	DWORD dwId = HIWORD( dwItemIdRec );
-	
+
 	if( pUser->IsUsableState( dwId ) == FALSE )
 		return;
-	
+
 #if __VER >= 12 // __NEW_ITEMCREATEMON_SERVER
 	CCreateMonster::GetInstance()->CreateMonster( pUser, dwId, vPos );
 
@@ -8940,7 +8940,7 @@ void CDPSrvr::OnCreateMonster( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 		DWORD dwMonsterId = g_CreateMonster.GetCreateMonster( pItemElem->GetProp()->dwID );
 		if( dwMonsterId )
 			pMoverProp	= prj.GetMoverProp( dwMonsterId );
-				
+
 		if( pWorld && pMoverProp && pMoverProp->dwID != 0 )
 		{
 			D3DXVECTOR3 vDist2 = pUser->GetPos() - vPos;
@@ -8964,7 +8964,7 @@ void CDPSrvr::OnCreateMonster( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 				pObj->SetPos( vPos );
 				pObj->InitMotion( MTI_STAND );
 				pObj->UpdateLocalMatrix();
-			
+
 				((CMover*)pObj)->m_bActiveAttack = 0;
 				pWorld->AddObj( pObj, TRUE );
 			}
@@ -9022,7 +9022,7 @@ void CDPSrvr::OnTrade( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
 
 
-				//°³ÀÎ»óÁ¡ Áß¿¡´Â °Å·¡ ºÒ°¡ 
+				//°³ÀÎ»óÁ¡ Áß¿¡´Â °Å·¡ ºÒ°¡
 				if( pUser->m_vtInfo.VendorIsVendor() || pUser->m_vtInfo.IsVendorOpen() ||
                     pTrader->m_vtInfo.VendorIsVendor() || pTrader->m_vtInfo.IsVendorOpen() )
 				{
@@ -9066,7 +9066,7 @@ void CDPSrvr::OnConfirmTrade( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	{
 		// ´ëÀüÀå¿¡¼­´Â °Å·¡¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.
 		if( pWorld && pWorld->GetID() == WI_WORLD_GUILDWAR )
-		{			
+		{
 			pUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_TRADE) ); //±æµå´ëÀüÀå ¿¡¼­´Â °Å·¡¿¡ °üÇÑ ¸ðµç°ÍµéÀ» ÀÌ¿ë ÇÒ ¼ö ¾ø½À´Ï´Ù.
 			return;
 		}
@@ -9124,7 +9124,7 @@ void CDPSrvr::OnTradePut( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf,
 	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );
 	CWorld* pWorld;
 
-	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) && 
+	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) &&
 		IsValidObj( pTrader ) && pTrader->GetWorld() == pWorld && pTrader->m_vtInfo.GetOther() == pUser )
 	{
 #if __VER >= 9 // JYJ
@@ -9166,7 +9166,7 @@ void CDPSrvr::OnTradePull( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );
 	CWorld* pWorld;
 
-	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) && 
+	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) &&
 		IsValidObj( pTrader ) && pTrader->GetWorld() == pWorld && pTrader->m_vtInfo.GetOther() == pUser )
 	{
 
@@ -9185,7 +9185,7 @@ void CDPSrvr::OnTradePutGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 {
 	DWORD dwGold;
 	ar >> dwGold;
-	
+
 	int nGold = dwGold;
 	if( nGold <= 0 )
 		return;
@@ -9194,16 +9194,16 @@ void CDPSrvr::OnTradePutGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );
 	CWorld* pWorld;
 
-	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) && 
+	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) &&
 		IsValidObj( pTrader ) && pTrader->GetWorld() == pWorld && pTrader->m_vtInfo.GetOther() == pUser )
 	{
 		if( pUser->m_vtInfo.TradeGetState() == TRADE_STEP_ITEM && pTrader->m_vtInfo.TradeGetState() == TRADE_STEP_ITEM )
 		{
 			if( nGold > pUser->GetGold() )
 				nGold = pUser->GetGold();
-			
+
 			pUser->m_vtInfo.TradeSetGold( nGold );
-			pUser->AddGold( -nGold, FALSE );	// raiders.2006.11.28  ÀÎº¥µ· = ÀÎº¥µ· - °Å·¡Ã¢ µ· 
+			pUser->AddGold( -nGold, FALSE );	// raiders.2006.11.28  ÀÎº¥µ· = ÀÎº¥µ· - °Å·¡Ã¢ µ·
 
 			pUser->AddTradePutGold( pUser->GetId(), nGold );
 			( (CUser*)pTrader )->AddTradePutGold( pUser->GetId(), nGold );
@@ -9218,7 +9218,7 @@ void CDPSrvr::OnTradeClearGold( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );
 	CWorld* pWorld;
 
-	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) && 
+	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) &&
 		IsValidObj( pTrader ) && pTrader->GetWorld() == pWorld && pTrader->m_vtInfo.GetOther() == pUser )
 	{
 		if( pUser->m_vtInfo.TradeGetState() == TRADE_STEP_ITEM && pTrader->m_vtInfo.TradeGetState() == TRADE_STEP_ITEM )
@@ -9252,14 +9252,14 @@ void CDPSrvr::OnTradeCancel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 }
 
 
-// pPlayer´Â Áö±Ý ok¸¦ ´©¸¥ »ç¿ëÀÚÀÌ°í pTrdaer´Â ¸ÕÀú ok¸¦ ´©¸¥ »ç¿ëÀÚÀÌ´Ù.	
+// pPlayer´Â Áö±Ý ok¸¦ ´©¸¥ »ç¿ëÀÚÀÌ°í pTrdaer´Â ¸ÕÀú ok¸¦ ´©¸¥ »ç¿ëÀÚÀÌ´Ù.
 void CDPSrvr::OnTradelastConfrim( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
-	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );	
+	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );
 	CWorld* pWorld;
 
-	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) && 
+	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) &&
 		IsValidObj( pTrader ) && pTrader->GetWorld() == pWorld && pTrader->m_vtInfo.GetOther() == pUser )
 	{
 		if( pUser->m_vtInfo.TradeGetState() != TRADE_STEP_OK )
@@ -9268,7 +9268,7 @@ void CDPSrvr::OnTradelastConfrim( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 		switch( pTrader->m_vtInfo.TradeGetState() )
 		{
 		case TRADE_STEP_OK:
-			pUser->m_vtInfo.TradeSetState( TRADE_STEP_CONFIRM );	
+			pUser->m_vtInfo.TradeSetState( TRADE_STEP_CONFIRM );
 			#ifdef __JAIME_DEVONLINE
 			pUser->AddText( "#b[LTD]#nb Source par dave devils." );
 			#endif
@@ -9282,14 +9282,14 @@ void CDPSrvr::OnTradelastConfrim( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 				TRADE_CONFIRM_TYPE type = pUser->m_vtInfo.TradeLastConfirm( out );
 				switch( type )
 				{
-				case TRADE_CONFIRM_ERROR:	
-					pUser->AddTradeCancel( NULL_ID, pUser->m_idPlayer );	
+				case TRADE_CONFIRM_ERROR:
+					pUser->AddTradeCancel( NULL_ID, pUser->m_idPlayer );
 					( (CUser*)pTrader )->AddTradeCancel( NULL_ID, pUser->m_idPlayer );
 					break;
 				case TRADE_CONFIRM_OK:
 					SEND( out, &g_dpDBClient, DPID_SERVERPLAYER );
 
-					pUser->AddTradeConsent();	
+					pUser->AddTradeConsent();
 					( (CUser*)pTrader )->AddTradeConsent();
 
 					CWorld* pWorld	= ((CUser*)pTrader)->GetWorld();
@@ -9297,10 +9297,10 @@ void CDPSrvr::OnTradelastConfrim( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 					pWorld	= pUser->GetWorld();
 					g_dpDBClient.SavePlayer( pUser, pWorld->GetID(), pUser->GetPos(), pUser->GetLayer() );
 					break;
-				}					
+				}
 			}
-			break;	
-		} 
+			break;
+		}
 	}
 }
 
@@ -9311,12 +9311,12 @@ void CDPSrvr::OnTradeOk( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 	CMover* pTrader	= ( pUser ? pUser->m_vtInfo.GetOther() : NULL );
 	CWorld* pWorld;
 
-	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) && 
+	if( IsValidObj( pUser ) && ( pWorld = pUser->GetWorld() ) &&
 		IsValidObj( pTrader ) && pTrader->GetWorld() == pWorld && pTrader->m_vtInfo.GetOther() == pUser )
 	{
 		if( pUser->m_vtInfo.TradeGetState() == TRADE_STEP_ITEM )
 		{
-			pUser->m_vtInfo.TradeSetState( TRADE_STEP_OK ); 
+			pUser->m_vtInfo.TradeSetState( TRADE_STEP_OK );
 
 			if( pTrader->m_vtInfo.TradeGetState() == TRADE_STEP_OK )	// »ó´ë°¡ ¸ÕÀú ok¸¦ ´­·¯¼­ ±³È¯ÀÌ ¼º¸³µÇ´Â °æ¿ì
 			{
@@ -9338,14 +9338,14 @@ void CDPSrvr::OnPVendorOpen( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 		return;
 
 	char szPVendor[MAX_VENDORNAME];	// °³ÀÎ »óÁ¡ ÀÌ¸§( 48 )
-	ar.ReadString( szPVendor, MAX_VENDORNAME );	
+	ar.ReadString( szPVendor, MAX_VENDORNAME );
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( IsValidObj( pUser ) )
 	{
 #ifdef __MARKET_SYSTEM
 	if( pWorld && pWorld->GetID() == WI_WORLD_MADRIGAL )
-        {            
+        {
             pUser->AddText("Vous devez etre sur la place du marchée pour vendre! Vous allez etre teleporte");
 			pUser->REPLACE( g_uIdofMulti, dwWorldId, vPos, REPLACE_NORMAL, nDefaultLayer )
 			pUser->REPLACE( g_uIdofMulti, WI_WORLD_MARKET, D3DXVECTOR3( 6968.0f, 0.0f, 3328.8f ), REPLACE_NORMAL, nDefaultLayer );// mettre les bonne coordonée
@@ -9366,7 +9366,7 @@ pUser->AddText( "#b[LTD]#nb Source par dave devils." );
 			return;
 		}
 #endif
-/*		
+/*
 #ifdef __Y_BEAUTY_SHOP_CHARGE
 		if( ::GetLanguage() == LANG_TWN )
 		{
@@ -9380,7 +9380,7 @@ pUser->AddText( "#b[LTD]#nb Source par dave devils." );
 
 #ifdef __RULE_0615
 		if( prj.IsInvalidName( szPVendor ) || prj.IsAllowedLetter( szPVendor, TRUE ) == FALSE )
-			pUser->AddDiagText( prj.GetText( TID_DIAG_0020 ) ); 
+			pUser->AddDiagText( prj.GetText( TID_DIAG_0020 ) );
 #endif	// __RULE_0615
 
 		if( !( pUser->HasBuff( BUFF_ITEM, II_SYS_SYS_SCR_FONTEDIT ) ) )
@@ -9399,7 +9399,7 @@ pUser->AddText( "#b[LTD]#nb Source par dave devils." );
 #endif
 		CWorld* pWorld = pUser->GetWorld();
 		if( pWorld && pWorld->GetID() == WI_WORLD_GUILDWAR )
-		{			
+		{
 			pUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_TRADE) ); //±æµå´ëÀüÀå ¿¡¼­´Â °Å·¡¿¡ °üÇÑ ¸ðµç°ÍµéÀ» ÀÌ¿ë ÇÒ ¼ö ¾ø½À´Ï´Ù.
 			return;
 		}
@@ -9414,7 +9414,7 @@ pUser->AddText( "#b[LTD]#nb Source par dave devils." );
 		if( pUser->GetWorld() && pUser->GetWorld()->GetID() == WI_WORLD_MINIROOM )
 			return;
 #endif // __HOUSING
-		if( pUser->m_vtInfo.GetOther() )	// °Å·¡Áß ÀÌ¸é °³ÀÎ»óÁ¡ ºÒ°¡ 
+		if( pUser->m_vtInfo.GetOther() )	// °Å·¡Áß ÀÌ¸é °³ÀÎ»óÁ¡ ºÒ°¡
 			return;
 #if __VER >= 8 // 8Â÷ µà¾ó 061226 ma
 		if( 0 < pUser->m_nDuel )
@@ -9450,11 +9450,11 @@ pUser->AddText( "#b[LTD]#nb Source par dave devils." );
 
 		if( pUser->m_vtInfo.IsVendorOpen() )
 		{
-			if( pUser->m_vtInfo.VendorIsVendor() )	
+			if( pUser->m_vtInfo.VendorIsVendor() )
 			{
 				g_ChattingMng.NewChattingRoom( pUser->m_idPlayer );
 				CChatting * pChatting	= g_ChattingMng.GetChttingRoom( pUser->m_idPlayer );
-				
+
 				g_UserMng.AddPVendorOpen( pUser );
 				if( pChatting )
 				{
@@ -9480,23 +9480,23 @@ void CDPSrvr::OnPVendorClose( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 	if( IsValidObj( pUser ) )
 	{
 		ClosePVendor( pUser, objidVendor );
-	}	
+	}
 }
 
 BOOL CDPSrvr::ClosePVendor( CUser* pUser, OBJID objidVendor )
 {
 	if( pUser->GetId() == objidVendor )
 	{
-		if( pUser->m_vtInfo.IsVendorOpen() == FALSE && 
+		if( pUser->m_vtInfo.IsVendorOpen() == FALSE &&
 			pUser->m_vtInfo.VendorIsVendor() == FALSE )
 		{
 			return FALSE;
 		}
-		
+
 		CMover* pTrader	= pUser->m_vtInfo.GetOther();   //raiders.2006.11.27
 
 		pUser->m_vtInfo.VendorClose();
-		
+
 		//raiders.2006.11.27
 		pUser->m_vtInfo.TradeClear();
 		if( pTrader )
@@ -9536,7 +9536,7 @@ BOOL CDPSrvr::ClosePVendor( CUser* pUser, OBJID objidVendor )
 				{
 					CUser* pUserBuf = (CUser*)prj.GetUserByID( pChatting->m_idMember[i] );
 					if( IsValidObj( pUserBuf ) )		// Ã¤ÆÃ¿¡¼­ ³ª°¨
-					{							
+					{
 						pUserBuf->AddRemoveChatting( pUser->m_idPlayer );
 					}
 				}
@@ -9668,7 +9668,7 @@ void CDPSrvr::OnRegisterPVendorItem( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 	if( iIndex >= MAX_VENDITEM )
 		return;
 #endif //__S8_VENDOR_REVISION
-	if( nCost < 1 )	
+	if( nCost < 1 )
 		nCost = 1;
 
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
@@ -9701,7 +9701,7 @@ void CDPSrvr::OnRegisterPVendorItem( CAr & ar, DPID dpidCache, DPID dpidUser, LP
                         	pUser->AddText("Vous ne pouvez ouvrir de boutique pour l'instant.");
                         	return;
                     	}
-                }    
+                }
 
 				if(g_eLocal.GetState(EVE_NO_TEAM_TRADE))
                 {
@@ -9770,7 +9770,7 @@ void CDPSrvr::OnRegisterPVendorItem( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 #endif // __QUIZ
 
 		CItemElem* pItemElem = (CItemElem *)pUser->GetItemId( nId );
-		if( IsUsableItem( pItemElem ) )		
+		if( IsUsableItem( pItemElem ) )
 		{
 			if( pItemElem->IsQuest() )
 				return;
@@ -9782,7 +9782,7 @@ void CDPSrvr::OnRegisterPVendorItem( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 				pUser->AddDefinedText( TID_GAME_CANNOT_DO_USINGITEM );
 				return;
 			}
-			
+
 			ItemProp* pProp	= pItemElem->GetProp();
 			if( pProp->dwItemKind3 == IK3_CLOAK  && pItemElem->m_idGuild != 0 )
 				return;
@@ -9806,10 +9806,10 @@ void CDPSrvr::OnRegisterPVendorItem( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 			}
 			*/
 #endif // __VER >= 9 // JYJ
-			
+
 			if( nNum > pItemElem->m_nItemNum )
 				nNum = pItemElem->m_nItemNum;
-			if( nNum < 1 )	
+			if( nNum < 1 )
 				nNum = 1;
 
 			ItemProp* pItemProp	= pItemElem->GetProp();
@@ -9817,7 +9817,7 @@ void CDPSrvr::OnRegisterPVendorItem( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 #if __VER < 8     //8Â÷°ÔÀÓ³»¾ÆÀÌÅÛÆÇ¸Å°¡°ÝÁ¦ÇÑÇ®±â
 			if( (DWORD)nCost > (pItemProp->dwCost * 1000) )
 				return;
-#endif	//  __VER < 8  
+#endif	//  __VER < 8
 
 			pUser->m_vtInfo.VendorSetItem( nId, iIndex, nNum, nCost );
 			pUser->AddRegisterPVendorItem( iIndex, 0, nId, nNum, nCost );
@@ -9845,13 +9845,13 @@ void CDPSrvr::OnCreateAngel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 
 	ar.ReadString( sendstr, 1024 );
 	CString infostr = sendstr;
-	
+
 	int strlen = infostr.GetLength();
 	j = 0;
 	k = 0;
 	itemcount = 0;
 	memset(tempchr, 0, sizeof(TCHAR)*10);
-	
+
 	for(int i=0; i<strlen; i++)
 	{
 		temp[0] = infostr.GetAt(i);
@@ -9860,7 +9860,7 @@ void CDPSrvr::OnCreateAngel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 		{
 			CString tempstr;
 			tempstr.Format("%s", tempchr);
-			
+
 			temp[0] = infostr.GetAt(i+1);
 			temp[1] = NULL;
 			if(strcmp(temp, "D") == 0)
@@ -9890,20 +9890,20 @@ void CDPSrvr::OnCreateAngel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			j++;
 		}
 	}
-	
+
 	nOrichalcum = 0;
 	nMoonstone = 0;
 
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
 	if( !IsValidObj( pUser ) )
 		return;
-	
+
 	for(i=0; i<itemcount; i++)
 	{
 		pItemElem = (CItemElem*)pUser->GetItemId( itemset[i].itemid );
 		if(pItemElem != NULL)
 		{
-			switch(pItemElem->GetProp()->dwID) 
+			switch(pItemElem->GetProp()->dwID)
 			{
 				case II_GEN_MAT_ORICHALCUM01:
 				case II_GEN_MAT_ORICHALCUM01_1:
@@ -9924,7 +9924,7 @@ void CDPSrvr::OnCreateAngel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 	whiteAngelRate = greenAngelRate / 10.0f;
 	blueAngelRate = greenAngelRate * 2.0f;
 	redAngelRate = 100.0f - ( whiteAngelRate + greenAngelRate + blueAngelRate );
-	
+
 	fRate[0]	= redAngelRate;
 	fRate[1]	= fRate[0] + blueAngelRate;
 	fRate[2]	= fRate[1] + greenAngelRate;
@@ -9939,7 +9939,7 @@ void CDPSrvr::OnCreateAngel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			dwItemId = adwItemId[i];
 			break;
 		}
-	}	
+	}
 
 	if( dwItemId > 0 )
 	{
@@ -9969,10 +9969,10 @@ void CDPSrvr::OnCreateAngel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				pItemElem = (CItemElem*)pUser->GetItemId( itemset[i].itemid );
 				if( pItemElem->GetExtra() > 0 )
 					pItemElem->SetExtra(0);
-//#ifdef __ANGEL_LOG				
-				OnLogItem( aLogItem, pItemElem, itemset[i].extracount );	
+//#ifdef __ANGEL_LOG
+				OnLogItem( aLogItem, pItemElem, itemset[i].extracount );
 //#endif // __ANGEL_LOG
-				pUser->RemoveItem( (BYTE)( pItemElem->m_dwObjId ), itemset[i].extracount );	
+				pUser->RemoveItem( (BYTE)( pItemElem->m_dwObjId ), itemset[i].extracount );
 			}
 
 		}
@@ -10030,7 +10030,7 @@ void CDPSrvr::OnAngleBuff( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 		switch( pItemProp->dwID )
 		{
 		case II_SYS_SYS_QUE_ANGEL_RED:
-			itemElem.m_dwItemId	= II_SYS_SYS_QUE_ANGEL_RED100;						
+			itemElem.m_dwItemId	= II_SYS_SYS_QUE_ANGEL_RED100;
 			break;
 		case II_SYS_SYS_QUE_ANGEL_BLUE:
 			itemElem.m_dwItemId	= II_SYS_SYS_QUE_ANGEL_BLUE100;
@@ -10058,7 +10058,7 @@ void CDPSrvr::OnAngleBuff( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 
 			char szMessage[512] = {0,};
 			sprintf( szMessage, prj.GetText( TID_EVE_REAPITEM ), itemElem.GetProp()->szName );
-			pUser->AddText( szMessage );			
+			pUser->AddText( szMessage );
 		}
 		else
 			pUser->AddDefinedText( TID_GAME_NOT_INVEN_ANGEL, "" );
@@ -10070,7 +10070,7 @@ void CDPSrvr::OnAngleBuff( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 void CDPSrvr::OnKawibawiboStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10087,35 +10087,35 @@ void CDPSrvr::OnKawibawiboStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 void CDPSrvr::OnKawibawiboGetItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	prj.m_MiniGame.ResultItem_Kawibawibo( pUser );
 }
 
 void CDPSrvr::OnReassembleStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	OBJID objItemId[9];
-	
+
 	for( int i=0; i<9; ++i )
 		ar >> objItemId[i];
-		
+
 	BOOL nResult = prj.m_MiniGame.Result_Reassemble( pUser, objItemId, 9 );
 	if( nResult == TRUE )
 		prj.m_MiniGame.ResultItem_Reassemble( pUser );
-		
+
 }
 
 void CDPSrvr::OnReassembleOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10125,7 +10125,7 @@ void CDPSrvr::OnReassembleOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 void CDPSrvr::OnAlphabetOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10135,10 +10135,10 @@ void CDPSrvr::OnAlphabetOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 void CDPSrvr::OnAlphabetStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	int nQuestionID = 0;
 	OBJID objItemId[5];
 
@@ -10157,23 +10157,23 @@ void CDPSrvr::OnAlphabetStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 void CDPSrvr::OnFiveSystemOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	prj.m_MiniGame.OpenWnd_FiveSystem( pUser );
 }
 
 void CDPSrvr::OnFiveSystemBet( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
 	int nBetNum;
 	int nBetPenya;
-	
+
 	ar >> nBetNum;
 	ar >> nBetPenya;
 
@@ -10195,7 +10195,7 @@ void CDPSrvr::OnFiveSystemBet( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE l
 void CDPSrvr::OnFiveSystemStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10203,15 +10203,15 @@ void CDPSrvr::OnFiveSystemStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 	if( !( prj.m_MiniGame.ResultPenya_FiveSystem( pUser, nResult ) ) )
 		pUser->AddFiveSystemResult( CMiniGame::FIVESYSTEM_FAILED );
-}	
+}
 
 void CDPSrvr::OnFiveSystemDestroyWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	prj.m_MiniGame.DestroyWnd_FiveSystem( pUser );
 }
 #endif // __EVE_MINIGAME
@@ -10220,7 +10220,7 @@ void CDPSrvr::OnFiveSystemDestroyWnd( CAr & ar, DPID dpidCache, DPID dpidUser, L
 void CDPSrvr::OnUltimateMakeItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10236,10 +10236,10 @@ void CDPSrvr::OnUltimateMakeItem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 void CDPSrvr::OnUltimateMakeGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	OBJID objItemId;
 	ar >> objItemId;
 
@@ -10251,7 +10251,7 @@ void CDPSrvr::OnUltimateMakeGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 void CDPSrvr::OnUltimateTransWeapon( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10270,7 +10270,7 @@ void CDPSrvr::OnUltimateTransWeapon( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 void CDPSrvr::OnUltimateSetGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -10287,25 +10287,25 @@ void CDPSrvr::OnUltimateSetGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 void CDPSrvr::OnUltimateRemoveGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	OBJID objItemWeapon;
 	OBJID objItemGem;
-	
+
 	ar >> objItemWeapon;
 	ar >> objItemGem;
-	
+
 	int nResult = prj.m_UltimateWeapon.RemoveGem( pUser, objItemWeapon, objItemGem );
 
 	if(nResult == CUltimateWeapon::ULTIMATE_SUCCESS)
 	{
 		//¼º°ø ¸Þ¼¼Áö Ãâ·Â
 		pUser->AddDefinedText( TID_GAME_REMOVEGEM_SUCCESS, "" );
-		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );		
+		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
 		if((pUser->IsMode( TRANSPARENT_MODE ) ) == 0)
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);		
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 	}
 	else if(nResult == CUltimateWeapon::ULTIMATE_FAILED)
 	{
@@ -10313,7 +10313,7 @@ void CDPSrvr::OnUltimateRemoveGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 		pUser->AddDefinedText( TID_GAME_REMOVEGEM_FAILED, "" );
 		pUser->AddPlaySound( SND_INF_UPGRADEFAIL );
 		if((pUser->IsMode( TRANSPARENT_MODE ) ) == 0)
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_FAIL, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);				
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_FAIL, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 	}
 	pUser->AddUltimateWeapon( ULTIMATE_REMOVEGEM, nResult );
 }
@@ -10321,13 +10321,13 @@ void CDPSrvr::OnUltimateRemoveGem( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 void CDPSrvr::OnUltimateEnchantWeapon( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
 	OBJID objItemWeapon;
 	OBJID objItemGem;
-	
+
 	ar >> objItemWeapon;
 	ar >> objItemGem;
 
@@ -10337,9 +10337,9 @@ void CDPSrvr::OnUltimateEnchantWeapon( CAr & ar, DPID dpidCache, DPID dpidUser, 
 	{
 		//¼º°ø ¸Þ¼¼Áö Ãâ·Â
 		pUser->AddDefinedText( TID_UPGRADE_SUCCEEFUL, "" );
-		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );		
+		pUser->AddPlaySound( SND_INF_UPGRADESUCCESS );
 		if((pUser->IsMode( TRANSPARENT_MODE ) ) == 0)
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);		
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_SUCCESS, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 	}
 	else if(nResult == CUltimateWeapon::ULTIMATE_FAILED)
 	{
@@ -10347,7 +10347,7 @@ void CDPSrvr::OnUltimateEnchantWeapon( CAr & ar, DPID dpidCache, DPID dpidUser, 
 		pUser->AddDefinedText( TID_UPGRADE_FAIL, "" );
 		pUser->AddPlaySound( SND_INF_UPGRADEFAIL );
 		if((pUser->IsMode( TRANSPARENT_MODE ) ) == 0)
-			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_FAIL, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);				
+			g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_INT_FAIL, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 	}
 	pUser->AddUltimateWeapon( ULTIMATE_ENCHANTWEAPON, nResult );
 }
@@ -10376,13 +10376,13 @@ void CDPSrvr::InviteParty( u_long uLeaderid, u_long uMemberid, BOOL bTroup )
 {
 	CUser* pUser = g_UserMng.GetUserByPlayerID( uMemberid );
 	CUser* pLeaderUser = g_UserMng.GetUserByPlayerID( uLeaderid );
-	
+
 	if( IsValidObj( pLeaderUser ) && IsValidObj( pUser ) )
 	{
 		// ´ëÀüÀå¿¡¼­´Â ÆÄÆ¼¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù.
 		CWorld* pWorld = pUser->GetWorld();
 		if( ( pWorld && pWorld->GetID() == WI_WORLD_GUILDWAR ) || pLeaderUser->GetWorld() && pLeaderUser->GetWorld()->GetID() == WI_WORLD_GUILDWAR )
-		{			
+		{
 			pLeaderUser->AddText( prj.GetText(TID_GAME_GUILDCOMBAT_CANNOT_PARTY) );// "¼öÁ¤ÇØ¾ßÇÔ : ±æµå´ëÀüÀå¿¡´Â ÆÄÆ¼¸¦ ÇÒ¼ö ¾ø½À´Ï´Ù" );
 			return;
 		}
@@ -10400,11 +10400,11 @@ void CDPSrvr::InviteParty( u_long uLeaderid, u_long uMemberid, BOOL bTroup )
 			return;
 		}
 #endif // __VER >= 8 // 8Â÷ µà¾ó 061226 ma
-		
+
 		if( pLeaderUser->m_nDuel == 2 )
-		{			
+		{
 			pLeaderUser->AddDefinedText( TID_GAME_PPVP_ADDPARTY, "" );		// ±Ø´Ü µà¾óÁß¿£ ÃÊÃ» ¸øÇÔ´Ù.
-		} 
+		}
 		else
 		{
 			if( 0 < (CMover*)pUser->GetPartyId() )	// ÀÌ¹Ì ÆÄÆ¼°¡ ÀÖÀ»¶§
@@ -10435,7 +10435,7 @@ void CDPSrvr::InviteCompany( CUser* pUser, OBJID objid )
 		return;
 	}
 #endif // __SECRET_ROOM
-	
+
 	if( IsValidObj( pUser ) )
 	{
 		CUser* pUsertmp	= prj.GetUser( objid );
@@ -10476,10 +10476,10 @@ void CDPSrvr::InviteCompany( CUser* pUser, OBJID objid )
 						if( pUsertmp->IsAttackMode() )
 						{
 							pUser->AddDefinedText( TID_GAME_BATTLE_NOTGUILD, "" );
-						} 
+						}
 						else
 						{
-							
+
 							pUsertmp->m_idGuild	= 0;
 							pUsertmp->AddGuildInvite( pGuild->m_idGuild, pUser->m_idPlayer );
 							pUser->AddDefinedText( TID_GAME_COMACCEPTKINGPIN, "%s", pUsertmp->GetName( TRUE ) );
@@ -10492,7 +10492,7 @@ void CDPSrvr::InviteCompany( CUser* pUser, OBJID objid )
 				}
 			}
 		}
-	}	
+	}
 }
 
 #if __VER >= 12 // __SECRET_ROOM
@@ -10547,36 +10547,36 @@ BOOL CDPSrvr::IsPiercingSize( CUser* pUser, CItemElem* pItemElem0, CItemElem* pI
 {
 	if( IsUsableItem( pItemElem0 ) == FALSE || IsUsableItem( pItemElem1 ) == FALSE )
 		return FALSE;
-	
+
 	if( pUser->m_Inventory.IsEquip( pItemElem0->m_dwObjId ) )
 	{
 		nError = TID_GAME_EQUIPPUT;
 		return FALSE;
-	}	
-	
-	//////////////// Ã¹¹øÂ° ¾ÆÀÌÅÛ //////////////// 
+	}
+
+	//////////////// Ã¹¹øÂ° ¾ÆÀÌÅÛ ////////////////
 	if( pItemElem0->GetProp()->dwItemKind3 != IK3_SUIT )
 	{
 		nError = TID_PIERCING_POSSIBLE_ITEM;
 		return FALSE;
 	}
-		
-	// ÇÇ¾î½Ì »çÀÌÁî °Ë»ç Áö±ÝÀº 4°³°¡ ÃÖ°í	
+
+	// ÇÇ¾î½Ì »çÀÌÁî °Ë»ç Áö±ÝÀº 4°³°¡ ÃÖ°í
 	if( pItemElem0->GetPiercingSize() >= MAX_PIERCING_SUIT )
 	{
 		nError = TID_PIERCING_POSSIBLE;
 		return FALSE;
 	}
-	//////////////// µÎ¹øÂ° ¾ÆÀÌÅÛ //////////////// 
+	//////////////// µÎ¹øÂ° ¾ÆÀÌÅÛ ////////////////
 	// ´ÙÀÌ½ºÀÎÁö °Ë»ç
 	if( pItemElem1->GetProp()->dwItemKind3 != IK3_PIERDICE )
 	{
-		nError = TID_UPGRADE_ERROR_WRONGUPLEVEL;			
-		return FALSE;					
+		nError = TID_UPGRADE_ERROR_WRONGUPLEVEL;
+		return FALSE;
 	}
-	
+
 #if __VER >= 8 //__Y_NEW_ENCHANT
-	if( pItemElem1->GetProp()->dwID != II_GEN_MAT_MOONSTONE 
+	if( pItemElem1->GetProp()->dwID != II_GEN_MAT_MOONSTONE
 		&& pItemElem1->GetProp()->dwID != II_GEN_MAT_MOONSTONE_1 )
 #else //__Y_NEW_ENCHANT
 	if( pItemElem1->GetProp()->dwID != II_GEN_MAT_DIE_EIGHT && pItemElem1->GetProp()->dwID != II_GEN_MAT_DIE_TEN )
@@ -10585,13 +10585,13 @@ BOOL CDPSrvr::IsPiercingSize( CUser* pUser, CItemElem* pItemElem0, CItemElem* pI
 		nError = TID_SBEVE_NOTUSEITEM;			// ÇÇ¾î½Ì¿¡ ÇÊ¿äÇÑ ÁÖ»çÀ§°¡ ¾Æ´Ï¸é ºÒ°¡´É
 		return FALSE;
 	}
-	//////////////// ¼¼¹øÂ° ¾ÆÀÌÅÛ //////////////// 
+	//////////////// ¼¼¹øÂ° ¾ÆÀÌÅÛ ////////////////
 	if( IsUsableItem( pItemElem2 ) && pItemElem2->m_dwItemId != II_SYS_SYS_SCR_PIEPROT )
 	{
 		nError = TID_SBEVE_NOTUSEITEM;			// »ó¿ë¾ÆÀÌÅÛÀÌ ¾Æ´Ï¸é ºÒ°¡´É
 		return FALSE;
 	}
-	
+
 	return TRUE;
 }
 #endif // __EXT_PIERCING
@@ -10609,10 +10609,10 @@ CCommonCtrl* CreateExpBox( CUser* pUser )
 	///////////////////////////////////////////////////////////////////////
 	// °æÇèÄ¡°¡ ±ðÀÌÁö ¾ÊÀ¸¸é µå¶øÀ» ¾ÈÇÔ!!!
 	CMover* pMover = (CMover*)pUser;
-	
+
 	float fRate = 0.1f, fDecExp = 0.0f;
 	BOOL  bPxpClear = FALSE, bLvDown = FALSE;
-	int   nLevel	= pMover->GetLevel();	
+	int   nLevel	= pMover->GetLevel();
 	pMover->GetDieDecExp( nLevel, fRate, fDecExp, bPxpClear, bLvDown );
 	if( fDecExp )
 	{
@@ -10629,33 +10629,33 @@ CCommonCtrl* CreateExpBox( CUser* pUser )
 		fDecExp = 0.0f;
 
 	if( pMover->GetExp1() == 0 )
-		fDecExp = 0.0f;	
+		fDecExp = 0.0f;
 
 	if( pMover->m_bLastPK || pMover->m_bGuildCombat || pMover->m_bLastDuelParty )		// ¹«Á¶°Ç °æÇèÄ¡ ¾È±ï´Â´Ù...
-		fDecExp = 0.0f;			
-		
+		fDecExp = 0.0f;
+
 	if( fDecExp == 0.0f )
 		return NULL;
-	
+
 	CCommonCtrl* pCtrl	= (CCommonCtrl*)CreateObj( D3DDEVICE, OT_CTRL, 46 );
-	
+
 	if( !pCtrl )
 		return NULL;
 	///////////////////////////////////////////////////////////////////////
 
 	pCtrl->m_CtrlElem.m_dwSet    = UA_PLAYER_ID;
 	pCtrl->m_idExpPlayer = pUser->m_idPlayer;
-	
+
 	EXPINTEGER	nDecExp = (EXPINTEGER)(prj.m_aExpCharacter[pUser->m_nLevel+1].nExp1 * fDecExp );	// ÇöÀç·¹º§ÀÇ ÃÖ´ë°æÇèÄ¡ * ÆÛ¼¾Æ®
 
 	if( nDecExp > pMover->GetExp1() )
 		nDecExp = pMover->GetExp1();
-	
+
 	pCtrl->m_nExpBox     = (EXPINTEGER)(nDecExp * 0.3f);
 	pCtrl->m_dwDelete    = timeGetTime() + MIN( 30 );
-	
+
 	pCtrl->SetPos( pUser->GetPos() );
-	
+
 	pUser->AddDefinedText(TID_GAME_EXPBOX_INFO_MSG, "" );
 	pUser->AddChatText(   TID_GAME_EXPBOX_INFO_MSG, "");
 	return pCtrl;
@@ -10930,7 +10930,7 @@ void CDPSrvr::OnPetTamerMiracle( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 					if( pUser->HasPet() )
 						pUser->RemovePet();
-					pUser->AddPet( pPet, PF_PET_GET_AVAIL );	// í»	// PF_PET_GET_AVAIL 
+					pUser->AddPet( pPet, PF_PET_GET_AVAIL );	// í»	// PF_PET_GET_AVAIL
 					g_UserMng.AddPetLevelup( pUser, MAKELONG( (WORD)pPet->GetIndex(), (WORD)pPet->GetLevel() ) );	// öâ
 					pUser->UpdateItem( (BYTE)( pItemElem->m_dwObjId ), UI_NUM, pItemElem->m_nItemNum - 1 );
 
@@ -10971,12 +10971,14 @@ void CDPSrvr::OnModifyStatus( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 {
 	int nStrCount, nStaCount, nDexCount, nIntCount;
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
 	ar >> nStrCount >> nStaCount >> nDexCount >> nIntCount;
-	
+	if( nStrCount > pUser->m_nRemainGP || nStaCount > pUser->m_nRemainGP || nDexCount > pUser->m_nRemainGP || nIntCount > pUser->m_nRemainGP )
+        return;
+
 	if((nStrCount < 0 || nStaCount < 0 || nDexCount < 0 || nIntCount < 0) ||
 		(nStrCount + nStaCount + nDexCount + nIntCount <= 0)) //¾ç¼ö °Ë»ç ¹× ÇÕÀÌ 0ÀÌÇÏÀÏ °æ¿ì Áß´Ü.
 		return;
@@ -10997,19 +10999,19 @@ void CDPSrvr::OnModifyStatus( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 		g_UserMng.AddHonorTitleChange( pUser, pUser->m_nHonor);
 #endif	// __HONORABLE_TITLE			// ´ÞÀÎ
 	}
-}	
+}
 #endif //__CSC_VER9_2
 
 #if __VER >= 10 // __LEGEND	//	9Â÷ Àü½Â½Ã½ºÅÛ	Neuz, World, Trans
 void CDPSrvr::OnLegendSkillStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	OBJID objItemId[5];
-	
+
 	for( int i=0; i<5; ++i )
 		ar >> objItemId[i];
 
@@ -11020,12 +11022,12 @@ void CDPSrvr::OnLegendSkillStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 #endif // __3RD_LEGEND16
 		return;
 
-	for( i = 0; i < MAX_SKILL_JOB; i++ ) 
-	{				
+	for( i = 0; i < MAX_SKILL_JOB; i++ )
+	{
 		LPSKILL lpSkill = &(pUser->m_aJobSkill[i]);
 		if( lpSkill && lpSkill->dwSkill != NULL_ID )
 		{
-			ItemProp* pSkillProp    = prj.GetSkillProp( lpSkill->dwSkill );			
+			ItemProp* pSkillProp    = prj.GetSkillProp( lpSkill->dwSkill );
 			if( pSkillProp == NULL )
 				continue;
 			if( pSkillProp->dwItemKind1 != JTYPE_HERO)
@@ -11036,7 +11038,7 @@ void CDPSrvr::OnLegendSkillStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 				return;
 			}
 		}
-	}	
+	}
 
 	CItemElem* pItemElem[5];
 	// ÀÏÄ¡ÇÏ´ÂÁö °Ë»ç (ÀÎº¥Åä¸®¿¡¼­ °Ë»ç)
@@ -11066,15 +11068,15 @@ void CDPSrvr::OnLegendSkillStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 		pUser->RemoveItem( (BYTE)( objItemId[i] ), (short)1 );
 	}
 
-	
+
 	if( xRandom(1000) > 766 )
 	{
-		for( i = 0; i < MAX_SKILL_JOB; i++ ) 
-		{				
+		for( i = 0; i < MAX_SKILL_JOB; i++ )
+		{
 			LPSKILL lpSkill = &(pUser->m_aJobSkill[i]);
 			if( lpSkill && lpSkill->dwSkill != NULL_ID )
 			{
-				ItemProp* pSkillProp    = prj.GetSkillProp( lpSkill->dwSkill );			
+				ItemProp* pSkillProp    = prj.GetSkillProp( lpSkill->dwSkill );
 				if( pSkillProp == NULL )
 					continue;
 				if( pSkillProp->dwItemKind1 != JTYPE_HERO)
@@ -11083,13 +11085,13 @@ void CDPSrvr::OnLegendSkillStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 
 				g_dpDBClient.SendLogSkillPoint( LOG_SKILLPOINT_USE, 1, (CMover*)pUser, &(pUser->m_aJobSkill[i]) );
 			}
-		}	
+		}
 		g_UserMng.AddCreateSfxObj((CMover *)pUser, XI_SYS_EXCHAN01, pUser->GetPos().x, pUser->GetPos().y, pUser->GetPos().z);
 		pUser->AddDoUseSkillPoint( &(pUser->m_aJobSkill[0]), pUser->m_nSkillPoint );
 #ifdef __S_NEW_SKILL_2
 		g_dpDBClient.SaveSkill( pUser );
 #endif // __S_NEW_SKILL_2
-		pUser->AddLegendSkillResult(TRUE);	
+		pUser->AddLegendSkillResult(TRUE);
 	}
 	else
 	{
@@ -11102,7 +11104,7 @@ void CDPSrvr::OnLegendSkillStart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 void CDPSrvr::OnGC1to1TenderOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11112,7 +11114,7 @@ void CDPSrvr::OnGC1to1TenderOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 void CDPSrvr::OnGC1to1TenderView( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11122,10 +11124,10 @@ void CDPSrvr::OnGC1to1TenderView( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 void CDPSrvr::OnGC1to1Tender( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
-	
+
 	int nPenya;
 	ar >> nPenya;
 
@@ -11135,7 +11137,7 @@ void CDPSrvr::OnGC1to1Tender( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 void CDPSrvr::OnGC1to1CancelTender( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11145,7 +11147,7 @@ void CDPSrvr::OnGC1to1CancelTender( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 void CDPSrvr::OnGC1to1FailedTender( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11156,7 +11158,7 @@ void CDPSrvr::OnGC1to1FailedTender( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 void CDPSrvr::OnGC1to1MemberLineUpOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11166,7 +11168,7 @@ void CDPSrvr::OnGC1to1MemberLineUpOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUs
 void CDPSrvr::OnGC1to1MemberLineUp( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11184,14 +11186,14 @@ void CDPSrvr::OnGC1to1MemberLineUp( CAr & ar, DPID dpidCache, DPID dpidUser, LPB
 		ar >> nTemp;
 		vecMemberId.push_back( nTemp );
 	}
-	
+
 	g_GuildCombat1to1Mng.SetMemberLineUp( pUser, vecMemberId );
 }
 
 void CDPSrvr::OnGC1to1TeleportToNPC( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11201,7 +11203,7 @@ void CDPSrvr::OnGC1to1TeleportToNPC( CAr & ar, DPID dpidCache, DPID dpidUser, LP
 void CDPSrvr::OnGC1to1TeleportToStage( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11213,7 +11215,7 @@ void CDPSrvr::OnGC1to1TeleportToStage( CAr & ar, DPID dpidCache, DPID dpidUser, 
 void CDPSrvr::OnQueryStartCollecting( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		if( pUser->IsDisguise() )
 			return;
@@ -11224,18 +11226,18 @@ void CDPSrvr::OnQueryStartCollecting( CAr & ar, DPID dpidCache, DPID dpidUser, L
 void CDPSrvr::OnQueryStopCollecting( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 		pUser->StopCollecting();
 }
 #endif	// __SYS_COLLECTING
 
-	
+
 #if __VER >= 11 // __MA_VER11_04	// ±æµå Ã¢°í ·Î±× ±â´É world,database,neuz
 void CDPSrvr::OnQueryGuildBankLogList( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	bool bMK = FALSE;
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		BYTE byListType;
 		ar >> byListType;
@@ -11258,7 +11260,7 @@ void CDPSrvr::OnQueryGuildBankLogList( CAr & ar, DPID dpidCache, DPID dpidUser, 
 void CDPSrvr::OnHonorListReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		pUser->AddHonorListAck();
 	}
@@ -11266,7 +11268,7 @@ void CDPSrvr::OnHonorListReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lp
 void CDPSrvr::OnHonorChangeReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		int nChange;
 		ar >> nChange;
@@ -11294,7 +11296,7 @@ void CDPSrvr::OnHonorChangeReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 void CDPSrvr::OnSealCharReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		CGuild *pGuild = pUser->GetGuild();
 		if( pGuild != NULL )
@@ -11316,7 +11318,7 @@ void CDPSrvr::OnSealCharReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			if( pItemElem->m_nItemNum > 0 )
 				nSize++;
 		}
-		
+
 		if( nSize > 1 )
 		{
 			pUser->AddDefinedText( TID_GAME_SEALCHAR_NO_CLEANINVEN );
@@ -11358,7 +11360,7 @@ void CDPSrvr::OnSealCharReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			pUser->AddDefinedText( TID_GAME_SEALCHAR_NO_CLEANBANK );
 			return;
 		}
-#endif		
+#endif
 		if( nBankSize > 0 || pUser->m_dwGoldBank[pUser->m_nSlot] > 0)
 		{
 			pUser->AddDefinedText( TID_GAME_SEALCHAR_NO_CLEANBANK );
@@ -11374,7 +11376,7 @@ void CDPSrvr::OnSealCharConmReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 	ar >> objidSend;
 
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		CGuild *pGuild = pUser->GetGuild();
 		if( pGuild != NULL )
@@ -11394,7 +11396,7 @@ void CDPSrvr::OnSealCharConmReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 		CItemElem* pItemElemTrue = NULL;
 		CItemElem* pItemElemtmp = NULL;
-		
+
 		if( nSize > 1 )
 		{
 			pUser->AddDefinedText( TID_GAME_SEALCHAR_NO_CLEANINVEN );
@@ -11442,7 +11444,7 @@ void CDPSrvr::OnSealCharConmReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 			pUser->AddDefinedText( TID_GAME_SEALCHAR_NO_CLEANBANK );
 			return;
 		}
-	
+
 #if __VER >= 11 // __SYS_PLAYER_DATA
 		const char* lpszPlayer	= CPlayerDataCenter::GetInstance()->GetPlayerString( objidSend );
 #else	// __SYS_PLAYER_DATA
@@ -11475,7 +11477,7 @@ void CDPSrvr::OnSealCharConmReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 		itemElemSend.SetPiercingItem( 1, pUser->GetStr() );		//nSTR
 		itemElemSend.SetPiercingItem( 2, pUser->GetDex() );		//nDEX
 		itemElemSend.SetPiercingItem( 3, pUser->GetInt() );		//nINT
-		
+
 		LogItemInfo aLogItem;
 		aLogItem.RecvName = "SEALCHAR";
 		g_dpDBClient.SendQueryPostMail( objidSend, 0, itemElemSend, 0, itemElemSend.GetProp()->szName, 	(char*)GETTEXT( TID_MMI_SEALCHARITEM ) );
@@ -11487,7 +11489,7 @@ void CDPSrvr::OnSealCharConmReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 
 
 		ItemProp* pItemProp  = pItemElemtmp->GetProp();
-		g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElemtmp, pItemProp );		
+		g_dpDBClient.SendLogSMItemUse( "1", pUser, pItemElemtmp, pItemProp );
 //		pItemElemtmp->UseItem();
 		OBJID       dwTmpObjId = pItemElemtmp->m_dwObjId;
 		pUser->RemoveItem( (BYTE)( dwTmpObjId ), (short)1 );
@@ -11512,7 +11514,7 @@ void CDPSrvr::OnSealCharGetReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE 
 	ar >> dwData ;
 
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		dwId = HIWORD( dwData );
 
@@ -11603,7 +11605,7 @@ void	CDPSrvr::OnMoveItemOnPocket( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYT
 void	CDPSrvr::OnAvailPocket( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		int nPocket, nItem;
 
@@ -11616,7 +11618,7 @@ void	CDPSrvr::OnAvailPocket( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			Error( "CDPSrvr::OnAvailPocket : %s", str );
 			return;
 		}
-		
+
 		if( nPocket <= 0 && nPocket >= MAX_POCKET )
 			return;
 		CItemElem* pItemElem	= pUser->m_Inventory.GetAtId( nItem );
@@ -11653,7 +11655,7 @@ void	CDPSrvr::OnAvailPocket( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 void	CDPSrvr::OnBlessednessCancel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		if( !CNpcChecker::GetInstance()->IsCloseNpc( MMI_BLESSING_CANCEL, pUser->GetWorld(), pUser->GetPos() ) )
 			return;
@@ -11691,16 +11693,16 @@ void	CDPSrvr::OnBlessednessCancel( CAr & ar, DPID dpidCache, DPID dpidUser, LPBY
 			}
 			else
 			{
-				pUser->AddDefinedText( TID_GAME_BLESSEDNESS_CANCEL );	
+				pUser->AddDefinedText( TID_GAME_BLESSEDNESS_CANCEL );
 			}
-		}		
+		}
 	}
 }
 
 void	CDPSrvr::OnAwakening( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		if( !CNpcChecker::GetInstance()->IsCloseNpc( MMI_ITEM_AWAKENING, pUser->GetWorld(), pUser->GetPos() ) )
 			return;
@@ -11752,12 +11754,12 @@ void	CDPSrvr::OnAwakening( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 void	CDPSrvr::OnNPCBuff( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		CHAR	m_szKey[64];
 		ar.ReadString(m_szKey, 64);
 		LPCHARACTER lpChar = prj.GetCharacter( m_szKey );
-		
+
 		if( lpChar )
 		{
 			// if( !CNpcChecker::GetInstance()->IsCloseNpc(MMI_NPC_BUFF, pUser->GetWorld(), pUser->GetPos() ) )
@@ -11773,7 +11775,7 @@ void	CDPSrvr::OnNPCBuff( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 					{
 						if( vecNPCBuff[i].dwSkillLV < pSkillProp->dwExpertLV || vecNPCBuff[i].dwSkillLV > pSkillProp->dwExpertMax )
 							continue;
-						
+
 						if(	( pSkillProp->dwID == SI_GEN_EVE_QUICKSTEP && pUser->HasBuff(BUFF_SKILL, SI_ASS_CHEER_QUICKSTEP) )
 							|| ( pSkillProp->dwID == SI_GEN_EVE_HASTE && pUser->HasBuff(BUFF_SKILL, SI_ASS_CHEER_HASTE) )
 							|| ( pSkillProp->dwID == SI_GEN_EVE_HEAPUP && pUser->HasBuff(BUFF_SKILL, SI_ASS_CHEER_HEAPUP) )
@@ -11782,7 +11784,7 @@ void	CDPSrvr::OnNPCBuff( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, 
 							pUser->AddDefinedText( TID_GAME_NPCBUFF_FAILED, "\"%s\"", pSkillProp->szName );
 							continue;
 						}
-						
+
 						AddSkillProp* pAddSkillProp = prj.GetAddSkillProp( pSkillProp->dwSubDefine + vecNPCBuff[i].dwSkillLV - 1 );
 						if( pAddSkillProp )
 						{
@@ -11901,7 +11903,7 @@ void	CDPSrvr::OnSecretRoomTenderOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser
 void	CDPSrvr::OnSecretRoomTender( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11937,7 +11939,7 @@ void	CDPSrvr::OnSecretRoomLineUpOpenWnd( CAr & ar, DPID dpidCache, DPID dpidUser
 void	CDPSrvr::OnSecretRoomLineUpMember( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
 	CUser* pUser = g_UserMng.GetUser( dpidCache, dpidUser );
-	
+
 	if( IsValidObj( pUser ) == FALSE )
 		return;
 
@@ -11959,7 +11961,7 @@ void	CDPSrvr::OnSecretRoomLineUpMember( CAr & ar, DPID dpidCache, DPID dpidUser,
 		if( !pData )
 			return;
 
-		// ID Áßº¹Ã¼Å©		
+		// ID Áßº¹Ã¼Å©
 		if( !checker.insert( dwIdPlayer ).second )
 			return;
 
@@ -12052,7 +12054,7 @@ void CDPSrvr::PutItemLog( CUser* pUser, const char* szAction, const char* szCont
 	log.Action	=  szAction;
 	log.SendName	= pUser->GetName();
 	log.RecvName	= szContext;
-	log.WorldId		= pUser->GetWorld() ? pUser->GetWorld()->GetID() : WI_WORLD_NONE;	// chipi_090623 ¼öÁ¤ - Ã¹ Á¢¼Ó½Ã ¸¸·áµÈ ¹öÇÁÀÎ °æ¿ì ¿ùµå°¡ ¾ø´Â »óÅÂ·Î µé¾î¿Â´Ù. 
+	log.WorldId		= pUser->GetWorld() ? pUser->GetWorld()->GetID() : WI_WORLD_NONE;	// chipi_090623 ¼öÁ¤ - Ã¹ Á¢¼Ó½Ã ¸¸·áµÈ ¹öÇÁÀÎ °æ¿ì ¿ùµå°¡ ¾ø´Â »óÅÂ·Î µé¾î¿Â´Ù.
 	log.Gold	= pUser->GetGold();
 	log.Gold2	= pUser->GetGold();
 	if( nNum == 0 )
@@ -12066,7 +12068,7 @@ void CDPSrvr::PutPenyaLog( CUser* pUser, const char* szAction, const char* szCon
 	log.Action	= szAction;
 	log.SendName	= pUser->GetName();
 	log.RecvName	= szContext;
-	log.WorldId		= pUser->GetWorld() ? pUser->GetWorld()->GetID() : WI_WORLD_NONE;	// chipi_090623 ¼öÁ¤ - Ã¹ Á¢¼Ó½Ã ¸¸·áµÈ ¹öÇÁÀÎ °æ¿ì ¿ùµå°¡ ¾ø´Â »óÅÂ·Î µé¾î¿Â´Ù. 
+	log.WorldId		= pUser->GetWorld() ? pUser->GetWorld()->GetID() : WI_WORLD_NONE;	// chipi_090623 ¼öÁ¤ - Ã¹ Á¢¼Ó½Ã ¸¸·áµÈ ¹öÇÁÀÎ °æ¿ì ¿ùµå°¡ ¾ø´Â »óÅÂ·Î µé¾î¿Â´Ù.
 	//log.ItemName	= "SEED";
 	_stprintf( log.szItemName, "%d", II_GOLD_SEED1 );
 	log.Gold	= pUser->GetGold() + nCost;
@@ -12191,7 +12193,7 @@ void CDPSrvr::OnTeleportToHeavenTower( CAr & ar, DPID dpidCache, DPID dpidUser, 
 
 	if( !CNpcChecker::GetInstance()->IsCloseNpc( MMI_HEAVEN_TOWER, pUser->GetWorld(), pUser->GetPos() ) )
 		return;
-    	
+
 	int nFloor;
 	ar >> nFloor;
 
@@ -12231,7 +12233,7 @@ void CDPSrvr::OnTeleportToHeavenTower( CAr & ar, DPID dpidCache, DPID dpidUser, 
 
 #if __VER >= 12 // __TAX
 	BYTE nCont = CTax::GetInstance()->GetContinent( pUser );
-#endif // __TAX	
+#endif // __TAX
 	// ÇØ´ç ÃþÀ¸·Î ÅÚ·¹Æ÷Æ® -> ½ÇÆÐ½Ã ±×³É ¸®ÅÏ...
 	if( pUser->REPLACE( g_uIdofMulti, dwWorldId, vPos, REPLACE_NORMAL, nDefaultLayer ) )
 	{
@@ -12241,7 +12243,7 @@ void CDPSrvr::OnTeleportToHeavenTower( CAr & ar, DPID dpidCache, DPID dpidUser, 
 		__TAXINFO* pTaxInfo = CTax::GetInstance()->GetTaxInfo( nCont );
 		if( pTaxInfo && pTaxInfo->dwId != NULL_ID )
 			CTax::GetInstance()->AddTax( nCont, nCost, TAX_ADMISSION );
-#endif // __TAX		
+#endif // __TAX
 		CString strFloor;
 		strFloor.Format( "HEAVEN_TOWER_%2d", nFloor );
 		PutPenyaLog( pUser, "h", strFloor, nCost );
@@ -12301,7 +12303,7 @@ BOOL CDPSrvr::DoUseItemTarget_GenRandomOption(
 
 		//	mulcom	BEGIN100426	°¢¼º º¸È£ÀÇ µÎ·ç¸¶¸® ·Î±×.
 // 		WriteLog( "UserID [%d] : ItemSerialNumber[%d] Protect GenNewRandomOption [%I64d]", (int)( pUser->GetId() ), (int)( pTarget->GetSerialNumber() ), pTarget->GetNewRandomOption() );
- 
+
 		TCHAR	szNewOption[128];
 		::memset( szNewOption, 0, sizeof(szNewOption) );
 		::_stprintf( szNewOption, "%I64d", pTarget->GetNewRandomOption() );
@@ -12322,7 +12324,7 @@ BOOL CDPSrvr::DoUseItemTarget_GenRandomOption(
 
 #if __VER >= 12 // __PET_0519
 	// È°¼ºÈ­ µÈ ÇÈ¾÷Æê ¶Ç´Â ¸®¾îÆê °¢¼º Á÷ ÈÄ È¿°ú Àû¿ë
-	if( pUser->IsUsing( pTarget ) 
+	if( pUser->IsUsing( pTarget )
 		&& ( nKind == CRandomOptionProperty::eSystemPet || nKind == CRandomOptionProperty::eEatPet ) )
 		pUser->SetDestParamRandomOptExtension( pTarget );
 #endif	// __PET_0519
@@ -12349,7 +12351,7 @@ BOOL CDPSrvr::DoUseItemTarget_InitializeRandomOption(
 	{
 #if __VER >= 12 // __PET_0519
 		// ¸ÔÆê ¶Ç´Â ½Ã½ºÅÛ Æê °¢¼º Ãë¼Ò ÈÄ È¿°ú Á¦°Å
-		if( pUser->IsUsing( pTarget ) 
+		if( pUser->IsUsing( pTarget )
 			&& ( nKind == CRandomOptionProperty::eSystemPet || nKind == CRandomOptionProperty::eEatPet ) )
 			pUser->ResetDestParamRandomOptExtension( pTarget );
 #endif	// __PET_0519
@@ -12392,7 +12394,7 @@ BOOL CDPSrvr::DoUseItemTarget_InitializeRandomOption(
 		OnLogItem( log, pTarget, 1 );
 		return TRUE;
 	}
-	pUser->AddDefinedText( nError );	
+	pUser->AddDefinedText( nError );
 	return FALSE;
 }
 
@@ -12571,7 +12573,7 @@ void CDPSrvr::OnRainbowRaceApplication( CAr & ar, DPID dpidCache, DPID dpidUser,
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( !IsValidObj( pUser ) )
 		return;
-	
+
 	CRainbowRaceMng::GetInstance()->SetApplicationUser( pUser );
 }
 void CDPSrvr::OnRainbowRaceMiniGamePacket( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
@@ -12579,7 +12581,7 @@ void CDPSrvr::OnRainbowRaceMiniGamePacket( CAr & ar, DPID dpidCache, DPID dpidUs
 	CUser* pUser	= g_UserMng.GetUser( dpidCache, dpidUser );
 	if( !IsValidObj( pUser ) )
 		return;
-	
+
 	BOOL bExt;
 	ar >> bExt;
 
@@ -12686,7 +12688,7 @@ void CDPSrvr::OnReqQuestNPCPos( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE,
 void CDPSrvr::OnPropose( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		char szPlayer[MAX_PLAYER]	= { 0,};
 		ar.ReadString( szPlayer, MAX_PLAYER );
@@ -12697,21 +12699,21 @@ void CDPSrvr::OnPropose( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long
 void CDPSrvr::OnRefuse( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 		CCoupleHelper::Instance()->OnRefuse( pUser );
 }
 
 void CDPSrvr::OnCouple( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 		CCoupleHelper::Instance()->OnCouple( pUser );
 }
 
 void CDPSrvr::OnDecouple( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 		CCoupleHelper::Instance()->OnDecouple( pUser );
 }
 #endif	// __COUPLE_1117
@@ -12720,7 +12722,7 @@ void CDPSrvr::OnDecouple( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_lon
 void CDPSrvr::OnMapKey( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		char szFileName[33] = {0,}, szMapKey[33] = {0,};
 		ar.ReadString( szFileName, 33 );
@@ -12837,13 +12839,13 @@ void CDPSrvr::OnGuildHouseGoOut( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE
 void CDPSrvr::OnTeleporterReq( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_long )
 {
 	CUser* pUser	=	g_UserMng.GetUser( dpidCache, dpidUser );
-	if( IsValidObj( pUser ) ) 
+	if( IsValidObj( pUser ) )
 	{
 		CHAR	m_szKey[64];
 		int		nIndex;
 		ar.ReadString(m_szKey, 64);
 		ar >> nIndex;
-		
+
 		LPCHARACTER lpChar = prj.GetCharacter( m_szKey );
 		if( lpChar )
 		{
@@ -13024,7 +13026,7 @@ void CDPSrvr::OnGuildHouseTenderJoin( CAr & ar, DPID dpidCache, DPID dpidUser, L
 		OBJID objGHId;
 		int nTenderPerin, nTenderPenya;
 		ar >> objGHId >> nTenderPerin >> nTenderPenya;
-		
+
 		GuildHouseMng->OnGuildHouseTenderJoin( pUser, objGHId, nTenderPerin, nTenderPenya );
 	}
 }
@@ -13072,7 +13074,7 @@ void CDPSrvr::OnBaruna( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u
 		ar >> nState;
 		switch( nState )
 		{
-			case BARUNA_ENCHANT: 
+			case BARUNA_ENCHANT:
 			{
 				DWORD dwItem01, dwItem02, dwItem03, dwItem04;
 				ar >> dwItem01 >> dwItem02 >> dwItem03 >> dwItem04;
@@ -13155,10 +13157,10 @@ void CDPSrvr::OnBaruna( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u
 
 				CItemUpgrade::GetInstance()->CreateBarunaPiercing( pUser, pItemElem0, pItemElem1, pItemElem2, pItemElem3 );
 
-			}break;	
+			}break;
 #endif // __BARUNA_PIERCING
 		}
-	}	
+	}
 }
 #endif // __NEW_ITEM_VARUNA
 #ifdef __FASHION_COMBINE
@@ -13178,7 +13180,7 @@ void CDPSrvr::OnFashionCombine( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE,
 				return;
 		}
 		if( xRandom( 2000 ) < 20 )
-		{		
+		{
 			int nResult = 0;
 			nResult = g_xRandomOptionProperty->MergeRandomOption( pItemElem[0], pItemElem[1] );
 			nResult += g_xRandomOptionProperty->MergeRandomOption( pItemElem[2], pItemElem[3] );
@@ -13280,7 +13282,7 @@ void CDPSrvr::OnColosseum( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf
 		}
 	}
 }
-#endif // __COLOSSEUM 
+#endif // __COLOSSEUM
 #ifdef __CADDIE_SHOP
 void CDPSrvr::OnBuyItemCart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpBuf, u_long uBufSize )
 {
@@ -13330,14 +13332,14 @@ void CDPSrvr::OnBuyItemCart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 				continue;
 			}
 #endif // __OCCUPATION_SHOPITEM
-		
+
 			int nCost = (int)pItemElem->GetCost();
 				nCost = (int)( prj.m_fShopCost * nCost );
 
 #ifdef __SHOP_COST_RATE
 			nCost = (int)( prj.m_EventLua.GetShopBuyFactor() * nCost );
 #endif // __SHOP_COST_RATE
-		
+
 #if __VER < 8 // __S8_PK
 		// Á÷À§¿¡ µû¸¥ »óÁ¡°¡°Ý º¯µ¿
 			KarmaProp* pProp = prj.GetKarmaProp( pUser->m_nSlaughter );
@@ -13345,7 +13347,7 @@ void CDPSrvr::OnBuyItemCart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			{
 				if( pProp->nGrade == -6 )
 					continue;
-	
+
 				if( pProp->fDiscountRate != 0.0f )
 					nCost = (int)( nCost * pProp->fDiscountRate );
 			}
@@ -13357,7 +13359,7 @@ void CDPSrvr::OnBuyItemCart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 #endif //__MA_VER11_02
 			if( nCost < 1 )
 				nCost = 1;
-		
+
 			int nPracticable = pUser->GetGold() / nCost;
 			if( pCartItem.dwNum[i] > (DWORD)nPracticable )
 				pCartItem.dwNum[i] = (short)nPracticable;
@@ -13379,7 +13381,7 @@ void CDPSrvr::OnBuyItemCart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 			int nGold = nCost * pCartItem.dwNum[i];
 			if( nGold <= 0 )
 				continue;
-			
+
 			if( pUser->GetGold() >= nGold )
 			{
 				CItemElem itemElem;
@@ -13401,7 +13403,7 @@ void CDPSrvr::OnBuyItemCart( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE lpB
 					pItemElem->SetSerialNumber( itemElem.GetSerialNumber() );
 					OnLogItem( aLogItem, pItemElem, pCartItem.dwNum[i] );		// why do not pass &itemElem as argument?
 					pItemElem->SetSerialNumber( 0 );
-					pUser->AddGold( -nGold );	
+					pUser->AddGold( -nGold );
 #if __VER >= 12 // __TAX
 					if( nTax )
 						CTax::GetInstance()->AddTax( CTax::GetInstance()->GetContinent( pUser ), nTax, TAX_PURCHASE );
@@ -13432,7 +13434,7 @@ void CDPSrvr::OnUpdateJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_lo
             return;
         else if( nJob >= MAX_EXPERT && nJob < MAX_PROFESSIONAL && pUser->m_nLevel != (MAX_EXP_LEVEL + MAX_JOB_LEVEL) )
             return;
-        else if( nJob >= MAX_PROFESSIONAL && nJob < MAX_HERO && pUser->m_nLevel != MAX_GENERAL_LEVEL && pUser->GetExpPercent() != 9999 ) 
+        else if( nJob >= MAX_PROFESSIONAL && nJob < MAX_HERO && pUser->m_nLevel != MAX_GENERAL_LEVEL && pUser->GetExpPercent() != 9999 )
             return;
         else if( nJob >= MAX_HERO && pUser->m_nLevel != MAX_LEGEND_LEVEL && pUser->GetExpPercent() != 9999 )
             return;
@@ -13458,5 +13460,5 @@ void CDPSrvr::OnUpdateJob( CAr & ar, DPID dpidCache, DPID dpidUser, LPBYTE, u_lo
     {
         Error("Erreur %s a la ligne %d", __FILE__, __LINE__);
     }
-}  
+}
 #endif
