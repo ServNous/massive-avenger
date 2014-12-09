@@ -49,3 +49,4 @@ Modification de Fureur :
 ###Systèmes
 - Commande d'eveil /Awake prix actuel 1p
 - Ramasseur + Familier se range automatiquement lorsqu'on s'envole
+- Commande /SkillLevelAll (déjà incluse dans LTD)

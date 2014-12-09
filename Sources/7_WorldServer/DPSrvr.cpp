@@ -304,7 +304,7 @@ CDPSrvr::CDPSrvr()
 #if __VER >= 11 // __PIERCING_REMOVE
 	ON_MSG( PACKETTYPE_PIERCINGREMOVE, OnPiercingRemove );
 #endif // __PIERCING_REMOVE
-	ON_MSG( PACKETTYPE_BUYING_INFO, OnBuyingInfo );
+//	ON_MSG( PACKETTYPE_BUYING_INFO, OnBuyingInfo );
 	ON_MSG( PACKETTYPE_ENTERCHTTING, OnEnterChattingRoom );
 	ON_MSG( PACKETTYPE_CHATTING, OnChatting );
 	ON_MSG( PACKETTYPE_OPENCHATTINGROOM, OnOpenChattingRoom );
@@ -12381,7 +12381,6 @@ BOOL CDPSrvr::DoUseItemTarget_InitializeRandomOption(
 		//	mulcom	END100405	°¢¼º º¸È£ÀÇ µÎ·ç¸¶¸®
 
 		pUser->UpdateItemEx( (BYTE)( pTarget->m_dwObjId ), UI_RANDOMOPTITEMID, pTarget->GetRandomOptItemId() );
-		//pUser->AddDiagText( prj.GetText( nOk ) );
 		pUser->AddText("L'éveil de l'objet a été retirer avec succès.");
 		// log
 		LogItemInfo	log;

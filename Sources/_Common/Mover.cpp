@@ -2332,6 +2332,32 @@ BOOL CMover::InitSkillExp()
 }
 
 #ifdef __CLIENT
+void CMover::MaxSkills()
+{
+	#ifdef __WORLDSERVER
+		LPSKILL pSkill = NULL;
+		ItemProp* pSkillProp = NULL;
+		 
+		for( int i = 0; i < MAX_SKILL_JOB; i++ )
+		{
+			pSkill = &(((CUser*)this)->m_aJobSkill[i]);
+			 
+			if( pSkill == NULL || pSkill->dwSkill == 0xffffffff )
+				continue;
+			 
+			pSkillProp = prj.GetSkillProp( pSkill->dwSkill );
+			 
+			if( pSkillProp == NULL )
+				continue;
+			 
+			if(((CUser*)this)->IsMaster())
+				return;
+			 
+			pSkill->dwLevel = pSkillProp->dwExpertMax;
+			((CUser*)this)->AddSetSkill( pSkill->dwSkill, pSkill->dwLevel );
+		}
+	#endif // __WORLDSERVER
+}
 int CMover::GetCurrentMaxSkillPoint()
 {
 	int nCurrentMaxSkillPoint = m_nSkillPoint;
