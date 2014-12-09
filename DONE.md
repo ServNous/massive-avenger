@@ -45,8 +45,9 @@ Modification de Fureur :
 5min de durée, bonus dégats pour tout le groupe
 
 ###Items
-### * Parures
+* ### Parures
 ###Systèmes
 - Commande d'eveil /Awake prix actuel 1p
 - Ramasseur + Familier se range automatiquement lorsqu'on s'envole
 - Commande /SkillLevelAll (déjà incluse dans LTD)
+- Fix du taux de réussite de la fusion de fashion
